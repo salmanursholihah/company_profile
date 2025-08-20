@@ -7,7 +7,7 @@
     <div class="page-title dark-background">
       <div class="container position-relative">
         <h1>Blog</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+            <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
@@ -39,9 +39,9 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
+                  <p class="post-author">siti kus</p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                    <time datetime="2025-08-08">Agust 08, 2025</time>
                   </p>
                 </div>
               </div>
@@ -65,9 +65,9 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
+                  <p class="post-author">mesi maulewat</p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                    <time datetime="2025-01-01">Jun 5, 2025</time>
                   </p>
                 </div>
               </div>
@@ -91,9 +91,9 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
+                  <p class="post-author">rapi amadddd</p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                    <time datetime="2025-01-01">Jun 22, 2025</time>
                   </p>
                 </div>
               </div>
@@ -117,9 +117,9 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-4.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Lisa Neymar</p>
+                  <p class="post-author">ronaldo yati</p>
                   <p class="post-date">
-                    <time datetime="2022-01-01">Jun 30, 2022</time>
+                    <time datetime="2025-01-01">Jun 30, 2025</time>
                   </p>
                 </div>
               </div>
@@ -143,7 +143,7 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-5.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Denis Peterson</p>
+                  <p class="post-author">genjer</p>
                   <p class="post-date">
                     <time datetime="2022-01-01">Jan 30, 2022</time>
                   </p>
@@ -169,7 +169,7 @@
               <div class="d-flex align-items-center">
                 <img src="assets/img/blog/blog-author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
                 <div class="post-meta">
-                  <p class="post-author">Mika Lendon</p>
+                  <p class="post-author">mega lodon</p>
                   <p class="post-date">
                     <time datetime="2022-01-01">Feb 14, 2022</time>
                   </p>

@@ -1,232 +1,115 @@
 @extends('layouts.app_landing')
 
+<main class="main">
 
-  <main class="main">
+   <!-- Hero Section -->
+<section id="hero" class="hero section position-relative" 
+    style="background: ('assets/img/hero-bg.png') no-repeat center center/cover; height: 100vh;">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <!-- Overlay -->
+    <div class="hero-overlay position-absolute w-100 h-100" style="background: rgba(0,0,0,0.5); top:0; left:0;"></div>
 
-      <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
+    <div class="container text-center text-white position-relative" style="z-index:2;">
+        <h1 class="mb-3" data-aos="fade-down">PT Utama Cipta Tata Asri</h1>
+        <p class="lead mb-4" data-aos="fade-up">
+            Solusi mesin pengolah limbah cair medis profesional sejak 2015. Produk kami telah terpasang di berbagai instansi medis pemerintah & swasta.
+        </p>
+        <a href="#about" class="btn btn-primary btn-lg" data-aos="zoom-in">Pelajari Lebih Lanjut</a>
+    </div>
 
-      <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+</section>
+<!-- /Hero Section -->
 
-        <div class="container position-relative">
 
-          <div class="carousel-item active">
-            <div class="carousel-container">
-              <h2>Welcome to PT Utama Cipta Tata asri</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
+
+    <!-- Quick Services Section -->
+    <section id="quick-services" class="section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up">Layanan Unggulan Kami</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Kami menyediakan solusi lengkap, efisien dan ramah lingkungan.</p>
             </div>
-          </div><!-- End Carousel Item -->
 
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Lorem Ipsum Dolor</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
+            <div class="row g-4">
+                @php
+                    $services = [
+                        ['icon'=>'bi-gear', 'title'=>'Design Engineering', 'desc'=>'Solusi rekayasa mesin dan sistem pengolahan limbah.','color'=>'bg-primary'],
+                        ['icon'=>'bi-truck', 'title'=>'Pengiriman Cepat', 'desc'=>'Gratis pengiriman Pulau Jawa & Sumatera.','color'=>'bg-success'],
+                        ['icon'=>'bi-award', 'title'=>'Kualitas Terjamin', 'desc'=>'Produk sudah teruji dan terinstal di berbagai instansi.','color'=>'bg-warning'],
+                        ['icon'=>'bi-people', 'title'=>'Pendampingan & Training', 'desc'=>'Pelatihan operator dan dukungan pasca-instalasi.','color'=>'bg-danger'],
+                    ];
+                @endphp
+
+                @foreach($services as $service)
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                        <div class="card shadow-sm h-100 border-0 text-center p-3">
+                            <div class="icon mb-3 {{ $service['color'] }} rounded-circle d-inline-flex align-items-center justify-content-center" style="width:60px;height:60px;">
+                                <i class="bi {{ $service['icon'] }} text-white fs-3"></i>
+                            </div>
+                            <h5 class="card-title">{{ $service['title'] }}</h5>
+                            <p class="card-text">{{ $service['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-          </div><!-- End Carousel Item -->
-
-          <div class="carousel-item">
-            <div class="carousel-container">
-              <h2>Sequi ea ut et est quaerat</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started">Read More</a>
-            </div>
-          </div><!-- End Carousel Item -->
-
-          <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-          </a>
-
-          <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-          </a>
-
-          <ol class="carousel-indicators"></ol>
-
         </div>
-
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-        </div>
-
-      </div>
-
-    </section><!-- /Featured Services Section -->
+    </section><!-- /Quick Services Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-            <img src="{{ asset('assets/img/about.jpg') }}}}" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-          </div>
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-            </p>
-          </div>
+    <section id="about" class="section py-5">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="{{ asset('assets/img/about.jpg') }}" class="img-fluid rounded shadow" alt="About Us">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2>Selayang Pandang</h2>
+                    <p>
+                        PT Utama Cipta Tata Asri bergerak di bidang Design Engineering & Manufacturing dengan fokus lingkungan. Kami mengkhususkan pada mesin pengolah limbah cair medis.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check2-circle text-primary me-2"></i>Instalasi cepat & handal</li>
+                        <li><i class="bi bi-check2-circle text-primary me-2"></i>Pelatihan operator & pendampingan</li>
+                        <li><i class="bi bi-check2-circle text-primary me-2"></i>Produk ramah lingkungan & hemat energi</li>
+                    </ul>
+                    <a href="#featured-products" class="btn btn-outline-primary mt-3">Lihat Produk</a>
+                </div>
+            </div>
         </div>
-
-      </div>
-
     </section><!-- /About Section -->
 
-    <!-- Features Section -->
-    <section id="features" class="features section">
+    <!-- Featured Products Section -->
+    <section id="featured-products" class="section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 data-aos="fade-up">Produk Best Seller</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Solusi inovatif kami yang banyak diminati instansi medis & swasta.</p>
+            </div>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+            <div class="row g-4">
+                @php
+                    $products = [
+                        ['img'=>'ipal_1m3.png','title'=>'IPAL WT PRO 0041 KAP.1m3','desc'=>'Kapasitas 1m3, cocok untuk lahan terbatas.'],
+                        ['img'=>'features-2.svg','title'=>'IPAL WT PRO 004i 3.5 m3','desc'=>'Dengan solar cell hybrid off-grid, hemat energi.'],
+                        ['img'=>'features-3.svg','title'=>'IPAL Model 003X','desc'=>'Efisiensi tinggi & mudah dipasang.'],
+                        ['img'=>'features-4.svg','title'=>'IPAL Model 005Y','desc'=>'Kualitas teruji, tahan lama, ramah lingkungan.'],
+                    ];
+                @endphp
 
-      <div class="container">
+                @foreach($products as $product)
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                        <div class="card h-100 shadow-sm border-0 text-center">
+                            <img src="{{ asset('assets/img/'.$product['img']) }}" class="card-img-top" alt="{{ $product['title'] }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product['title'] }}</h5>
+                                <p class="card-text">{{ $product['desc'] }}</p>
+                                <a href="{{ asset('assets/img/'.$product['img']) }}" class="btn btn-outline-primary glightbox">Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section><!-- /Featured Products Section -->
 
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="{{ asset('assets/img/features-1.svg') }}}}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i><span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check"></i> <span>Ullam est qui quos consequatur eos accusamus.</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{ asset('assets/img/features-2.svg') }}}}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Corporis temporibus maiores provident</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-            <img src="{{ asset('assets/img/features-3.svg') }}}}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.</li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
-            <img src="{{ asset('assets/img/features-4.svg') }}}}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
-            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-      </div>
-
-    </section><!-- /Features Section -->
-
-  </main>
+</main>
