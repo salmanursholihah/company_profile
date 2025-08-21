@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.vendor')
 
 @section('content')
 <div class="grid grid-cols-4 gap-6 mb-6">

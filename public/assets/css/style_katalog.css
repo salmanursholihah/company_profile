@@ -1,0 +1,91 @@
+
+/* CSS hanya berlaku di halaman E-Katalog */
+.e-katalog-page {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 20px 0;
+}
+
+.e-katalog-page h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.e-katalog-page .catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.e-katalog-page .product-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.e-katalog-page .product-card:hover {
+    transform: translateY(-5px);
+}
+
+.e-katalog-page .product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.e-katalog-page .product-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.e-katalog-page .product-price {
+    margin: 5px 0;
+}
+
+.e-katalog-page .old-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-right: 5px;
+}
+
+.e-katalog-page .new-price {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.e-katalog-page .discount {
+    color: green;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.e-katalog-page .btn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #1f8f85;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    
+}
+.e-katalog-page .btnn {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #978f88;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.e-katalog-page .location {
+    font-size: 13px;
+    color: #555;
+    margin-top: 5px;
+}

@@ -37,18 +37,18 @@
       {{-- Produk --}}
       @php
         $products = [
-          ['company'=>'Company A','name'=>'Product A1','desc'=>'Deskripsi singkat Product A1','img'=>'gambar1.png'],
-          ['company'=>'Company A','name'=>'Product A2','desc'=>'Deskripsi singkat Product A2','img'=>'gambar2.png'],
-          ['company'=>'Company B','name'=>'Product B1','desc'=>'Deskripsi singkat Product B1','img'=>'gambar3.png'],
-          ['company'=>'Company C','name'=>'Product C1','desc'=>'Deskripsi singkat Product C1','img'=>'gambar4.png'],
-          ['company'=>'Company A','name'=>'Product A21','desc'=>'Deskripsi singkat Product A21','img'=>'gambar5.png'],
-          ['company'=>'Company A','name'=>'Product A22','desc'=>'Deskripsi singkat Product A22','img'=>'gambar6.png'],
-          ['company'=>'Company B','name'=>'Product B21','desc'=>'Deskripsi singkat Product B21','img'=>'gambar7.png'],
-          ['company'=>'Company C','name'=>'Product C21','desc'=>'Deskripsi singkat Product C21','img'=>'gambar8.png'],
-          ['company'=>'Company A','name'=>'Product A211','desc'=>'Deskripsi singkat Product A211','img'=>'gambar9.png'],
-          ['company'=>'Company A','name'=>'Product A212','desc'=>'Deskripsi singkat Product A212','img'=>'gambar10.png'],
-          ['company'=>'Company B','name'=>'Product B211','desc'=>'Deskripsi singkat Product B211','img'=>'gambar11.png'],
-          ['company'=>'Company C','name'=>'Product C211','desc'=>'Deskripsi singkat Product C211','img'=>'gambar12.png'],
+          ['company'=>'Company A','name'=>'Product A1','desc'=>'Deskripsi singkat Product A1','price'=>'1.500.000','img'=>'gambar1.png'],
+          ['company'=>'Company A','name'=>'Product A2','desc'=>'Deskripsi singkat Product A2','price'=>'2.200.000','img'=>'gambar2.png'],
+          ['company'=>'Company B','name'=>'Product B1','desc'=>'Deskripsi singkat Product B1','price'=>'1.800.000','img'=>'gambar3.png'],
+          ['company'=>'Company C','name'=>'Product C1','desc'=>'Deskripsi singkat Product C1','price'=>'2.500.000','img'=>'gambar4.png'],
+          ['company'=>'Company A','name'=>'Product A21','desc'=>'Deskripsi singkat Product A21','price'=>'1.500.000','img'=>'gambar5.png'],
+          ['company'=>'Company A','name'=>'Product A22','desc'=>'Deskripsi singkat Product A22','price'=>'2.200.000','img'=>'gambar6.png'],
+          ['company'=>'Company B','name'=>'Product B21','desc'=>'Deskripsi singkat Product B21','price'=>'1.800.000','img'=>'gambar7.png'],
+          ['company'=>'Company C','name'=>'Product C21','desc'=>'Deskripsi singkat Product C21','price'=>'2.500.000','img'=>'gambar8.png'],
+          ['company'=>'Company A','name'=>'Product A211','desc'=>'Deskripsi singkat Product A211','price'=>'1.500.000','img'=>'gambar9.png'],
+          ['company'=>'Company A','name'=>'Product A212','desc'=>'Deskripsi singkat Product A212','price'=>'2.200.000','img'=>'gambar10.png'],
+          ['company'=>'Company B','name'=>'Product B211','desc'=>'Deskripsi singkat Product B211','price'=>'1.800.000','img'=>'gambar11.png'],
+          ['company'=>'Company C','name'=>'Product C211','desc'=>'Deskripsi singkat Product C211','price'=>'2.500.000','img'=>'gambar12.png'],
           // Tambahkan produk lainnya
         ];
       @endphp
@@ -61,6 +61,7 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ $product['name'] }}</h5>
                 <p class="card-text">{{ $product['desc'] }}</p>
+                <p class="fw-bold">Price: Rp {{ $product['price'] }}</p>
 
                 {{-- Info tambahan --}}
                 <details class="mt-auto">

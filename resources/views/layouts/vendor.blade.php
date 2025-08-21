@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body class="bg-gray-100 font-sans">
 
     <div class="flex h-screen">
@@ -16,13 +14,11 @@
         <aside class="w-64 bg-gradient-to-b from-cyan-900 to-cyan-700 text-white flex flex-col">
             <div class="p-6 text-2xl font-bold">Ositech</div>
             <nav class="flex-1 px-4 space-y-2">
-                <a href="{{ route('admin.dashboard') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Dashboard</a>
-                <a href="{{ route('admin.product.index') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Product</a>
-                <a href="{{ route('admin.vendor.index') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">vendor</a>
-                <a href="{{ route('admin.blog.index') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Blog artikel</a>
-                <a href="{{ route('admin.contact.index') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">contact</a>
-                <a href="{{ route('admin.user.index') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Users</a>
-                <a href="{{ route('admin.setting') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Settings</a>
+                <a href="{{ route('vendor.dashboard') }}" class="block py-2 px-3 rounded hover:bg-cyan-600">Dashboard</a>
+                <a href="#" class="block py-2 px-3 rounded hover:bg-cyan-600">product saya</a>
+                <a href="#" class=" block py-2 px-3 rounded hover:bg-cyan-600">pesanan saya</a>
+                <a href="#" class="block py-2 px-3 rounded hover:bg-cyan-600">profil vendor</a>
+                <a href="#" class="block py-2 px-3 rounded hover:bg-cyan-600">Settings</a>
             </nav>
             <div class="p-4 border-t border-cyan-600">
                 <a href="#" class="block py-2 px-3 rounded hover:bg-cyan-600">Logout</a>
@@ -41,5 +37,4 @@
     </div>
 
 </body>
-
 </html>

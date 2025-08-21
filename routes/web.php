@@ -33,6 +33,9 @@ Route::get('/e-katalog', function () {
     return view('e-katalog');
 })->name('e-katalog');
 
+Route::get('logout', function(){
+    return view('login');
+})->name('logout');
 
 
 
@@ -50,11 +53,57 @@ Route::prefix('admin')->group(function () {
         ]);
     })->name('admin.dashboard');
 
-    Route::get('/users', function () {
-        return view('admin.users');
-    })->name('admin.users');
+    Route::get('/user.index', function () {
+        return view('admin.user.index');
+    })->name('admin.user.index');
 
-    Route::get('/settings', function () {
-        return view('admin.settings');
-    })->name('admin.settings');
+    Route::get('/product.index', function () {
+        return view('admin.product.index');
+    })->name('admin.product.index');
+
+    Route::get('/blog.index', function () {
+        return view('admin.blog.index');
+    })->name('admin.blog.index');
+
+
+    Route::get('/vendor.index', function () {
+        return view('admin.vendor.index');
+    })->name('admin.vendor.index');
+
+    Route::get('/contact.index', function () {
+        return view('admin.contact.index');
+    })->name('admin.contact.index');
+
+
+    Route::get('/setting', function () {
+        return view('admin.setting');
+    })->name('admin.setting');
 });
+
+
+
+// routes/web.php
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard', [
+            'productsCount' => 5483,
+            'ordersCount' => 2859,
+            'stockCount' => 5483,
+            'outOfStock' => 38,
+        ]);
+    })->name('admin.dashboard');
+});
+
+
+// routes/web.php
+Route::prefix('vendor')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('vendor.dashboard', [
+            'productsCount' => 5483,
+            'ordersCount' => 2859,
+            'stockCount' => 5483,
+            'outOfStock' => 38,
+        ]);
+    })->name('vendor.dashboard');
+});
+
