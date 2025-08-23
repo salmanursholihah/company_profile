@@ -43,7 +43,45 @@ Route::get('logout', function(){
 
 
 
-/////routing untuk admin
+// /////routing untuk admin
+// // Admin routes
+// Route::prefix('admin')->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('admin.dashboard', [
+//             'usersCount' => 120,
+//             'subsCount' => 45,
+//         ]);
+//     })->name('admin.dashboard');
+
+//     Route::get('/user.index', function () {
+//         return view('admin.user.index');
+//     })->name('admin.user.index');
+
+//     Route::get('/product.index', function () {
+//         return view('admin.product.index');
+//     })->name('admin.product.index');
+
+//     Route::get('/blog.index', function () {
+//         return view('admin.blog.index');
+//     })->name('admin.blog.index');
+
+
+//     Route::get('/vendor.index', function () {
+//         return view('admin.vendor.index');
+//     })->name('admin.vendor.index');
+
+//     Route::get('/contact.index', function () {
+//         return view('admin.contact.index');
+//     })->name('admin.contact.index');
+
+
+//     Route::get('/setting', function () {
+//         return view('admin.setting');
+//     })->name('admin.setting');
+// });
+
+
+
 // Admin routes
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
@@ -53,57 +91,75 @@ Route::prefix('admin')->group(function () {
         ]);
     })->name('admin.dashboard');
 
-    Route::get('/user.index', function () {
+    Route::get('/setting', function(){
+        return view('admin.setting');
+    })->name('admin.setting');
+
+    Route::get('/users', function () {
         return view('admin.user.index');
     })->name('admin.user.index');
 
-    Route::get('/product.index', function () {
+    Route::get('/products', function () {
         return view('admin.product.index');
     })->name('admin.product.index');
 
-    Route::get('/blog.index', function () {
+
+    Route::get('/product_vendors', function(){
+        return view('admin.product_saya.index');
+    })->name('admin.product_saya.index');
+
+
+    Route::get('/blogs', function () {
         return view('admin.blog.index');
     })->name('admin.blog.index');
 
-
-    Route::get('/vendor.index', function () {
+    Route::get('/vendors', function () {
         return view('admin.vendor.index');
     })->name('admin.vendor.index');
 
-    Route::get('/contact.index', function () {
+    Route::get('/contacts', function () {
         return view('admin.contact.index');
     })->name('admin.contact.index');
 
 
-    Route::get('/setting', function () {
-        return view('admin.setting');
-    })->name('admin.setting');
+    Route::get('/admin_profiles', function(){
+        return view('admin.profile.admin_profil');
+    })->name('admin.profile.admin_profile');
+
+    Route::get('/vendor_profiles', function(){
+        return view('admin.profile.vendor_profile');
+    })->name('admin.profile.vendor_profile');
+    
+    Route::get('/profile_updates', function(){
+        return view('admin.profile.update');
+    })->name('admin.profile.update');
 });
 
 
 
-// routes/web.php
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard', [
-            'productsCount' => 5483,
-            'ordersCount' => 2859,
-            'stockCount' => 5483,
-            'outOfStock' => 38,
-        ]);
-    })->name('admin.dashboard');
-});
+
+// // routes/web.php
+// Route::prefix('admin')->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('admin.dashboard', [
+//             'productsCount' => 5483,
+//             'ordersCount' => 2859,
+//             'stockCount' => 5483,
+//             'outOfStock' => 38,
+//         ]);
+//     })->name('admin.dashboard');
+// });
 
 
-// routes/web.php
-Route::prefix('vendor')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('vendor.dashboard', [
-            'productsCount' => 5483,
-            'ordersCount' => 2859,
-            'stockCount' => 5483,
-            'outOfStock' => 38,
-        ]);
-    })->name('vendor.dashboard');
-});
+// // routes/web.php
+// Route::prefix('vendor')->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('vendor.dashboard', [
+//             'productsCount' => 5483,
+//             'ordersCount' => 2859,
+//             'stockCount' => 5483,
+//             'outOfStock' => 38,
+//         ]);
+//     })->name('vendor.dashboard');
+// });
 

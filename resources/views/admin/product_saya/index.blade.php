@@ -30,10 +30,7 @@
             <th class="px-4 py-3">Kategori</th>
             <th class="px-4 py-3">Deskripsi</th>
             <th class="px-4 py-3">Harga</th>
-            <th class="px-4 py-3">Discount</th>
             <th class="px-4 py-3">Stok</th>
-            <th class="px-4 py-3">Lokasi</th>
-            <th class="px-4 py-3">Status</th>
             <th class="px-4 py-3 text-right">Aksi</th>
           </tr>
         </thead>
@@ -47,12 +44,7 @@
             <td class="px-4 py-3">Elektronik</td>
             <td class="px-4 py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, numquam.</td>
             <td class="px-4 py-3">Rp 12.500.000</td>
-            <td class="px-4 py-3">17%</td>
             <td class="px-4 py-3">15</td>
-            <td class="px-4 py-3">toko milosshop</td>
-            <td class="px-4 py-3">
-              <span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-700">Aktif</span>
-            </td>
             <td class="px-4 py-3 text-right space-x-2">
               <button class="px-3 py-1 bg-yellow-500 text-white rounded-lg">Edit</button>
               <button class="px-3 py-1 bg-red-600 text-white rounded-lg">Delete</button>
@@ -67,12 +59,7 @@
             <td class="px-4 py-3">Pakaian</td>
             <td class="px-4 py-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</td>
             <td class="px-4 py-3">Rp 120.000</td>
-            <td class="px-4 py-3">50%</td>
             <td class="px-4 py-3">50</td>
-            <td class="px-4 py-3">busana cantik</td>
-            <td class="px-4 py-3">
-              <span class="px-2 py-1 rounded-full text-xs bg-gray-200 text-gray-800">Nonaktif</span>
-            </td>
             <td class="px-4 py-3 text-right space-x-2">
               <button class="px-3 py-1 bg-yellow-500 text-white rounded-lg">Edit</button>
               <button class="px-3 py-1 bg-red-600 text-white rounded-lg">Delete</button>
@@ -94,4 +81,3 @@
     </div>
   </div>
 @endsection
-

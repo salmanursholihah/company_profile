@@ -7,32 +7,15 @@
   <!-- Container -->
   <div class="max-w-7xl mx-auto px-4 py-8 space-y-6">
 
-    <!-- Filter/Search -->
-    <div class="bg-white p-4 rounded-xl shadow flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-      <div class="flex gap-2">
-        <input type="text" placeholder="Cari user..." class="border rounded-lg px-3 py-2 w-64">
-        <select class="border rounded-lg px-3 py-2">
-          <option>vendor</option>
-          <option>user</option>
-          <option>admin</option>
-        </select>
-      </div>
-      <button class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700">Terapkan</button>
-    </div>
-
     <!-- Tabel Produk -->
     <div class="bg-white rounded-xl shadow overflow-x-auto">
       <table class="min-w-full text-sm">
         <thead class="bg-gray-50">
           <tr class="text-left border-b">
-            <th class="px-4 py-3">gambar</th>
-            <th class="px-4 py-3">Name</th>
-            <th class="px-4 py-3">Email</th>
-            <th class="px-4 py-3">contact number</th>
-            <th class="px-4 py-3">address</th>
-            <th class="px-4 py-3">city</th>
-            <th class="px-4 py-3">password</th>
-            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3">name</th>
+            <th class="px-4 py-3">email</th>
+            <th class="px-4 py-3">subject</th>
+            <th class="px-4 py-3">message</th>
             <th class="px-4 py-3 text-right">Aksi</th>
           </tr>
         </thead>
@@ -44,13 +27,8 @@
             </td>
             <td class="px-4 py-3">mimin sarimin</td>
             <td class="px-4 py-3">mimin@gmail.com</td>
-            <td class="px-4 py-3">+62-1234-2345</td>
-            <td class="px-4 py-3">jakarta</td>
-            <td class="px-4 py-3">indonesia</td>
-            <td class="px-4 py-3">******</td>
-            <td class="px-4 py-3">
-              <span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-700">Aktif</span>
-            </td>
+            <td class="px-4 py-3">Lorem ipsum dolor sit amet.</td>
+            <td class="px-4 py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus dolore velit, dolor deleniti suscipit reprehenderit at voluptas nihil earum sint.</td>
             <td class="px-4 py-3 text-right space-x-2">
               <button class="px-3 py-1 bg-yellow-500 text-white rounded-lg">Edit</button>
               <button class="px-3 py-1 bg-red-600 text-white rounded-lg">Delete</button>
@@ -63,13 +41,8 @@
             </td>
             <td class="px-4 py-3">ucup suracup</td>
             <td class="px-4 py-3">ucup@gmail.com</td>
-            <td class="px-4 py-3">+62-1234-2345</td>
-            <td class="px-4 py-3">jakarta</td>
-            <td class="px-4 py-3">indonesia</td>
-            <td class="px-4 py-3">******</td>
-            <td class="px-4 py-3">
-              <span class="px-2 py-1 rounded-full text-xs bg-green-100 text-green-700">Aktif</span>
-            </td>
+            <td class="px-4 py-3">Lorem, ipsum dolor.</td>
+            <td class="px-4 py-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae aperiam vel quia. Accusamus eaque maxime corrupti ab.</td>
             <td class="px-4 py-3 text-right space-x-2">
               <button class="px-3 py-1 bg-yellow-500 text-white rounded-lg">Edit</button>
               <button class="px-3 py-1 bg-red-600 text-white rounded-lg">Delete</button>

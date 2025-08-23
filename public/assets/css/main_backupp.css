@@ -1,0 +1,156 @@
+/* =========================================
+   Base Style untuk Katalog & Dashboard
+   ========================================= */
+
+/* Default Theme (akan ditimpa oleh pilihan theme) */
+:root {
+  --primary: #0d6efd;
+  --secondary: #20c997;
+  --accent: #ffc107;
+  --danger: #dc3545;
+  --background: #ffffff;
+  --text: #212529;
+}
+
+/* ========== THEME OPTIONS ========== */
+
+/* 1. Tech Blue – Green */
+.theme-blue-green {
+  --primary: #0d6efd;
+  --secondary: #20c997;
+  --accent: #ffc107;
+  --danger: #dc3545;
+  --background: #ffffff;
+  --text: #212529;
+}
+
+/* 2. Energy Orange – Yellow */
+.theme-orange-yellow {
+  --primary: #fd7e14;
+  --secondary: #ffc107;
+  --accent: #0d6efd;
+  --danger: #dc3545;
+  --background: #ffffff;
+  --text: #212529;
+}
+
+/* 3. Elegant Purple – Pink */
+.theme-purple-pink {
+  --primary: #6f42c1;
+  --secondary: #d63384;
+  --accent: #20c997;
+  --danger: #e63946;
+  --background: #ffffff;
+  --text: #212529;
+}
+
+/* 4. Fresh Green – Teal */
+.theme-green-teal {
+  --primary: #198754;
+  --secondary: #0dcaf0;
+  --accent: #ffc107;
+  --danger: #e63946;
+  --background: #ffffff;
+  --text: #212529;
+}
+
+/* 5. Dark Mode – Neon Accent */
+.theme-dark-neon {
+  --primary: #0dcaf0;
+  --secondary: #6610f2;
+  --accent: #ff073a;
+  --danger: #ffdd00;
+  --background: #121212;
+  --text: #f8f9fa;
+}
+
+/* ========== GLOBAL STYLES ========== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header / Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('../img/hero-bg.jpg') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Card Produk */
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  background: var(--background);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.card-price {
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.card-price.discount {
+  color: var(--danger);
+  text-decoration: line-through;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  background: var(--primary);
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

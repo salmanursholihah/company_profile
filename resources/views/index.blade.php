@@ -7,7 +7,7 @@
 <main class="main">
 
 
-    <!-- Hero Section -->
+<!--hero section -->
     <section id="hero" class="hero section dark-background">
 
       <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->

@@ -53,7 +53,7 @@
 
 <body class="blog-details-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
+    <header id="header" class="header d-flex align-items-center fixed-top header-custom">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo d-flex align-items-center">
@@ -71,6 +71,8 @@
                     <li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
                     <li><a href="{{ route('team') }}">Team</a></li>
                     <li><a href="{{ route('blog') }}">Blog</a></li>
+
+
                     <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -146,7 +148,8 @@
                         <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i
                                 class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ospod67?_t=ZS-8ycKl7yOd2G&_r=1"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.tiktok.com/@ospod67?_t=ZS-8ycKl7yOd2G&_r=1"><i
+                                class="bi bi-tiktok"></i></a>
                         <a href="https://youtube.com/@ospod-milos?si=pJO2FPcFW9RLsaY9"><i class="bi bi-youtube"></i></a>
 
                         <a href=""><i class="bi bi-linkedin"></i></a>
@@ -194,3 +197,7 @@
 </body>
 
 </html>
+
+
+
+
