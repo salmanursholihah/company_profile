@@ -20,7 +20,7 @@
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: #30a4bc;   /* langsung pakai warna biru */
+  --background-color: #2294a3;   /* langsung pakai warna biru */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -140,11 +140,18 @@
   --surface-color: #ffffff;
 }
 
-.dark-background {
+/* .dark-background {
   --background-color: #1e4356;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #284e62;
+  --contrast-color: #ffffff;
+} */
+.dark-background {
+  --background-color: #2294a3;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #2294a3;
   --contrast-color: #ffffff;
 }
 
@@ -351,7 +358,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #30a4bc;
+  --background-color: #225f6b;
 }
 
 /*--------------------------------------------------------------

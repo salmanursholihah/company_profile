@@ -66,7 +66,7 @@
                 <ul>
                     <li><a href="{{ route('index') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('services') }}">Product</a></li>
+                    <li><a href="{{ route('product') }}">Product</a></li>
                     <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
                     <li><a href="{{ route('team') }}">Team</a></li>
@@ -110,7 +110,7 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="d-flex align-items-center">
-                        <span class="sitename">PT Utama Cipya Tata Asri </span>
+                        <span class="sitename">PT Utama Cipta Tata Asri </span>
                     </a>
                     <div class="footer-contact pt-3">
                         <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Kec. Magelang Utara, Kota Magelang,
@@ -125,7 +125,7 @@
                     <ul>
                         <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
                         <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('services') }}">Services</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('product') }}">Product</a></li>
                         <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
                     </ul>
                 </div>
@@ -135,7 +135,8 @@
                     <ul>
                         <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
                         <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">P
+                            roduct Management</a></li>
                         <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
                     </ul>
                 </div>

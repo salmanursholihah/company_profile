@@ -9,7 +9,7 @@
             <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
              <nav class="breadcrumbs">
                  <ol>
-                     <li><a href="index.html">Home</a></li>
+                     <li class="current">Home</li>
                      <li class="current">About</li>
                  </ol>
              </nav>

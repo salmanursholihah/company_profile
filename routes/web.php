@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\KatalogController;
+use App\Http\Controllers\AdminkatalogController;
+use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminVendorController;
 
 Route::get('/', function () {
     return view('index');
@@ -10,9 +16,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
 
 Route::get('/portfolio', function () {
     return view('portfolio');
@@ -22,6 +26,7 @@ Route::get('/team', function () {
     return view('team');
 })->name('team');
 
+
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
@@ -29,9 +34,9 @@ Route::get('/blog', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-Route::get('/e-katalog', function () {
-    return view('e-katalog');
-})->name('e-katalog');
+
+Route::get('/e-katalog', [KatalogController::class, 'index'])->name('e-katalog');
+
 
 Route::get('logout', function(){
     return view('login');
@@ -99,10 +104,13 @@ Route::prefix('admin')->group(function () {
         return view('admin.user.index');
     })->name('admin.user.index');
 
-    Route::get('/products', function () {
-        return view('admin.product.index');
-    })->name('admin.product.index');
+    // Route::get('/katalog', function () {
+    //     return view('admin.katalog.index');
+    // })->name('admin.katalog.index');
 
+    // Route::get('/products', function () {
+    //     return view('admin.product.index');
+    // })->name('admin.product.index');
 
     Route::get('/product_vendors', function(){
         return view('admin.product_saya.index');
@@ -113,9 +121,9 @@ Route::prefix('admin')->group(function () {
         return view('admin.blog.index');
     })->name('admin.blog.index');
 
-    Route::get('/vendors', function () {
-        return view('admin.vendor.index');
-    })->name('admin.vendor.index');
+    // Route::get('/vendors', function () {
+    //     return view('admin.vendor.index');
+    // })->name('admin.vendor.index');
 
     Route::get('/contacts', function () {
         return view('admin.contact.index');
@@ -136,30 +144,24 @@ Route::prefix('admin')->group(function () {
 });
 
 
+/////route crud admin
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', AdminProductController::class);
+});
 
 
-// // routes/web.php
-// Route::prefix('admin')->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('admin.dashboard', [
-//             'productsCount' => 5483,
-//             'ordersCount' => 2859,
-//             'stockCount' => 5483,
-//             'outOfStock' => 38,
-//         ]);
-//     })->name('admin.dashboard');
-// });
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::resource('katalogs', AdminKatalogController::class);
+});
 
 
-// // routes/web.php
-// Route::prefix('vendor')->group(function () {
-//     Route::get('/dashboard', function () {
-//         return view('vendor.dashboard', [
-//             'productsCount' => 5483,
-//             'ordersCount' => 2859,
-//             'stockCount' => 5483,
-//             'outOfStock' => 38,
-//         ]);
-//     })->name('vendor.dashboard');
-// });
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::resource('users', AdminUserController::class);
+});
+
+
+Route::prefix('admin')->group(function () {
+    Route::resource('vendors', AdminVendorController::class, ['as' => 'admin']);
+});
+
 

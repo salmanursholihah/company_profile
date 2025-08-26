@@ -1,100 +1,144 @@
 @extends('layouts.app_landing')
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/style_katalog.css') }}">
+<style>
+    .catalog {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .product-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 200px; /* semua gambar dipaksa sama tinggi */
+        object-fit: cover; /* crop agar proporsional */
+        border-bottom: 1px solid #eee;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+
+    .product-price {
+        margin: 5px 0;
+    }
+
+    .old-price {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 5px;
+    }
+
+    .new-price {
+        color: #e63946;
+        font-weight: bold;
+    }
+
+    .discount {
+        color: #2a9d8f;
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+
+    .location {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .btn, .btnn {
+        background: #2a9d8f;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+    }
+
+    .btnn {
+        background: #264653;
+    }
+
+    .btn:hover {
+        background: #21867a;
+    }
+
+    .btnn:hover {
+        background: #1c3440;
+    }
+</style>
+@endpush
+
 <main class="main">
 
-  <!-- Page Title -->
-  <div class="page-title dark-background">
-    <div class="container position-relative">
-      <h1>Product Catalog</h1>
-            <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="{{ url('/') }}">Home</a></li>
-          <li class="current">Catalog</li>
-        </ol>
-      </nav>
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+        <div class="container position-relative">
+            <h1>Product</h1>
+            <p>Solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+            <nav class="breadcrumbs">
+                <ol>
+                    <li class="current">Home</li>
+                    <li class="current">Product</li>
+                </ol>
+            </nav>
+        </div>
     </div>
-  </div>
 
+    <div class="e-katalog-page">
+        <h1>Katalog Produk</h1>
+        <div class="catalog">
+            @forelse($products as $product)
+                <div class="product-card">
+                    <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}">
 
-  <!-- Catalog Section -->
-  <section id="catalog" class="catalog section py-5">
-    <div class="container">
-
-      {{-- Filter Perusahaan --}}
-      @php
-        $companies = ['Company A', 'Company B', 'Company C'];
-      @endphp
-      <div class="d-flex justify-content-center mb-4">
-        <ul class="catalog-filters list-inline isotope-filters" data-aos="fade-up">
-          <li class="list-inline-item me-2" data-filter="*" class="filter-active btn btn-outline-primary">All Companies</li>
-          @foreach($companies as $company)
-            <li class="list-inline-item me-2 btn btn-outline-primary" data-filter=".{{ Str::slug($company) }}">{{ $company }}</li>
-          @endforeach
-        </ul>
-      </div>
-
-      {{-- Produk --}}
-      @php
-        $products = [
-          ['company'=>'Company A','name'=>'Product A1','desc'=>'Deskripsi singkat Product A1','price'=>'1.500.000','img'=>'gambar1.png'],
-          ['company'=>'Company A','name'=>'Product A2','desc'=>'Deskripsi singkat Product A2','price'=>'2.200.000','img'=>'gambar2.png'],
-          ['company'=>'Company B','name'=>'Product B1','desc'=>'Deskripsi singkat Product B1','price'=>'1.800.000','img'=>'gambar3.png'],
-          ['company'=>'Company C','name'=>'Product C1','desc'=>'Deskripsi singkat Product C1','price'=>'2.500.000','img'=>'gambar4.png'],
-          ['company'=>'Company A','name'=>'Product A21','desc'=>'Deskripsi singkat Product A21','price'=>'1.500.000','img'=>'gambar5.png'],
-          ['company'=>'Company A','name'=>'Product A22','desc'=>'Deskripsi singkat Product A22','price'=>'2.200.000','img'=>'gambar6.png'],
-          ['company'=>'Company B','name'=>'Product B21','desc'=>'Deskripsi singkat Product B21','price'=>'1.800.000','img'=>'gambar7.png'],
-          ['company'=>'Company C','name'=>'Product C21','desc'=>'Deskripsi singkat Product C21','price'=>'2.500.000','img'=>'gambar8.png'],
-          ['company'=>'Company A','name'=>'Product A211','desc'=>'Deskripsi singkat Product A211','price'=>'1.500.000','img'=>'gambar9.png'],
-          ['company'=>'Company A','name'=>'Product A212','desc'=>'Deskripsi singkat Product A212','price'=>'2.200.000','img'=>'gambar10.png'],
-          ['company'=>'Company B','name'=>'Product B211','desc'=>'Deskripsi singkat Product B211','price'=>'1.800.000','img'=>'gambar11.png'],
-          ['company'=>'Company C','name'=>'Product C211','desc'=>'Deskripsi singkat Product C211','price'=>'2.500.000','img'=>'gambar12.png'],
-          // Tambahkan produk lainnya
-        ];
-      @endphp
-
-      <div class="row g-4 isotope-container" data-aos="fade-up">
-        @foreach($products as $product)
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ Str::slug($product['company']) }}">
-            <div class="card h-100 shadow-sm border-0">
-              <img src="{{ asset('assets/img/katalog/'.$product['img']) }}" class="card-img-top" alt="{{ $product['name'] }}">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ $product['name'] }}</h5>
-                <p class="card-text">{{ $product['desc'] }}</p>
-                <p class="fw-bold">Price: Rp {{ $product['price'] }}</p>
-
-                {{-- Info tambahan --}}
-                <details class="mt-auto">
-                  <summary class="text-primary fw-bold cursor-pointer">Detail Layanan & Fitur</summary>
-                  <ul class="mt-2 ps-3">
-                    <li>🚚 Biaya pengiriman: Gratis Pulau Jawa & Sumatera</li>
-                    <li>🏗 Konstruksi penunjang IPAL</li>
-                    <li>⚙ Uji fungsi</li>
-                    <li>💰 Pajak sudah termasuk</li>
-                    <li>👷‍♂️ Pendampingan & training operator</li>
-                    <li>🔧 Instalasi alat</li>
-                  </ul>
-                </details>
-
-                <a href="{{ asset('assets/img/katalog/'.$product['img']) }}" class="btn btn-outline-primary mt-3 glightbox" title="{{ $product['name'] }}">
-                  <i class="bi bi-zoom-in"></i> Preview
-                </a>
-              </div>
-            </div>
-          </div>
-        @endforeach
-      </div>
-
+                    <div class="product-title">{{ $product->name }}</div>
+                    <div class="product-price">
+                        @if($product->discount)
+                            <span class="old-price">Rp{{ number_format($product->price, 0, ',', '.') }}</span>
+                            <span class="new-price">Rp{{ number_format($product->price - ($product->price * $product->discount / 100), 0, ',', '.') }}</span>
+                            <span class="discount">(-{{ $product->discount }}%)</span>
+                        @else
+                            <span class="new-price">Rp{{ number_format($product->price, 0, ',', '.') }}</span>
+                        @endif
+                    </div>
+                    <div class="location">{{ $product->lokasi }}</div>
+                    <div class="btn-group">
+                        <a href="https://wa.me/6281234567890" class="btn">
+                            <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
+                        </a>
+                        <a href="https://milospro.com/" class="btnn">
+                            <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
+                        </a>
+                    </div>
+                </div>
+            @empty
+                <p class="text-center">Belum ada produk tersedia.</p>
+            @endforelse
+        </div>
     </div>
-  </section>
-
-  <!-- Contact Info -->
-  <section class="contact-info bg-light py-4">
-    <div class="container text-center">
-      <h5>Hubungi Kami</h5>
-      <p>📞 +62 711 419005 | +62 859 3281 8611</p>
-      <p>✉️ utamacta@gmail.com</p>
-    </div>
-  </section>
-
 </main>
