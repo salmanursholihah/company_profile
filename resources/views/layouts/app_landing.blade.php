@@ -70,7 +70,9 @@
                     <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
                     <li><a href="{{ route('team') }}">Team</a></li>
-                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a href="{{ route('blog.index') }}">Blog</a></li>
+                    <li><a href="{{ route('register') }}">sign up</a></li>
+                    <li><a href="{{ route('login') }}">sign in</a></li>
 
 
                     <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -90,7 +92,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

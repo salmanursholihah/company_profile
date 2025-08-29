@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\KatalogController;
@@ -7,6 +8,12 @@ use App\Http\Controllers\AdminkatalogController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminVendorController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminContactController;
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminProductVendorController;
+use App\Http\Controllers\AdminProfileController;
 
 Route::get('/', function () {
     return view('index');
@@ -27,30 +34,22 @@ Route::get('/team', function () {
 })->name('team');
 
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+
+// Halaman contact untuk user/public
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+
+// Submit form contact
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/e-katalog', [KatalogController::class, 'index'])->name('e-katalog');
 
 
-Route::get('logout', function(){
-    return view('login');
-})->name('logout');
+// Route::prefix('admin')->middleware('auth')->group(function () {
 
-
-
-
-
-
-
-// /////routing untuk admin
-// // Admin routes
-// Route::prefix('admin')->group(function () {
+//     /// Dashboard & profile update untuk admin & vendor
 //     Route::get('/dashboard', function () {
 //         return view('admin.dashboard', [
 //             'usersCount' => 120,
@@ -58,37 +57,50 @@ Route::get('logout', function(){
 //         ]);
 //     })->name('admin.dashboard');
 
-//     Route::get('/user.index', function () {
-//         return view('admin.user.index');
-//     })->name('admin.user.index');
+//     // Route::get('/profile_updates', function(){
+//     //     return view('admin.profile.update');
+//     // })->name('admin.profile.update');
 
-//     Route::get('/product.index', function () {
-//         return view('admin.product.index');
-//     })->name('admin.product.index');
-
-//     Route::get('/blog.index', function () {
-//         return view('admin.blog.index');
-//     })->name('admin.blog.index');
+//     /// Logout
+//     Route::get('/logout', function(){
+//         return view('auth.login');
+//     })->name('logout');
 
 
-//     Route::get('/vendor.index', function () {
-//         return view('admin.vendor.index');
-//     })->name('admin.vendor.index');
+//     ///route khusus admin
+// Route::middleware(['auth','role:super_admin'])->group(function () {
+//     Route::get('/users', function () {
+//         return view('admin.users.index');
+//     })->name('admin.users.index');
 
-//     Route::get('/contact.index', function () {
-//         return view('admin.contact.index');
-//     })->name('admin.contact.index');
+//     Route::get('/contacts', function () {
+//         return view('admin.contacts.index');
+//     })->name('admin.contacts.index');
 
+//     Route::get('/admin_profiles', function(){
+//         return view('admin.profile.admin_profil');
+//     })->name('admin.profile.admin_profile');
 
-//     Route::get('/setting', function () {
+//     Route::get('/setting', function(){
 //         return view('admin.setting');
 //     })->name('admin.setting');
 // });
+// ///route khusus vendor
+// Route::middleware(['auth','role:vendor'])->group(function () {
+//     Route::get('/product_vendors', function(){
+//         return view('admin.product_vendor.index');
+//     })->name('admin.product_vendor.index');
+
+//     Route::get('/vendor_profiles', function(){
+//         return view('admin.profile.vendor_profile');
+//     })->name('admin.profile.vendor_profile');
+// });
+// });
 
 
+Route::prefix('admin')->middleware('auth')->group(function () {
 
-// Admin routes
-Route::prefix('admin')->group(function () {
+    // Dashboard & profile update untuk admin & vendor
     Route::get('/dashboard', function () {
         return view('admin.dashboard', [
             'usersCount' => 120,
@@ -96,52 +108,60 @@ Route::prefix('admin')->group(function () {
         ]);
     })->name('admin.dashboard');
 
-    Route::get('/setting', function(){
-        return view('admin.setting');
-    })->name('admin.setting');
+    /// Logout
+    Route::get('/logout', function(){
+        return view('auth.login');
+    })->name('logout');
 
-    Route::get('/users', function () {
-        return view('admin.user.index');
-    })->name('admin.user.index');
+    /// Routes khusus admin
+    Route::middleware('role:super_admin')->group(function () {
+        Route::get('/users', function () {
+            return view('admin.users.index');
+        })->name('admin.users.index');
 
-    // Route::get('/katalog', function () {
-    //     return view('admin.katalog.index');
-    // })->name('admin.katalog.index');
+        Route::get('/contacts', function () {
+            return view('admin.contacts.index');
+        })->name('admin.contacts.index');
 
-    // Route::get('/products', function () {
-    //     return view('admin.product.index');
-    // })->name('admin.product.index');
+        Route::get('/admin_profiles', function(){
+            return view('admin.profile.admin_profile');
+        })->name('admin.profile.admin_profile');
 
-    Route::get('/product_vendors', function(){
-        return view('admin.product_saya.index');
-    })->name('admin.product_saya.index');
+        Route::get('/setting', function(){
+            return view('admin.setting');
+        })->name('admin.setting');
+    });
 
+    /// Routes khusus vendor
+    Route::middleware('role:vendor')->group(function () {
+        Route::get('/product_vendors', function(){
+            return view('admin.product_vendor.index');
+        })->name('admin.product_vendor.index');
 
-    Route::get('/blogs', function () {
-        return view('admin.blog.index');
-    })->name('admin.blog.index');
+        Route::get('/vendor_profiles', function(){
+            return view('admin.profile.vendor_profile');
+        })->name('admin.profile.vendor_profile');
+    });
 
-    // Route::get('/vendors', function () {
-    //     return view('admin.vendor.index');
-    // })->name('admin.vendor.index');
-
-    Route::get('/contacts', function () {
-        return view('admin.contact.index');
-    })->name('admin.contact.index');
-
-
-    Route::get('/admin_profiles', function(){
-        return view('admin.profile.admin_profil');
-    })->name('admin.profile.admin_profile');
-
-    Route::get('/vendor_profiles', function(){
-        return view('admin.profile.vendor_profile');
-    })->name('admin.profile.vendor_profile');
-    
-    Route::get('/profile_updates', function(){
-        return view('admin.profile.update');
-    })->name('admin.profile.update');
 });
+
+
+
+///untuk vendor dan admin
+Route::get('logout', function(){
+    return view('auth.login');
+})->name('logout');
+
+
+
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 
 /////route crud admin
@@ -164,4 +184,19 @@ Route::prefix('admin')->group(function () {
     Route::resource('vendors', AdminVendorController::class, ['as' => 'admin']);
 });
 
+Route::prefix('admin')->name('admin.')->group(function(){
+    Route::resource('contacts', AdminContactController::class);
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('blogs', AdminBlogController::class);
+});
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('product_vendor', AdminProductVendorController::class);
+});
+
+Route::middleware('auth')->group(function() {
+    Route::get('/profile/edit', [AuthController::class, 'editProfile'])->name('profile.edit');
+    Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
+});
 

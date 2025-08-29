@@ -30,7 +30,7 @@
   const role = "vendor"; // ubah ke admin/vendor
 
   const stats = document.getElementById("stats");
-  if(role === "admin") {
+  if(role === "super_admin") {
     stats.innerHTML = `
       <div class="bg-blue-500 text-white p-5 rounded-xl shadow">Visitors<br><span class="text-2xl font-bold">2690</span></div>
       <div class="bg-yellow-400 text-white p-5 rounded-xl shadow">Feedback<br><span class="text-2xl font-bold">40</span></div>
@@ -46,7 +46,7 @@
     `;
   }
 
-  if(role === "admin") {
+  if(role === "super_admin") {
     document.querySelectorAll(".vendor-only").forEach(el => el.style.display = "none");
   } else {
     document.querySelectorAll(".admin-only").forEach(el => el.style.display = "none");
@@ -60,7 +60,7 @@
     }
   });
 
-  if(role === "admin") {
+  if(role === "super_admin") {
     new Chart(document.getElementById('pieChart'), {
       type: 'pie',
       data: {

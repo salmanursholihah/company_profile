@@ -16,4 +16,7 @@ class Vendor extends Model
             'status',
     ];
 
+    public function productvendor(){
+     return $this->hasMany(ProductVendor::class);
+    }
 }

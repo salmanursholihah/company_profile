@@ -19,6 +19,8 @@
       </div>
       <button class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700">Terapkan</button>
     </div>
+<br><br><br>
+    <a href="{{ route('admin.users.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg">Tambah User</a>
 
     <!-- Tabel Produk -->
     <div class="bg-white rounded-xl shadow overflow-x-auto">
@@ -28,9 +30,7 @@
             <th class="px-4 py-3">gambar</th>
             <th class="px-4 py-3">Name</th>
             <th class="px-4 py-3">Email</th>
-            <th class="px-4 py-3">contact number</th>
-            <th class="px-4 py-3">address</th>
-            <th class="px-4 py-3">city</th>
+            <th class="px-4 py-3">Role</th>
             <th class="px-4 py-3">password</th>
             <th class="px-4 py-3">Status</th>
             <th class="px-4 py-3 text-right">Aksi</th>
@@ -44,9 +44,7 @@
     </td>
     <td class="px-4 py-3">{{ $user->name }}</td>
     <td class="px-4 py-3">{{ $user->email }}</td>
-    <td class="px-4 py-3">{{ $user->contact_number }}</td>
-    <td class="px-4 py-3">{{ $user->address }}</td>
-    <td class="px-4 py-3">{{ $user->city }}</td>
+    <td class="px-4 py-3">{{ $user->role }}</td>
     <td class="px-4 py-3">******</td>
     <td class="px-4 py-3">
         @if ($user->status)

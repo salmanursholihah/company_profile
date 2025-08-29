@@ -2,53 +2,68 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class AdminUserController extends Controller
 {
-   public function index(Request $request)
+    // Tampilkan semua user
+    public function index()
     {
-        $query = User::query();
-
-        if ($request->filled('search')) {
-            $query->where('name', 'like', "%{$request->search}%")
-                  ->orWhere('email', 'like', "%{$request->search}%");
-        }
-
-        if ($request->filled('role')) {
-            $query->where('role', $request->role);
-        }
-
-        $users = $query->paginate(10);
-
+        $users = user::paginate(10);
         return view('admin.users.index', compact('users'));
     }
 
+    // Form tambah user
+    public function create()
+    {
+        return view('admin.users.create');
+    }
+
+    // Simpan data user baru
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'  => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6',
+            'role'=> 'required|in:super_admin,vendor,user',
+        ]);
+
+        User::create([
+            'name'  => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => $request->role,
+        ]);
+
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil ditambahkan');
+    }
+
+    // Form edit
     public function edit(User $user)
     {
         return view('admin.users.edit', compact('user'));
     }
 
+    // Update data user
     public function update(Request $request, User $user)
     {
-        $data = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'contact_number' => 'nullable|string',
-            'address' => 'nullable|string',
-            'city' => 'nullable|string',
-            'status' => 'required|boolean',
+        $request->validate([
+            'name'  => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'role' => 'required|in:super_admin,vendor,user'.$user->id,
         ]);
 
-        $user->update($data);
+        $user->update($request->all());
 
-        return redirect()->route('admin.users.index')->with('success', 'User updated successfully.');
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil diperbarui');
     }
 
+    // Hapus user
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
+        return redirect()->route('admin.users.index')->with('success', 'User berhasil dihapus');
     }
 }

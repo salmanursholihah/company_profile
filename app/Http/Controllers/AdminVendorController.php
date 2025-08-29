@@ -17,6 +17,7 @@ class AdminVendorController extends Controller
     public function create()
     {
         return view('admin.vendors.create');
+
     }
 
     public function store(Request $request)
