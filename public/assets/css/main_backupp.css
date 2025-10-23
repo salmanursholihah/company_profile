@@ -76,7 +76,7 @@ body {
 /* Header / Hero Section */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url('../img/hero-bg.jpg') center/cover no-repeat;
+              url('../img/hero-bg.png') center/cover no-repeat;
   height: 80vh;
   display: flex;
   align-items: center;
