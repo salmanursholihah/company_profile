@@ -3,94 +3,112 @@
 @push('styles')
 <link rel="stylesheet" href="{{ asset('assets/css/style_katalog.css') }}">
 <style>
+    .e-katalog-page h1{
+        text-align:center;
+        margin-bottom:25px;
+        font-size:26px;
+        color:#12385b;
+    }
+
     .catalog {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
     }
 
     .product-card {
         background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         overflow: hidden;
         text-align: center;
-        transition: transform 0.2s ease;
+        transition: all 0.25s ease;
+        border: 1px solid #f2f2f2;
     }
 
     .product-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
     }
 
     .product-card img {
         width: 100%;
-        height: 200px; /* semua gambar dipaksa sama tinggi */
-        object-fit: cover; /* crop agar proporsional */
-        border-bottom: 1px solid #eee;
+        height: 160px;
+        object-fit: cover;
     }
 
     .product-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600;
-        margin: 10px 0;
+        margin: 8px 0 5px;
+        color: #2b2b2b;
+        min-height: 45px;
+        padding: 0 10px;
     }
 
     .product-price {
-        margin: 5px 0;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
     }
 
     .old-price {
+        font-size: 0.85rem;
         text-decoration: line-through;
-        color: #888;
+        color: #999;
         margin-right: 5px;
     }
 
     .new-price {
         color: #e63946;
         font-weight: bold;
+        font-size: 1rem;
     }
 
     .discount {
         color: #2a9d8f;
-        font-size: 0.9rem;
-        margin-left: 5px;
+        font-size: 0.85rem;
     }
 
     .location {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 10px;
+        font-size: 0.85rem;
+        color: #555;
+        padding-bottom: 8px;
     }
 
     .btn-group {
         display: flex;
         justify-content: center;
-        gap: 10px;
+        gap: 6px;
         padding: 10px;
+        border-top: 1px solid #eee;
     }
 
     .btn, .btnn {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .btn {
         background: #2a9d8f;
         color: white;
-        padding: 8px 14px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: background 0.3s;
     }
-
-    .btnn {
-        background: #264653;
-    }
-
     .btn:hover {
         background: #21867a;
     }
 
+    .btnn {
+        background: #264653;
+        color: white;
+    }
     .btnn:hover {
-        background: #1c3440;
+        background: #1a2e38;
     }
 </style>
+
 @endpush
 
 <main class="main">

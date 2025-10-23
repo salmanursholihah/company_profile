@@ -25,7 +25,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                       <div class="member-img">
-                          <img src="assets/img/team/team1.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-dwi.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -43,7 +43,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
                       <div class="member-img">
-                          <img src="assets/img/team/team2.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-rudi.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -61,7 +61,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
                       <div class="member-img">
-                          <img src="assets/img/team/team3.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-naja.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -79,7 +79,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
                       <div class="member-img">
-                          <img src="assets/img/team/team4.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-diesta.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -97,7 +97,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
                       <div class="member-img">
-                          <img src="assets/img/team/team5.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-abi.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -115,7 +115,7 @@
 
                   <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
                       <div class="member-img">
-                          <img src="assets/img/team/team6.jpeg" class="img-fluid" alt="">
+                          <img src="assets/img/team/team-dicky.jpeg" class="img-fluid" alt="">
                           <div class="social">
                               <a href="#"><i class="bi bi-twitter-x"></i></a>
                               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -125,6 +125,42 @@
                       </div>
                       <div class="member-info text-center">
                           <h4>Josepha Palas</h4>
+                          <span>Operation</span>
+                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
+                              eligendi cupiditate vel</p>
+                      </div>
+                  </div><!-- End Team Member -->
+
+                  <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+                      <div class="member-img">
+                          <img src="assets/img/team/team-nizar.jpeg" class="img-fluid" alt="">
+                          <div class="social">
+                              <a href="#"><i class="bi bi-twitter-x"></i></a>
+                              <a href="#"><i class="bi bi-facebook"></i></a>
+                              <a href="#"><i class="bi bi-instagram"></i></a>
+                              <a href="#"><i class="bi bi-linkedin"></i></a>
+                          </div>
+                      </div>
+                      <div class="member-info text-center">
+                          <h4>Thomas Palas</h4>
+                          <span>Operation</span>
+                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
+                              eligendi cupiditate vel</p>
+                      </div>
+                  </div><!-- End Team Member -->
+
+                  <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+                      <div class="member-img">
+                          <img src="assets/img/team/team-salma.jpeg" class="img-fluid" alt="">
+                          <div class="social">
+                              <a href="#"><i class="bi bi-twitter-x"></i></a>
+                              <a href="#"><i class="bi bi-facebook"></i></a>
+                              <a href="#"><i class="bi bi-instagram"></i></a>
+                              <a href="#"><i class="bi bi-linkedin"></i></a>
+                          </div>
+                      </div>
+                      <div class="member-info text-center">
+                          <h4>ananda</h4>
                           <span>Operation</span>
                           <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
                               eligendi cupiditate vel</p>
