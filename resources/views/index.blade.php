@@ -19,19 +19,25 @@
                 <div class="carousel-item active">
                     <div class="carousel-container">
                         <h2>PT Utama Cipta Tata Asri</h2>
-                        <p>Solusi Pengolahan Air Limbah Terpercaya
+                        {{-- <p>Solusi Pengolahan Air Limbah Terpercaya
                             Kami adalah perusahaan yang bergerak di bidang perencanaan, pembangunan, dan pengelolaan
                             Instalasi Pengolahan Air Limbah (IPAL). Dengan standar teknologi ramah lingkungan dan hasil
                             yang terukur, kami membantu industri, perumahan, rumah sakit, dan pemerintahan dalam
-                            mewujudkan pengelolaan limbah yang aman dan berkelanjutan.</p> <a href="#about"
-                            class="btn-get-started">Read More</a>
+                            mewujudkan pengelolaan limbah yang aman dan berkelanjutan.</p> --}}
+                        <p>kami adalah perusahaan manufaktur yang bergerak di dalam bidang rekayasa lingkungan dan
+                            pengolahan air limbah khususnya produsen sistem IPAL (instalasi pengelolaan air limbah) yang
+                            inovatif, efisien, dan ramah
+                            lingkungan. kami menghadirkan solusi komprehensif untuk pengelolaan limbah domestik, limbah
+                            industri, dan limbah medis yang memenuhi standar regulasi lingkungan nasional (PerMenLHK)
+                            maupun international</p>
+                        <a href="#about" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
                 <div class="carousel-item">
                     <div class="carousel-container">
-                        <h2>Desain, Instalasi & Maintenance IPAL</h2>
-                        Kami menyediakan layanan lengkap mulai dari desain sistem IPAL, konstruksi, instalasi alat, uji
+                        <h2>Instalasi & Maintenance IPAL</h2>
+                        Kami menyediakan layanan lengkap mulai dari Layanan Pengadaan, konstruksi, instalasi alat, uji
                         kualitas air, hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan pelanggan
                         berdasarkan standar Permen LH & regulasi lingkungan hidup Indonesia, sehingga hasil aman,
                         efisien, dan mudah dioperasikan. <a href="#about" class="btn-get-started">Read More</a>
@@ -75,17 +81,28 @@
                 <div class="col-lg-6" data-aos="fade-left">
                     <h2>Selayang Pandang</h2>
                     <p>
-                        PT Utama Cipta Tata Asri bergerak di bidang Design Engineering & Manufacturing dengan fokus
+                        {{-- PT Utama Cipta Tata Asri bergerak di bidang Design Engineering & Manufacturing dengan fokus
                         lingkungan.
                         Kami mengkhususkan pada mesin pengolah limbah cair kami berkomitment terhadap lingkungan dan
                         kualitas, menyediakan mesin-mesin inovatif yang telah terpasang di berbagai instansi
-                        pemerintahan dan swasta.
+                        pemerintahan dan swasta. --}}
 
-                        <br><br><br><br>
+                        PT Utama Cipta Tata Asri adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa
+                        lingkungan dan pengolahan air limbah, khususnya produsen sistem IPAL (Instalasi Pengolahan Air
+                        Limbah) yang inovatif, efisien, dan ramah lingkungan. Kami menghadirkan solusi komprehensif
+                        untuk pengolahan limbah domestik, limbah industri, dan limbah medis yang memenuhi standar
+                        regulasi lingkungan nasional (PerMenLHK) maupun internasional.
 
-                        dengan pengalaman lebih dari 10 tahun, PT Utama Cipta Tata asri terus berinovasi untuk
+                        <br><br><br>
+
+                        dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata asri terus berinovasi untuk
                         menghadirkan product yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
                         agar lebih aman dan berkelanjutan
+
+                        <br><br><br>
+                        Kami percaya bahwa
+                        kualitas air yang bersih adalah bagian penting dari keberlangsungan hidup dan lingkungan yang
+                        sehat.
                     </p>
 
                     <br><br><br>
@@ -134,48 +151,48 @@
     <br><br><br>
 
     <!---layanan--->
-<section class="services-section">
-    <h2>Layanan Kami</h2>
-    <div class="service-container">
+    <section class="services-section">
+        <h2>Layanan Kami</h2>
+        <div class="service-container">
 
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x250" alt="Layanan 1">
-            <div class="service-content">
-                <h3>Pengelolaan Limbah B3</h3>
-                <p>Melayani pengelolaan limbah B3 fase solid, liquid dan sludge.</p>
-                <a href="#">Selengkapnya →</a>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/400x250" alt="Layanan 1">
+                <div class="service-content">
+                    <h3>Pengelolaan Limbah B3</h3>
+                    <p>Melayani pengelolaan limbah B3 fase solid, liquid dan sludge.</p>
+                    <a href="#">Selengkapnya →</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x250" alt="Layanan 2">
-            <div class="service-content">
-                <h3>Pengangkutan Limbah</h3>
-                <p>Pengangkutan limbah dengan legalitas lengkap & driver bersertifikat.</p>
-                <a href="#">Selengkapnya →</a>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/400x250" alt="Layanan 2">
+                <div class="service-content">
+                    <h3>Pengangkutan Limbah</h3>
+                    <p>Pengangkutan limbah dengan legalitas lengkap & driver bersertifikat.</p>
+                    <a href="#">Selengkapnya →</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x250" alt="Layanan 3">
-            <div class="service-content">
-                <h3>Pengolahan Air Limbah</h3>
-                <p>Mengolah air limbah agar aman & ramah lingkungan.</p>
-                <a href="#">Selengkapnya →</a>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/400x250" alt="Layanan 3">
+                <div class="service-content">
+                    <h3>Pengolahan Air Limbah</h3>
+                    <p>Mengolah air limbah agar aman & ramah lingkungan.</p>
+                    <a href="#">Selengkapnya →</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x250" alt="Layanan 4">
-            <div class="service-content">
-                <h3>Pengelolaan Minyak & Gas</h3>
-                <p>Layanan limbah industri migas dan produksi energi.</p>
-                <a href="#">Selengkapnya →</a>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/400x250" alt="Layanan 4">
+                <div class="service-content">
+                    <h3>Pengelolaan Minyak & Gas</h3>
+                    <p>Layanan limbah industri migas dan produksi energi.</p>
+                    <a href="#">Selengkapnya →</a>
+                </div>
             </div>
-        </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
     <!---end layanan--->
 

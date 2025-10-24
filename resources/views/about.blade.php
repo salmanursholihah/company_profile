@@ -29,28 +29,36 @@
                  <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
                      <h3>Selayang pandang PT Utama Cipta Tata Asri</h3>
                      <p class="fst-italic">
-                         PT Utama Cipta Tata Asri bergerak di bidang Design Engineering & Manufacturing dengan fokus
-                         lingkungan. <br>Kami mengkhususkan pada mesin pengolah limbah cair <medis class="br"></medis>
-                         kami berkomitment terhadap lingkungan dan kualitas, menyediakan mesin-mesin inovatif yang
-                         telah terpasang di berbagai instansi pemerintahan dan swasta.
-                         <br><br><br>
+                   
+                        PT Utama Cipta Tata Asri adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa
+                        lingkungan dan pengolahan air limbah, khususnya produsen sistem IPAL (Instalasi Pengolahan Air
+                        Limbah) yang inovatif, efisien, dan ramah lingkungan. Kami menghadirkan solusi komprehensif
+                        untuk pengolahan limbah domestik, limbah industri, dan limbah medis yang memenuhi standar
+                        regulasi lingkungan nasional (PerMenLHK) maupun internasional.
 
-                         dengan pengalaman lebih dari 10 tahun, PT Utama Cipta Tata asri terus berinovasi untuk
-                         menghadirkan product yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
-                         agar lebih aman dan berkelanjutan
-                     </p>
+                        <br><br><br>
+
+                        dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata asri terus berinovasi untuk
+                        menghadirkan product yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
+                        agar lebih aman dan berkelanjutan
+
+                        <br><br><br>
+                        Kami percaya bahwa
+                        kualitas air yang bersih adalah bagian penting dari keberlangsungan hidup dan lingkungan yang
+                        sehat.
+                    </p>
                      <!-- <ul>
                          <li><i class="bi bi-check2-all"></i> <span>Instalasi cepat & handal.</span></li>
                          <li><i class="bi bi-check2-all"></i> <span>Pelatihan operator &? pendampingan.</span></li>
                          <li><i class="bi bi-check2-all"></i> <span>product yang ramah lingkungan dan hemat
                                  energi.</span></li>
                      </ul> -->
-                     <p>
+                     {{-- <p>
                          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
                          in voluptate
                          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                          proident
-                     </p>
+                     </p> --}}
                  </div>
              </div>
 

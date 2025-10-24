@@ -38,9 +38,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-naja.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-naja.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-naja.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -52,9 +52,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-dwi.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-dwi.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-dwi.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -66,9 +66,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-diesta.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-diesta.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-diesta.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -80,9 +80,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-salma.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-salma.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-salma.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -94,9 +94,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-nizar.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-nizar.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-nizar.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -108,9 +108,24 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-rudi.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-rudi.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-rudi.jpeg" title="team"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/team-nasrudin.jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-nasrudin.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -122,9 +137,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-dicky.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-dicky.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-dicky.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -136,9 +151,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-abi.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team-abi.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team-abi.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -150,9 +165,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team1.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team1.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team1.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -164,9 +179,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team2.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team2.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team2.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -178,9 +193,9 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team3.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>App 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/team3.jpeg" title="App 1"
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/team3.jpeg" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -194,7 +209,7 @@
                                <img src="assets/img/portfolio/product1.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
                                    <h4>Product 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <p></p>
                                    <a href="assets/img/portfolio/product1.jpeg" title="Product 1"
                                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
@@ -208,8 +223,8 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/teknis-1.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>Branding 1</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <h4>teknis 1</h4>
+                                   <p></p>
                                    <a href="assets/img/portfolio/teknis-1.jpeg" title="Branding 1"
                                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
@@ -220,27 +235,14 @@
                        </div><!-- End Portfolio Item -->
 
 
-                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                           <div class="portfolio-content h-100">
-                               <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                               <div class="portfolio-info">
-                                   <h4>App 2</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/app-2.jpg" title="App 2"
-                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                           class="bi bi-zoom-in"></i></a>
-                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                           class="bi bi-link-45deg"></i></a>
-                               </div>
-                           </div>
-                       </div><!-- End Portfolio Item -->
+                    
 
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/product2.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
                                    <h4>Product 2</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <p></p>
                                    <a href="assets/img/portfolio/product2.jpeg" title="Product 2"
                                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
@@ -253,27 +255,14 @@
                        
 
 
-                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                           <div class="portfolio-content h-100">
-                               <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                               <div class="portfolio-info">
-                                   <h4>App 3</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                   <a href="assets/img/portfolio/app-3.jpg" title="App 3"
-                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                           class="bi bi-zoom-in"></i></a>
-                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                           class="bi bi-link-45deg"></i></a>
-                               </div>
-                           </div>
-                       </div><!-- End Portfolio Item -->
+                      
 
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/product3.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
                                    <h4>Product 3</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <p></p>
                                    <a href="assets/img/portfolio/product3.jpeg" title="Product 3"
                                        data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
@@ -287,8 +276,8 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/teknis-2.jpg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>Branding 3</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <h4>teknis 3</h4>
+                                   <p></p>
                                    <a href="assets/img/portfolio/teknis-2.jpg" title="Branding 2"
                                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
@@ -301,8 +290,8 @@
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/teknis-3.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>Branding 3</h4>
-                                   <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                   <h4>teknis 3</h4>
+                                   <p></p>
                                    <a href="assets/img/portfolio/teknis-3.jpeg" title="Branding 2"
                                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
