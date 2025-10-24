@@ -156,7 +156,7 @@
         <div class="service-container">
 
             <div class="service-card">
-                <img src="https://via.placeholder.com/400x250" alt="Layanan 1">
+                <img src="assets/img/Limbah-B3.png" alt="Layanan 1">
                 <div class="service-content">
                     <h3>Pengelolaan Limbah B3</h3>
                     <p>Melayani pengelolaan limbah B3 fase solid, liquid dan sludge.</p>
@@ -165,7 +165,7 @@
             </div>
 
             <div class="service-card">
-                <img src="https://via.placeholder.com/400x250" alt="Layanan 2">
+                <img src="assets/img/pengangkutan-limbah.jpg" alt="Layanan 2">
                 <div class="service-content">
                     <h3>Pengangkutan Limbah</h3>
                     <p>Pengangkutan limbah dengan legalitas lengkap & driver bersertifikat.</p>
@@ -174,7 +174,7 @@
             </div>
 
             <div class="service-card">
-                <img src="https://via.placeholder.com/400x250" alt="Layanan 3">
+                <img src="assets/img/pengolahan-limbah.png" alt="Layanan 3">
                 <div class="service-content">
                     <h3>Pengolahan Air Limbah</h3>
                     <p>Mengolah air limbah agar aman & ramah lingkungan.</p>
@@ -182,14 +182,6 @@
                 </div>
             </div>
 
-            <div class="service-card">
-                <img src="https://via.placeholder.com/400x250" alt="Layanan 4">
-                <div class="service-content">
-                    <h3>Pengelolaan Minyak & Gas</h3>
-                    <p>Layanan limbah industri migas dan produksi energi.</p>
-                    <a href="#">Selengkapnya →</a>
-                </div>
-            </div>
 
         </div>
     </section>
