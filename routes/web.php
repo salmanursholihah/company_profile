@@ -29,6 +29,22 @@ Route::get('/portfolio', function () {
     return view('portfolio');
 })->name('portfolio');
 
+Route::get('/produksi_pabrikasi_ipal', function () {
+    return view('produksi_pabrikasi_ipal');
+})->name('produksi_pabrikasi_ipal');
+
+Route::get('/perawatan', function () {
+    return view('perawatan');
+})->name('perawatan');
+
+Route::get('/instalasi', function () {
+    return view('instalasi');
+})->name('instalasi');
+
+Route::get('/konstruksi_pembangunan', function () {
+    return view('konstruksi_pembangunan');
+})->name('konstruksi_pembangunan');
+
 Route::get('/team', function () {
     return view('team');
 })->name('team');

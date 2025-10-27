@@ -6,7 +6,7 @@
      <div class="page-title dark-background">
          <div class="container position-relative">
              <h1>About</h1>
-            <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+             <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
              <nav class="breadcrumbs">
                  <ol>
                      <li class="current">Home</li>
@@ -29,24 +29,50 @@
                  <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
                      <h3>Selayang pandang PT Utama Cipta Tata Asri</h3>
                      <p class="fst-italic">
-                   
-                        PT Utama Cipta Tata Asri adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa
-                        lingkungan dan pengolahan air limbah, khususnya produsen sistem IPAL (Instalasi Pengolahan Air
-                        Limbah) yang inovatif, efisien, dan ramah lingkungan. Kami menghadirkan solusi komprehensif
-                        untuk pengolahan limbah domestik, limbah industri, dan limbah medis yang memenuhi standar
-                        regulasi lingkungan nasional (PerMenLHK) maupun internasional.
 
-                        <br><br><br>
+                         PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak di bidang
+                         rekayasa lingkungan, dengan fokus utama pada pengolahan air limbah (Wastewater Treatment) dan
+                         sistem IPAL (Instalasi Pengolahan Air Limbah). Sebagai produsen IPAL terpercaya, kami
+                         menghadirkan rangkaian solusi pengolahan limbah yang inovatif, efisien, dan ramah lingkungan,
+                         mulai dari perencanaan desain, produksi instalasi, konstruksi, hingga operasional dan perawatan
+                         sistem.
+<br><br>
+                         Kami menyediakan solusi komprehensif bagi berbagai kebutuhan pengolahan limbah, mencakup:
+<br>
+                         - Limbah industri (makanan dan minuman, tekstil, kimia, farmasi, peternakan, dan manufaktur),
+<br>
+                         - Limbah medis (rumah sakit, klinik, laboratorium kesehatan, dan fasilitas kesehatan lainnya).
+                         <br><br>
 
-                        dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata asri terus berinovasi untuk
-                        menghadirkan product yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
-                        agar lebih aman dan berkelanjutan
+                         Setiap sistem IPAL yang kami produksi mengikuti standar baku mutu lingkungan sesuai Peraturan
+                         Menteri Lingkungan Hidup dan Kehutanan (PerMen LHK) serta mengacu pada standar internasional
+                         seperti WHO dan EPA untuk memastikan hasil pengolahan limbah aman, stabil, dan tidak mencemari
+                         lingkungan.
+<br><br>
+                         Dengan pengalaman lebih dari 10 tahun dalam industri teknologi pengolahan limbah, PT Utama
+                         Cipta Tata Asri didukung oleh tenaga ahli profesional di bidang teknik lingkungan, teknik
+                         sipil, desain proses, dan instrumentasi. Komitmen kami adalah terus melakukan inovasi teknologi
+                         guna menghadirkan produk yang:
 
-                        <br><br><br>
-                        Kami percaya bahwa
-                        kualitas air yang bersih adalah bagian penting dari keberlangsungan hidup dan lingkungan yang
-                        sehat.
-                    </p>
+                         Lebih efisien dalam penggunaan energi,
+
+                         Ramah lingkungan melalui penerapan proses biologi yang aman,
+
+                         Handal dan mudah dioperasikan,
+
+                         Berumur panjang dan minim biaya perawatan (low maintenance).
+                         <br><br><br>
+
+                         Selain memproduksi sistem IPAL, kami juga berperan sebagai mitra strategis bagi perusahaan,
+                         pemerintah daerah, dan lembaga kesehatan dalam mewujudkan pengelolaan limbah yang sesuai
+                         regulasi dan berkelanjutan. Produk dan layanan kami dirancang untuk mendukung implementasi
+                         prinsip kesehatan lingkungan, keamanan operasional, dan tanggung jawab sosial lingkungan (CSR).
+<br><br>
+                         Kami meyakini bahwa ketersediaan air bersih dan lingkungan yang sehat adalah kebutuhan
+                         fundamental untuk keberlangsungan hidup manusia dan masa depan generasi berikutnya. Oleh karena
+                         itu, kami berkomitmen untuk terus menghadirkan solusi rekayasa lingkungan yang memberikan
+                         manfaat nyata, berdaya guna, dan berorientasi masa depan
+                     </p>
                      <!-- <ul>
                          <li><i class="bi bi-check2-all"></i> <span>Instalasi cepat & handal.</span></li>
                          <li><i class="bi bi-check2-all"></i> <span>Pelatihan operator &? pendampingan.</span></li>
@@ -66,106 +92,137 @@
 
      </section><!-- /About Section -->
 
-    <!-- Visi Misi -->
+    <!--visi misi-->
     <section class="section py-5">
         <div class="container text-center">
             <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
             <div class="row g-4">
                 <div class="col-md-6" data-aos="zoom-in">
                     <div class="card border-0 shadow h-100 p-4">
-                        <i class="bi bi-award display-5 text-warning mb-3"></i>
+                        <br>
+                        <i class="fa-solid fa-eye fa-2xl text-primary"></i>
+                        <br>
                         <h5 class="fw-bold">Visi</h5>
-                        <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan dengan kualitas terbaik.</p>
+                        {{-- <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan Dengan
+                            kualitas terbaik.</p> --}}
+                        <p>Menjadi perusahaan penyedia layanan pengelolaan air limbah yang inovatif, tepercaya, dan
+                            berkelanjutan dengan kualitas terbaik.</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="card border-0 shadow h-100 p-4">
-                        <i class="bi bi-rocket-takeoff display-5 text-success mb-3"></i>
+                        <br>
+                        <i class="fa-solid fa-lightbulb fa-2xl display-5 text-success mb-3" style="color: #ffc107;"></i>
+                        <br>
+
                         <h5 class="fw-bold">Misi</h5>
                         <ul class="text-start">
-                            <li>Menyediakan pelayanan terbaik dan nomor satu</li>
-                            <li>Menyediakan produk ramah lingkungan & hemat energi</li>
-                            <li>Memberikan pendampingan & pelatihan operator</li>
+                            <li>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen lingkungan
+                                yang berkelanjutan</li>
+                            <li>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
+                                kendala operasional</li>
+                            <li>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang efektif
+                                dan berkualitas.</li>
+                            <li>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</li>
+                            <li>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku mutu
+                                lingkungan.</li>
+                            <li>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional IPAL.
+                            </li>
+                            <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
+                                sistem IPAL.</li>
+                            <li>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
+                                teknis.</li>
+                            <li>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi sumber
+                                daya air.</li>
+
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!--end visi misi-->
 
 
-        <!-- Legalitas Accordion -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="fw-bold mb-4 text-center">Legalitas & Sertifikasi</h2>
-            <div class="accordion" id="legalitasAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#akta">
-                            Akta Pendirian
-                        </button>
-                    </h2>
-                    <div id="akta" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
-                        <div class="accordion-body">AHU PT Utama Cipta Tata Asri</div>
-                        <img src="" alt="gambar sertifikat">
-                        <div class="accordion-body">Nomor induk berusaha (NIB)</div>
-                        <img src="" alt="gambar sertifikat">
-                    </div>
-                </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#legalitas">
-                         Legalitas
-                        </button>
-                    </h2>
-                    <div id="legalitas" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
-                        <div class="accordion-body">Sertifikat Hak Paten</div>
-                        <img src="" alt="gambar sertifikat">
-                        <div class="accordion-body">Sertifikat Merek</div>
-                        <img src="" alt="gambar sertifikat">
-                        <div class="accordion-body">Sertifikat Merek</div>
-                        <img src="" alt="gambar sertifikat">
-                    </div>
-                </div>
+     <!-- Legalitas Accordion -->
+     <section class="py-5 bg-light">
+         <div class="container">
+             <h2 class="fw-bold mb-4 text-center">Legalitas & Sertifikasi</h2>
+             <div class="accordion" id="legalitasAccordion">
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#akta">
+                             Akta Pendirian
+                         </button>
+                     </h2>
+                     <div id="akta" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
+                         <div class="accordion-body">AHU PT Utama Cipta Tata Asri</div>
+                         <img src="" alt="gambar sertifikat">
+                         <div class="accordion-body">Nomor induk berusaha (NIB)</div>
+                         <img src="" alt="gambar sertifikat">
+                     </div>
+                 </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#sertifikat">
-                            Sertifikat SNI & ISO
-                        </button>
-                    </h2>
-                    <div id="sertifikat" class="accordion-collapse collapse" data-bs-parent="#legalitasAccordion">
-                        <div class="accordion-body">
-                            <ul>
-                                <li>ISO 9001:2015</li>
-                                <img src="" alt="gambar sertifikat">
-                                <li>SNI 7504:2011</li>
-                                <img src="" alt="gambar sertifikat">
-                                <li>SNI_OSITECH_MINIIPAL_2019</li>
-                                <img src="" alt="gambar sertifikat">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#legalitas">
+                             Legalitas
+                         </button>
+                     </h2>
+                     <div id="legalitas" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
+                         <div class="accordion-body">Sertifikat Hak Paten</div>
+                         <img src="" alt="gambar sertifikat">
+                         <div class="accordion-body">Sertifikat Merek</div>
+                         <img src="" alt="gambar sertifikat">
+                         <div class="accordion-body">Sertifikat Merek</div>
+                         <img src="" alt="gambar sertifikat">
+                     </div>
+                 </div>
 
-                    <div class="accordion-item">
-                      <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#legalitas">
-                        TKDN
-                        </button>
-                    </h2>
-                    <div id="legalitas" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
-                        <div class="accordion-body">TKDN</div>
-                        <img src="" alt="gambar sertifikat">
-                   
-                    </div>
-                </div>
-                <!-- Tambahkan item lain sesuai kebutuhan -->
-            </div>
-        </div>
-    </section>
+                 <div class="accordion-item">
+                     <h2 class="accordion-header">
+                         <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#sertifikat">
+                             Sertifikat SNI & ISO
+                         </button>
+                     </h2>
+                     <div id="sertifikat" class="accordion-collapse collapse" data-bs-parent="#legalitasAccordion">
+                         <div class="accordion-body">
+                             <ul>
+                                 <li>ISO 9001:2015</li>
+                                 <img src="" alt="gambar sertifikat">
+                                 <li>SNI 7504:2011</li>
+                                 <img src="" alt="gambar sertifikat">
+                                 <li>SNI_OSITECH_MINIIPAL_2019</li>
+                                 <img src="" alt="gambar sertifikat">
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="accordion-item">
+                     <div class="accordion-item">
+                         <h2 class="accordion-header">
+                             <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                 data-bs-target="#legalitas">
+                                 TKDN
+                             </button>
+                         </h2>
+                         <div id="legalitas" class="accordion-collapse collapse show"
+                             data-bs-parent="#legalitasAccordion">
+                             <div class="accordion-body">TKDN</div>
+                             <img src="" alt="gambar sertifikat">
+
+                         </div>
+                     </div>
+                     <!-- Tambahkan item lain sesuai kebutuhan -->
+                 </div>
+             </div>
+     </section>
 
 
 
@@ -173,46 +230,46 @@
 
 
      <!--hasil uji lab-->
-<section>
-<section id="hasil-uji-lab" class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Text Content -->
-      <div class="col-lg-7" data-aos="fade-right">
-        <h3 class="fw-bold mb-3">Hasil Uji Laboratorium</h3>
-        <p class="mb-4">
-          <strong>1.</strong> Baku Mutu Air hasil proses <strong>MINI IPAL</strong> ini sudah sesuai dengan 
-          <em>PERMEN LINGKUNGAN HIDUP DAN KEHUTANAN REPUBLIK INDONESIA 
-          NOMOR P.68/Menlhk/Setjen/Kum.1/8/2016</em> tentang 
-          <strong>Baku Mutu Air Limbah Domestik</strong>.
-        </p>
-        <p class="mb-4">
-          <strong>2.</strong> Kami selalu konsisten melakukan pengujian terlebih dahulu ke 
-          <strong>laboratorium terakreditasi KAN</strong> sebelum produk dilepas ke pasaran.
-        </p>
-      </div>
+     <section>
+         <section id="hasil-uji-lab" class="py-5 bg-light">
+             <div class="container">
+                 <div class="row align-items-center">
 
-      <!-- Image -->
-      <div class="col-lg-5 text-center" data-aos="fade-left">
-        <img src="assets/img/sertifikat.png" 
-             alt="Sertifikat hasil instalasi" 
-             class="img-fluid rounded shadow">
-        <p class="mt-2 text-muted"><em>Contoh sertifikat hasil uji</em></p>
-      </div>
+                     <!-- Text Content -->
+                     <div class="col-lg-7" data-aos="fade-right">
+                         <h3 class="fw-bold mb-3">Hasil Uji Laboratorium</h3>
+                         <p class="mb-4">
+                             <strong>1.</strong> Baku Mutu Air hasil proses <strong>MINI IPAL</strong> ini sudah sesuai
+                             dengan
+                             <em>PERMEN LINGKUNGAN HIDUP DAN KEHUTANAN REPUBLIK INDONESIA
+                                 NOMOR P.68/Menlhk/Setjen/Kum.1/8/2016</em> tentang
+                             <strong>Baku Mutu Air Limbah Domestik</strong>.
+                         </p>
+                         <p class="mb-4">
+                             <strong>2.</strong> Kami selalu konsisten melakukan pengujian terlebih dahulu ke
+                             <strong>laboratorium terakreditasi KAN</strong> sebelum produk dilepas ke pasaran.
+                         </p>
+                     </div>
 
-    </div>
-  </div>
-</section>
+                     <!-- Image -->
+                     <div class="col-lg-5 text-center" data-aos="fade-left">
+                         <img src="assets/img/sertifikat.png" alt="Sertifikat hasil instalasi"
+                             class="img-fluid rounded shadow">
+                         <p class="mt-2 text-muted"><em>Contoh sertifikat hasil uji</em></p>
+                     </div>
+
+                 </div>
+             </div>
+         </section>
 
 
-     <!-- Clients Section -->
-     <section id="clients" class="clients section">
+         <!-- Clients Section -->
+         <section id="clients" class="clients section">
 
-         <div class="container">
+             <div class="container">
 
-             <div class="swiper init-swiper">
-                 <script type="application/json" class="swiper-config">
+                 <div class="swiper init-swiper">
+                     <script type="application/json" class="swiper-config">
                  {
                      "loop": true,
                      "speed": 600,
@@ -245,43 +302,51 @@
                      }
                  }
                  </script>
-                 <div class="swiper-wrapper align-items-center">
-                     <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
-                     </div>
-                     <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
+                     <div class="swiper-wrapper align-items-center">
+                         <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid"
+                                 alt="">
+                         </div>
+                         <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid"
+                                 alt="">
+                         </div>
                      </div>
                  </div>
+
              </div>
 
-         </div>
+         </section><!-- /Clients Section -->
 
-     </section><!-- /Clients Section -->
+         <!-- Testimonials Section -->
+         <section id="testimonials" class="testimonials section">
 
-     <!-- Testimonials Section -->
-     <section id="testimonials" class="testimonials section">
+             <!-- Section Title -->
+             <div class="container section-title" data-aos="fade-up">
+                 <h2>Testimonials</h2>
+                 <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+             </div><!-- End Section Title -->
 
-         <!-- Section Title -->
-         <div class="container section-title" data-aos="fade-up">
-             <h2>Testimonials</h2>
-             <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-         </div><!-- End Section Title -->
+             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-             <div class="swiper init-swiper">
-                 <script type="application/json" class="swiper-config">
+                 <div class="swiper init-swiper">
+                     <script type="application/json" class="swiper-config">
                  {
                      "loop": true,
                      "speed": 600,
@@ -296,138 +361,147 @@
                      }
                  }
                  </script>
-                 <div class="swiper-wrapper">
+                     <div class="swiper-wrapper">
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni1.jpeg" class="testimonial-img" alt="">
-                             <h3>Saul alexandra</h3>
-                             <h4>Ceo &amp; Founder</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni1.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>Saul alexandra</h3>
+                                 <h4>Ceo &amp; Founder</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
+                                         suscipit
+                                         rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen
+                                         aliquam,
+                                         risus at semper.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                     rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                     risus at semper.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni2.jpeg" class="testimonial-img" alt="">
-                             <h3>Sara Wilsson</h3>
-                             <h4>Designer</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni2.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>Sara Wilsson</h3>
+                                 <h4>Designer</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum
+                                         quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat
+                                         irure
+                                         amet legam anim culpa.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum
-                                     quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure
-                                     amet legam anim culpa.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni3.jpeg" class="testimonial-img" alt="">
-                             <h3>Jmatt brandon</h3>
-                             <h4>Store Owner</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni3.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>Jmatt brandon</h3>
+                                 <h4>Store Owner</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla
+                                         quem
+                                         veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis
+                                         sint
+                                         minim.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                     veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                     minim.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni4.jpeg" class="testimonial-img" alt="">
-                             <h3>Jenna karlis</h3>
-                             <h4>Freelancer</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni4.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>Jenna karlis</h3>
+                                 <h4>Freelancer</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export
+                                         minim
+                                         fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore
+                                         quem dolore labore illum veniam.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                     fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore
-                                     quem dolore labore illum veniam.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni5.jpeg" class="testimonial-img" alt="">
-                             <h3>John Larson</h3>
-                             <h4>Entrepreneur</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni5.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>John Larson</h3>
+                                 <h4>Entrepreneur</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
+                                         noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
+                                         esse veniam culpa fore nisi cillum quid.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
-                                     noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
-                                     esse veniam culpa fore nisi cillum quid.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
 
-                     <div class="swiper-slide">
-                         <div class="testimonial-item">
-                             <img src="assets/img/testimonials/testimoni6.jpeg" class="testimonial-img" alt="">
-                             <h3>Jonathan</h3>
-                             <h4>Entrepreneur</h4>
-                             <div class="stars">
-                                 <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                     class="bi bi-star-fill"></i>
+                         <div class="swiper-slide">
+                             <div class="testimonial-item">
+                                 <img src="assets/img/testimonials/testimoni6.jpeg" class="testimonial-img"
+                                     alt="">
+                                 <h3>Jonathan</h3>
+                                 <h4>Entrepreneur</h4>
+                                 <div class="stars">
+                                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                         class="bi bi-star-fill"></i>
+                                 </div>
+                                 <p>
+                                     <i class="bi bi-quote quote-icon-left"></i>
+                                     <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
+                                         noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
+                                         esse veniam culpa fore nisi cillum quid.</span>
+                                     <i class="bi bi-quote quote-icon-right"></i>
+                                 </p>
                              </div>
-                             <p>
-                                 <i class="bi bi-quote quote-icon-left"></i>
-                                 <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
-                                     noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
-                                     esse veniam culpa fore nisi cillum quid.</span>
-                                 <i class="bi bi-quote quote-icon-right"></i>
-                             </p>
-                         </div>
-                     </div><!-- End testimonial item -->
+                         </div><!-- End testimonial item -->
 
+                     </div>
+                     <div class="swiper-pagination"></div>
                  </div>
-                 <div class="swiper-pagination"></div>
+
              </div>
 
-         </div>
-
-     </section><!-- /Testimonials Section -->
+         </section><!-- /Testimonials Section -->
 
  </main>
-
-
- 

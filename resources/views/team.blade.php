@@ -10,7 +10,7 @@
               <nav class="breadcrumbs">
                   <ol>
                       <li class="current">Home</li>
-                      <li class="current">About</li>
+                      <li class="current">Team</li>
                   </ol>
               </nav>
           </div>

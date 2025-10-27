@@ -11,7 +11,7 @@
                <nav class="breadcrumbs">
                    <ol>
                        <li class="current">Home</li>
-                       <li class="current">About</li>
+                       <li class="current">Blog</li>
                    </ol>
                </nav>
            </div>

@@ -24,7 +24,7 @@
                             Instalasi Pengolahan Air Limbah (IPAL). Dengan standar teknologi ramah lingkungan dan hasil
                             yang terukur, kami membantu industri, perumahan, rumah sakit, dan pemerintahan dalam
                             mewujudkan pengelolaan limbah yang aman dan berkelanjutan.</p> --}}
-                        <p>kami adalah perusahaan manufaktur yang bergerak di dalam bidang rekayasa lingkungan dan
+                        <p>Kami adalah perusahaan manufaktur yang bergerak di dalam bidang rekayasa lingkungan dan
                             pengolahan air limbah khususnya produsen sistem IPAL (instalasi pengelolaan air limbah) yang
                             inovatif, efisien, dan ramah
                             lingkungan. kami menghadirkan solusi komprehensif untuk pengelolaan limbah domestik, limbah
@@ -37,7 +37,7 @@
                 <div class="carousel-item">
                     <div class="carousel-container">
                         <h2>Instalasi & Maintenance IPAL</h2>
-                        Kami menyediakan layanan lengkap mulai dari Layanan Pengadaan, konstruksi, instalasi alat, uji
+                        Menyediakan layanan lengkap mulai dari Layanan Pengadaan, konstruksi, instalasi alat, uji
                         kualitas air, hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan pelanggan
                         berdasarkan standar Permen LH & regulasi lingkungan hidup Indonesia, sehingga hasil aman,
                         efisien, dan mudah dioperasikan. <a href="#about" class="btn-get-started">Read More</a>
@@ -48,7 +48,7 @@
                     <div class="carousel-container">
                         <h2>Lingkungan Bersih, Operasi Lebih Efisien</h2>
 
-                        Kami berkomitmen untuk menghadirkan solusi pengolahan limbah yang efektif, hemat biaya, dan
+                        Berkomitmen untuk menghadirkan solusi pengolahan limbah yang efektif, hemat biaya, dan
                         berkelanjutan. Dengan tenaga ahli berpengalaman dan teknologi yang tepat, kami membantu klien
                         memenuhi aturan lingkungan, mengurangi dampak pencemaran, serta mendukung keberlanjutan
                         operasional perusahaan. <a href="#about" class="btn-get-started">Read More</a>
@@ -91,17 +91,19 @@
                         lingkungan dan pengolahan air limbah, khususnya produsen sistem IPAL (Instalasi Pengolahan Air
                         Limbah) yang inovatif, efisien, dan ramah lingkungan. Kami menghadirkan solusi komprehensif
                         untuk pengolahan limbah domestik, limbah industri, dan limbah medis yang memenuhi standar
-                        regulasi lingkungan nasional (PerMenLHK) maupun internasional.
+                        regulasi lingkungan nasional (PerMen LHK) maupun internasional.
 
                         <br><br><br>
 
-                        dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata asri terus berinovasi untuk
-                        menghadirkan product yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
-                        agar lebih aman dan berkelanjutan
+                        Dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata
+                        Asri terus berinovasi untuk
+                        menghadirkan produk yang efisien, ramah lingkungan, dan handal yang mendukung layanan medis
+                        agar lebih aman dan berkelanjutan.
 
                         <br><br><br>
                         Kami percaya bahwa
-                        kualitas air yang bersih adalah bagian penting dari keberlangsungan hidup dan lingkungan yang
+                        kualitas air bersih yang memenuhi standar baku mutu adalah bagian penting dari keberlangsungan
+                        hidup dan lingkungan yang
                         sehat.
                     </p>
 
@@ -126,20 +128,43 @@
             <div class="row g-4">
                 <div class="col-md-6" data-aos="zoom-in">
                     <div class="card border-0 shadow h-100 p-4">
-                        <i class="bi bi-award display-5 text-warning mb-3"></i>
+                        <br>
+                        <i class="fa-solid fa-eye fa-2xl text-primary"></i>
+                        <br>
                         <h5 class="fw-bold">Visi</h5>
-                        <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan dengan
-                            kualitas terbaik.</p>
+                        {{-- <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan Dengan
+                            kualitas terbaik.</p> --}}
+                        <p>Menjadi perusahaan penyedia layanan pengelolaan air limbah yang inovatif, tepercaya, dan
+                            berkelanjutan dengan kualitas terbaik.</p>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="card border-0 shadow h-100 p-4">
-                        <i class="bi bi-rocket-takeoff display-5 text-success mb-3"></i>
+                        <br>
+                        <i class="fa-solid fa-lightbulb fa-2xl display-5 text-success mb-3" style="color: #ffc107;"></i>
+                        <br>
+
                         <h5 class="fw-bold">Misi</h5>
                         <ul class="text-start">
-                            <li>Menyediakan pelayanan terbaik dan nomor satu</li>
-                            <li>Menyediakan produk ramah lingkungan & hemat energi</li>
-                            <li>Memberikan pendampingan & pelatihan operator</li>
+                            <li>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen lingkungan
+                                yang berkelanjutan</li>
+                            <li>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
+                                kendala operasional</li>
+                            <li>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang efektif
+                                dan berkualitas.</li>
+                            <li>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</li>
+                            <li>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku mutu
+                                lingkungan.</li>
+                            <li>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional IPAL.
+                            </li>
+                            <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
+                                sistem IPAL.</li>
+                            <li>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
+                                teknis.</li>
+                            <li>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi sumber
+                                daya air.</li>
+
+
                         </ul>
                     </div>
                 </div>
@@ -156,29 +181,44 @@
         <div class="service-container">
 
             <div class="service-card">
-                <img src="assets/img/Limbah-B3.png" alt="Layanan 1">
+                <img src="assets/img/layanan/produksi.jpeg" alt="Layanan 1">
                 <div class="service-content">
-                    <h3>Pengelolaan Limbah B3</h3>
-                    <p>Melayani pengelolaan limbah B3 fase solid, liquid dan sludge.</p>
-                    <a href="#">Selengkapnya →</a>
+                    <h3>Produksi & Pabrikasi IPAL</h3>
+                    <p>Sebagai produsen sistem pengolahan limbah cair (IPAL), kami menyediakan solusi rekayasa teknologi
+                        yang dirancang sesuai karakteristik dan kebutuhan proses setiap pelanggan. </p>
+                    <a href="{{route('produksi_pabrikasi_ipal')}}">Selengkapnya →</a>
                 </div>
             </div>
 
             <div class="service-card">
-                <img src="assets/img/pengangkutan-limbah.jpg" alt="Layanan 2">
+                <img src="assets/img/layanan/konstruksi.png" alt="Layanan 2">
                 <div class="service-content">
-                    <h3>Pengangkutan Limbah</h3>
-                    <p>Pengangkutan limbah dengan legalitas lengkap & driver bersertifikat.</p>
-                    <a href="#">Selengkapnya →</a>
+                    <h3>Konstruksi & Pembangunan IPAL</h3>
+                    <p>Selain produksi unit, kami juga menangani pekerjaan konstruksi IPAL secara menyeluruh. Mulai dari layanan
+                        konstruksi kami mencakup pekerjaan sipil (civil work) seperti pembuatan bak pre-treatment, bak
+                        aerasi, sedimentasi, klorinasi, hingga struktur pondasi dan ruang mesin.</p>
+                    <a href="{{route('konstruksi_pembangunan')}}">Selengkapnya →</a>
                 </div>
             </div>
 
             <div class="service-card">
-                <img src="assets/img/pengolahan-limbah.png" alt="Layanan 3">
+                <img src="assets/img/layanan/instalasi.jpeg" alt="Layanan 3">
                 <div class="service-content">
-                    <h3>Pengolahan Air Limbah</h3>
-                    <p>Mengolah air limbah agar aman & ramah lingkungan.</p>
-                    <a href="#">Selengkapnya →</a>
+                    <h3>Instalasi & Commissioning</h3>
+                    <p>Setelah tahap produksi dan konstruksi, kami melanjutkan dengan instalasi dan commissioning untuk
+                        memastikan IPAL siap beroperasi secara optimal.</p>
+                    <a href="{{route('instalasi')}}">Selengkapnya →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="assets/img/layanan/maintenance.jpeg" alt="Layanan 4">
+                <div class="service-content">
+                    <h3>Perawatan & Maintenance IPAL</h3>
+                    <p>Pengolahan air limbah membutuhkan pemeliharaan yang tepat agar sistem tetap berfungsi maksimal.
+                        Karena itu, kami menyediakan layanan operational & maintenance (O&M) untuk memastikan IPAL
+                        pelanggan tetap bekerja dengan baik setiap hari. </p>
+                    <a href="{{route('perawatan')}}">Selengkapnya →</a>
                 </div>
             </div>
 
@@ -202,34 +242,22 @@
                     [
                         'img' => 'app-1.png',
                         'title' => 'ipal oshitech WT PRO 004i 1 m³',
-                        'old' => 'Rp179.000',
-                        'new' => 'Rp143.200',
-                        'discount' => '-20%',
-                        'location' => 'magelang, Indonesia',
+                        'location' => 'Magelang, Indonesia',
                     ],
                     [
                         'img' => 'app-2.png',
                         'title' => 'ipal oshitech WT PRO 004i 3 m³',
-                        'old' => 'Rp650.000',
-                        'new' => 'Rp520.000',
-                        'discount' => '-20%',
-                        'location' => 'magelang, Indonesia',
+                        'location' => 'Magelang, Indonesia',
                     ],
                     [
                         'img' => 'app-3.png',
                         'title' => 'ipal oshitech WT PRO 004i 4,5 m³',
-                        'old' => 'Rp899.000',
-                        'new' => 'Rp720.000',
-                        'discount' => '-20%',
-                        'location' => 'magelang, Indonesia',
+                        'location' => 'Magelang, Indonesia',
                     ],
                     [
                         'img' => 'app-4.png',
                         'title' => 'ipal oshitech WT PRO 004i 5 m³',
-                        'old' => 'Rp450.000',
-                        'new' => 'Rp360.000',
-                        'discount' => '-20%',
-                        'location' => 'magelang, Indonesia',
+                        'location' => 'Magelang, Indonesia',
                     ],
                 ];
             @endphp
@@ -239,17 +267,12 @@
                     <div class="product-card">
                         <img src="{{ asset('assets/img/portfolio/' . $product['img']) }}" alt="">
                         <div class="product-title">{{ $product['title'] }}</div>
-                        <div class="product-price">
-                            <span class="old-price">{{ $product['old'] }}</span>
-                            <span class="new-price">{{ $product['new'] }}</span>
-                            <span class="discount">({{ $product['discount'] }})</span>
-                        </div>
                         <div class="location">{{ $product['location'] }}</div>
                         <div class="btn-group">
                             <a href="https://wa.me/6281234567890" class="btn">
                                 <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
                             </a>
-                            <a href="https://milospro.com/" class="btnn">
+                            <a href="https://milosgo.com/" class="btnn">
                                 <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
                             </a>
                         </div>

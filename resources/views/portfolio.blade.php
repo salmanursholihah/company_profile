@@ -11,7 +11,7 @@
                <nav class="breadcrumbs">
                    <ol>
                        <li class="current">Home</li>
-                       <li class="current">About</li>
+                       <li class="current">Portfolio</li>
                    </ol>
                </nav>
            </div>
@@ -26,15 +26,16 @@
 
                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                        <li data-filter="*" class="filter-active">All</li>
-                       <li data-filter=".filter-app">team</li>
+                       {{-- <li data-filter=".filter-app">team</li> --}}
+                       <li data-filter=".filter-app">Our Customers</li>
                        <li data-filter=".filter-product">Product</li>
-                       <li data-filter=".filter-branding">teknis</li>
+                       <li data-filter=".filter-branding">technical</li>
                        {{-- <li data-filter=".filter-books">Books</li> --}}
                    </ul><!-- End Portfolio Filters -->
 
                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                       {{-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                            <div class="portfolio-content h-100">
                                <img src="assets/img/portfolio/team-naja.jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
@@ -202,7 +203,7 @@
                                            class="bi bi-link-45deg"></i></a>
                                </div>
                            </div>
-                       </div><!-- End Portfolio Item -->
+                       </div><!-- End Portfolio Item --> --}}
 
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                            <div class="portfolio-content h-100">
@@ -219,23 +220,8 @@
                            </div>
                        </div><!-- End Portfolio Item -->
 
-                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                           <div class="portfolio-content h-100">
-                               <img src="assets/img/portfolio/teknis-1.jpeg" class="img-fluid" alt="">
-                               <div class="portfolio-info">
-                                   <h4>teknis 1</h4>
-                                   <p></p>
-                                   <a href="assets/img/portfolio/teknis-1.jpeg" title="Branding 1"
-                                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                                           class="bi bi-zoom-in"></i></a>
-                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                                           class="bi bi-link-45deg"></i></a>
-                               </div>
-                           </div>
-                       </div><!-- End Portfolio Item -->
 
 
-                    
 
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                            <div class="portfolio-content h-100">
@@ -252,10 +238,10 @@
                            </div>
                        </div><!-- End Portfolio Item -->
 
-                       
 
 
-                      
+
+
 
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                            <div class="portfolio-content h-100">
@@ -272,13 +258,64 @@
                            </div>
                        </div><!-- End Portfolio Item -->
 
+
+                       {{-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product3.jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>Product 3</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product3.jpeg" title="Product 3"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item --> --}}
+
+
+
+
+
+
+
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                            <div class="portfolio-content h-100">
-                               <img src="assets/img/portfolio/teknis-2.jpg" class="img-fluid" alt="">
+                               <img src="assets/img/portfolio/product1 (1).JPG" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>teknis 3</h4>
+                                   <h4>teknis 4</h4>
                                    <p></p>
-                                   <a href="assets/img/portfolio/teknis-2.jpg" title="Branding 2"
+                                   <a href="assets/img/portfolio/product1 (1).JPG" title="Branding 2"
+                                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (2).JPG" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (2).JPG" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (1).png" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>teknis 4</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (1).png" title="Branding 2"
                                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -288,11 +325,199 @@
                        </div><!-- End Portfolio Item -->
                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                            <div class="portfolio-content h-100">
-                               <img src="assets/img/portfolio/teknis-3.jpeg" class="img-fluid" alt="">
+                               <img src="assets/img/portfolio/product1 (2).jpeg" class="img-fluid" alt="">
                                <div class="portfolio-info">
-                                   <h4>teknis 3</h4>
+                                   <h4>teknis 4</h4>
                                    <p></p>
-                                   <a href="assets/img/portfolio/teknis-3.jpeg" title="Branding 2"
+                                   <a href="assets/img/portfolio/product1 (2).jpeg" title="Branding 2"
+                                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (3).jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (3).jpeg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (3).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (3).jpg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (4).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>teknis 4</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (4).jpg" title="Branding 2"
+                                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (4).jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (4).jpeg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (5).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (5).jpg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (5).jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>our customer</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (5).jpeg" title="app 2"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (6).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>teknis 4</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (6).jpg" title="Branding 2"
+                                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (6).jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (6).jpeg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (7).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (7).jpg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (7).jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>produc</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (7).jpeg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (9).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (9).jpg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (10).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>product</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (10).jpg" title="product 2"
+                                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product1 (11).jpg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>teknis 4</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product1 (11).jpg" title="Branding 2"
                                        data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -301,7 +526,24 @@
                            </div>
                        </div><!-- End Portfolio Item -->
 
-          
+
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/our-customer1.jpeg" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/our-customer1.jpeg" title="team"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+
 
                    </div><!-- End Portfolio Container -->
 
