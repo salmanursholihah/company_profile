@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="fw-bold mb-4">Manajemen Blog</h1>
+    <h2 class="fw-bold mb-4">Manajemen Blog</h2>
 
     <!-- Filter & Search -->
     <form method="GET" action="{{ route('admin.blogs.index') }}" class="d-flex gap-2 mb-4">
