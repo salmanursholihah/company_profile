@@ -24,12 +24,12 @@
                             Instalasi Pengolahan Air Limbah (IPAL). Dengan standar teknologi ramah lingkungan dan hasil
                             yang terukur, kami membantu industri, perumahan, rumah sakit, dan pemerintahan dalam
                             mewujudkan pengelolaan limbah yang aman dan berkelanjutan.</p> --}}
-                        <p>Kami adalah perusahaan manufaktur yang bergerak di dalam bidang rekayasa lingkungan dan
-                            pengolahan air limbah khususnya produsen sistem IPAL (instalasi pengelolaan air limbah) yang
-                            inovatif, efisien, dan ramah
-                            lingkungan. kami menghadirkan solusi komprehensif untuk pengelolaan limbah domestik, limbah
-                            industri, dan limbah medis yang memenuhi standar regulasi lingkungan nasional (PerMenLHK)
-                            maupun international</p>
+                        <p>Kami adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa lingkungan pengelolaan
+                            limbah, khususnya limbah cair. kami merupakan produsen ipal (instalasi pengolahan air
+                            limbah) yang inovatif, efisien, dan ramah lingkungan.
+                            menghadirkan solusi yang komprehensif untuk pengelolaan limbah medis, limbah domestik, serta
+                            limbah industri yang memenuhi standar regulasi lingkungan nasional, sesuai dengan PerMen
+                            LHK.</p>
                         <a href="#about" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
@@ -37,10 +37,11 @@
                 <div class="carousel-item">
                     <div class="carousel-container">
                         <h2>Instalasi & Maintenance IPAL</h2>
-                        Menyediakan layanan lengkap mulai dari Layanan Pengadaan, konstruksi, instalasi alat, uji
-                        kualitas air, hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan pelanggan
-                        berdasarkan standar Permen LH & regulasi lingkungan hidup Indonesia, sehingga hasil aman,
-                        efisien, dan mudah dioperasikan. <a href="#about" class="btn-get-started">Read More</a>
+                        Menyediakan layanan lengkap mulai dari Pengadaan, konstruksi, instalasi alat, uji kualitas air,
+                        hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan dan kapabilitas pelanggan
+                        yang mengacu kepada standar Permen LHK di Indonesia. sehingga menghasilkan limbah yang aman,
+                        biaya yang efisien, dan fasilitas mudah dioperasikan. <a href="#about"
+                            class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -48,10 +49,11 @@
                     <div class="carousel-container">
                         <h2>Lingkungan Bersih, Operasi Lebih Efisien</h2>
 
-                        Berkomitmen untuk menghadirkan solusi pengolahan limbah yang efektif, hemat biaya, dan
-                        berkelanjutan. Dengan tenaga ahli berpengalaman dan teknologi yang tepat, kami membantu klien
-                        memenuhi aturan lingkungan, mengurangi dampak pencemaran, serta mendukung keberlanjutan
-                        operasional perusahaan. <a href="#about" class="btn-get-started">Read More</a>
+                        Berkomitmen untuk menghadirkan solusi pengolahan limbah khususnya limbah cair yang efektif,
+                        efisien, dan berkelanjutan. Dengan tenaga ahli yang berpengalaman dan teknologi yang tepat guna,
+                        kami membantu klien memenuhi aturan lingkungan, mengurangi dampak pencemaran, serta mendukung
+                        keberlanjutan operasional perusahaan.
+                        <a href="#about" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -87,11 +89,11 @@
                         kualitas, menyediakan mesin-mesin inovatif yang telah terpasang di berbagai instansi
                         pemerintahan dan swasta. --}}
 
-                        PT Utama Cipta Tata Asri adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa
-                        lingkungan dan pengolahan air limbah, khususnya produsen sistem IPAL (Instalasi Pengolahan Air
-                        Limbah) yang inovatif, efisien, dan ramah lingkungan. Kami menghadirkan solusi komprehensif
-                        untuk pengolahan limbah domestik, limbah industri, dan limbah medis yang memenuhi standar
-                        regulasi lingkungan nasional (PerMen LHK) maupun internasional.
+                        PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak dalam bidang rekayasa lingkungan pengelolaan
+                        limbah, khususnya limbah cair. kami merupakan produsen ipal (instalasi pengolahan air limbah)
+                        yang inovatif, efisien, dan ramah lingkungan. menghadirkan solusi yang komprehensif untuk
+                        pengelolaan limbah medis, limbah domestik, serta limbah industri yang memenuhi standar regulasi
+                        lingkungan nasional, sesuai dengan PerMen LHK
 
                         <br><br><br>
 
@@ -108,6 +110,7 @@
                     </p>
 
                     <br><br><br>
+                    <h5>Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan diantaranya :</h5>
                     <ul class="list-unstyled">
                         <li><i class="bi bi-check2-circle text-primary me-2"></i>Instalasi cepat & handal</li>
                         <li><i class="bi bi-check2-circle text-primary me-2"></i>Pelatihan operator & pendampingan</li>
@@ -184,9 +187,9 @@
                 <img src="assets/img/layanan/produksi.jpeg" alt="Layanan 1">
                 <div class="service-content">
                     <h3>Produksi & Pabrikasi IPAL</h3>
-                    <p>Sebagai produsen sistem pengolahan limbah cair (IPAL), kami menyediakan solusi rekayasa teknologi
+                    <p>Sebagai produsen instalasi pengolahan limbah cair (IPAL), kami menyediakan solusi rekayasa teknologi
                         yang dirancang sesuai karakteristik dan kebutuhan proses setiap pelanggan. </p>
-                    <a href="{{route('produksi_pabrikasi_ipal')}}">Selengkapnya →</a>
+                    <a href="{{ route('produksi_pabrikasi_ipal') }}">Selengkapnya →</a>
                 </div>
             </div>
 
@@ -194,10 +197,9 @@
                 <img src="assets/img/layanan/konstruksi.png" alt="Layanan 2">
                 <div class="service-content">
                     <h3>Konstruksi & Pembangunan IPAL</h3>
-                    <p>Selain produksi unit, kami juga menangani pekerjaan konstruksi IPAL secara menyeluruh. Mulai dari layanan
-                        konstruksi kami mencakup pekerjaan sipil (civil work) seperti pembuatan bak pre-treatment, bak
+                    <p>Selain produksi unit, kami juga menangani pekerjaan konstruksi IPAL secara menyeluruh. Mencakup pekerjaan sipil (civil work) seperti pembuatan bak pre-treatment, bak
                         aerasi, sedimentasi, klorinasi, hingga struktur pondasi dan ruang mesin.</p>
-                    <a href="{{route('konstruksi_pembangunan')}}">Selengkapnya →</a>
+                    <a href="{{ route('konstruksi_pembangunan') }}">Selengkapnya →</a>
                 </div>
             </div>
 
@@ -207,7 +209,7 @@
                     <h3>Instalasi & Commissioning</h3>
                     <p>Setelah tahap produksi dan konstruksi, kami melanjutkan dengan instalasi dan commissioning untuk
                         memastikan IPAL siap beroperasi secara optimal.</p>
-                    <a href="{{route('instalasi')}}">Selengkapnya →</a>
+                    <a href="{{ route('instalasi') }}">Selengkapnya →</a>
                 </div>
             </div>
 
@@ -215,10 +217,10 @@
                 <img src="assets/img/layanan/maintenance.jpeg" alt="Layanan 4">
                 <div class="service-content">
                     <h3>Perawatan & Maintenance IPAL</h3>
-                    <p>Pengolahan air limbah membutuhkan pemeliharaan yang tepat agar sistem tetap berfungsi maksimal.
+                    <p>Dalam pengelolaan air limbah membutuhkan pemeliharaan yang tepat agar sistem tetap berfungsi maksimal.
                         Karena itu, kami menyediakan layanan operational & maintenance (O&M) untuk memastikan IPAL
                         pelanggan tetap bekerja dengan baik setiap hari. </p>
-                    <a href="{{route('perawatan')}}">Selengkapnya →</a>
+                    <a href="{{ route('perawatan') }}">Selengkapnya →</a>
                 </div>
             </div>
 

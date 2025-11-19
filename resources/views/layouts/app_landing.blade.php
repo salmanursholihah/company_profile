@@ -117,8 +117,8 @@
                     <div class="footer-contact pt-3">
                         <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Kec. Magelang Utara, Kota Magelang,
                             Jawa Tengah</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>081 3456 7890 235</span></p>
-                        <p><strong>Email:</strong> <span>info@example.com</span></p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>0831-1666-8809</span></p>
+                        <p><strong>Email:</strong> <span>ptutamacta@gmail.com</span></p>
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@
 
                 <div class="col-lg-4 col-md-12">
                     <h4>Follow Us</h4>
-                    <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                    <p>Reliable, Ecodable, and Reasonable</p>
                     <div class="social-links d-flex">
                         <a href="https://www.twitter.com"><i class="bi bi-twitter-x"></i></a>
                         <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>

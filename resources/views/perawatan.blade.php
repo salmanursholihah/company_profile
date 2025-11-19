@@ -1,41 +1,43 @@
      @extends('layouts.app_landing')
 
-   <br><br><br><br>
+     <br><br><br><br>
 
-    <main class="blog-content"
-        style="max-width:800px;margin:0 auto;padding:20px;line-height:1.8;color:#333;font-family:Arial, sans-serif;">
+     <main class="blog-content"
+         style="max-width:800px;margin:0 auto;padding:20px;line-height:1.8;color:#333;font-family:Arial, sans-serif;">
 
-        <h2 style="margin-bottom:15px;font-size:28px;color:#0056b3;font-weight:bold;">
-           Perawatan & Maintenance IPAL
-        </h2>
+         <h2 style="margin-bottom:15px;font-size:28px;color:#0056b3;font-weight:bold;">
+             Perawatan & Maintenance IPAL
+         </h2>
 
-          <p>Pengolahan air limbah membutuhkan pemeliharaan yang tepat agar sistem tetap berfungsi maksimal.
-              Karena itu, kami menyediakan layanan operational & maintenance (O&M) untuk memastikan IPAL
-              pelanggan tetap bekerja dengan baik setiap hari. Program perawatan kami mencakup:
+         <img src="assets/img/layanan/maintenance.jpeg" alt="Layanan 4" width="500" height="500">
 
-          </p>
+         <p>Pengolahan air limbah membutuhkan pemeliharaan yang tepat agar sistem tetap berfungsi maksimal.
+             Karena itu, kami menyediakan layanan operational & maintenance (O&M) untuk memastikan IPAL
+             pelanggan tetap bekerja dengan baik setiap hari. Program perawatan kami mencakup:
 
-          <p style="text-align:justify;margin-bottom:15px;">
+         </p>
 
-              Pemeriksaan berkala & monitoring kualitas efluen
+         <p style="text-align:justify;margin-bottom:15px;">
 
-              Preventive maintenance peralatan mekanikal & elektrikal
+             Pemeriksaan berkala & monitoring kualitas efluen
 
-              Perbaikan mesin (blower, pompa, aerator, panel kontrol, dll.)
+             Preventive maintenance peralatan mekanikal & elektrikal
 
-              Monitoring parameter BOD, COD, TSS, pH, minyak & lemak
+             Perbaikan mesin (blower, pompa, aerator, panel kontrol, dll.)
 
-              Sludge management (pengurasan lumpur)
+             Monitoring parameter BOD, COD, TSS, pH, minyak & lemak
 
-              Supply chemical & bakteri biodegrader
+             Sludge management (pengurasan lumpur)
 
-              Penanganan darurat (on-call troubleshooting)
+             Supply chemical & bakteri biodegrader
 
-          </p>
+             Penanganan darurat (on-call troubleshooting)
 
-          <p style="text-align:justify;margin-bottom:15px;">
-              Kami menyediakan paket perawatan bulanan, triwulanan hingga tahunan, yang dapat disesuaikan
-              dengan kebutuhan operasional pengguna. Dengan layanan maintenance yang konsisten, IPAL akan
-              tetap memenuhi baku mutu lingkungan, hemat biaya operasional, dan terhindar dari risiko
-              kerusakan sistem.</p>
-      </main>
+         </p>
+
+         <p style="text-align:justify;margin-bottom:15px;">
+             Kami menyediakan paket perawatan bulanan, triwulanan hingga tahunan, yang dapat disesuaikan
+             dengan kebutuhan operasional pengguna. Dengan layanan maintenance yang konsisten, IPAL akan
+             tetap memenuhi baku mutu lingkungan, hemat biaya operasional, dan terhindar dari risiko
+             kerusakan sistem.</p>
+     </main>
