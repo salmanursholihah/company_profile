@@ -73,6 +73,7 @@
                     <li><a href="{{ route('blog.index') }}">Blog</a></li>
                     <li><a href="{{ route('register') }}">sign up</a></li>
                     <li><a href="{{ route('login') }}">sign in</a></li>
+                    <li><a href="{{ route('testing') }}">Testing</a></li>
 
 
                     <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
