@@ -30,7 +30,7 @@
                             menghadirkan solusi yang komprehensif untuk pengelolaan limbah medis, limbah domestik, serta
                             limbah industri yang memenuhi standar regulasi lingkungan nasional, sesuai dengan PerMen
                             LHK.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <a href="{{route('about')}}" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -42,7 +42,7 @@
                             hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan dan kapabilitas pelanggan
                             yang mengacu kepada standar Permen LHK di Indonesia. sehingga menghasilkan limbah yang aman,
                             biaya yang efisien, dan fasilitas mudah dioperasikan.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <a href="{{route('about')}}" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -58,7 +58,7 @@
                             dampak pencemaran, serta membantu perusahaan mencapai efisiensi energi dan operasional
                             secara
                             lebih mudah dan berkelanjutan.</p>
-                        <a href="#about" class="btn-get-started">Read More</a>
+                        <a href="{{route('about')}}" class="btn-get-started">Read More</a>
                     </div>
                 </div><!-- End Carousel Item -->
 
@@ -387,7 +387,7 @@
                          "640": {
                              "slidesPerView": 4,
                              "spaceBetween": 80
-                       
+
                          }
                      }
                  }

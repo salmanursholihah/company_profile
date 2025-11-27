@@ -145,7 +145,7 @@
 
                 <div class="col-lg-4 col-md-12">
                     <h4>Follow Us</h4>
-                    <p>Reliable, Ecodable, and Reasonable</p>
+                    <p class="italic">Reliable, Ecodable, and Reasonable</p>
                     <div class="social-links d-flex">
                         <a href="https://www.twitter.com"><i class="bi bi-twitter-x"></i></a>
                         <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>

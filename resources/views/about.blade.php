@@ -122,26 +122,46 @@
 
                          <h5 class="fw-bold">Misi</h5>
                          <ul class="text-start">
-                            <li><p>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen lingkungan
-                                yang berkelanjutan</p></li>
-                            <li><p>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
-                                kendala operasional</p></li>
-                            <li><p>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang efektif
-                                dan berkualitas.</p></li>
-                            <li><p>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</p></li>
-                            <li><p>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku mutu
-                                lingkungan.</p></li>
-                            <li><p>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional IPAL.</p>
-                            </li>
-                            <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
-                                sistem IPAL.</li>
-                            <li><p>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
-                                teknis.</p></li>
-                            <li><p>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi sumber
-                                daya air.</p></li>
+                             <li>
+                                 <p>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen
+                                     lingkungan
+                                     yang berkelanjutan</p>
+                             </li>
+                             <li>
+                                 <p>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
+                                     kendala operasional</p>
+                             </li>
+                             <li>
+                                 <p>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang
+                                     efektif
+                                     dan berkualitas.</p>
+                             </li>
+                             <li>
+                                 <p>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</p>
+                             </li>
+                             <li>
+                                 <p>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku
+                                     mutu
+                                     lingkungan.</p>
+                             </li>
+                             <li>
+                                 <p>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional
+                                     IPAL.</p>
+                             </li>
+                             <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
+                                 sistem IPAL.</li>
+                             <li>
+                                 <p>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
+                                     teknis.</p>
+                             </li>
+                             <li>
+                                 <p>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi
+                                     sumber
+                                     daya air.</p>
+                             </li>
 
 
-                        </ul>
+                         </ul>
                          </ul>
                      </div>
                  </div>
@@ -156,6 +176,15 @@
      <section class="py-5 bg-light">
          <div class="container">
              <h2 class="fw-bold mb-4 text-center">Legalitas & Sertifikasi</h2>
+             <p>Klaim atas kualitas produk IPAL kami didukung oleh berbagai sertifikasi resmi yang memastikan performa,
+                 keamanan, dan mutu sesuai standar nasional maupun internasional. Setiap unit IPAL telah melalui
+                 serangkaian uji fungsi dan uji kualitas yang ketat, serta memperoleh pengakuan seperti sertifikasi ISO
+                 sebagai standar manajemen mutu, sertifikasi BSN yang menjamin kesesuaian terhadap Standar Nasional
+                 Indonesia, dan sertifikasi TKDN yang membuktikan besarnya kandungan komponen dalam negeri pada produk
+                 kami. Dengan kelengkapan sertifikasi tersebut, produk IPAL kami tidak hanya teruji handal dan efisien,
+                 tetapi juga memenuhi persyaratan regulasi, audit teknis, serta kebutuhan proyek pemerintah maupun
+                 swasta.</p>
+                 <br><br>
              <div class="accordion" id="legalitasAccordion">
                  <div class="accordion-item">
                      <h2 class="accordion-header">
@@ -309,28 +338,25 @@
                  }
                  </script>
                      <div class="swiper-wrapper align-items-center">
-                         <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/rumah_sakit.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/puskesmas.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/restoran.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/klinik.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/farmasi.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/laborat.jpeg" class="img-fluid"
                                  alt="">
                          </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid"
-                                 alt="">
-                         </div>
-                         <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid"
+                         <div class="swiper-slide"><img src="assets/img/clients/kimia.jpeg" class="img-fluid"
                                  alt="">
                          </div>
                      </div>
