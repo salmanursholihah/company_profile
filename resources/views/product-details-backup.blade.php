@@ -7,8 +7,8 @@
       <div class="page-title dark-background">
           <div class="container position-relative">
               <h1>Service Details</h1>
-              <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-                  molestias.</p>
+              Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
+                  molestias.
               <nav class="breadcrumbs">
                   <ol>
                       <li class="current">Home</li>

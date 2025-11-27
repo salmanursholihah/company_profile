@@ -50,8 +50,14 @@
                     @forelse ($products as $product)
                         <tr class="hover:bg-gray-50 transition">
                             <td class="px-4 py-3">
-                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-                                    class="w-14 h-14 rounded-lg object-cover border">
+                                @if($product->image && file_exists(public_path('storage/' . $product->image)))
+                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                                        class="w-14 h-14 rounded-lg object-cover border">
+                                @else
+                                    <div class="w-14 h-14 rounded-lg bg-gray-200 flex items-center justify-center border">
+                                        <span class="text-xs text-gray-400">No Image</span>
+                                    </div>
+                                @endif
                             </td>
                             <td class="px-4 py-3 font-medium">{{ $product->name }}</td>
                             <td class="px-4 py-3">{{ $product->kategori }}</td>

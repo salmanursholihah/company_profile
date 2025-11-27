@@ -7,7 +7,7 @@
        <div class="page-title dark-background">
            <div class="container position-relative">
                <h1>Portfolio</h1>
-               <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+               solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
                <nav class="breadcrumbs">
                    <ol>
                        <li class="current">Home</li>
@@ -535,6 +535,55 @@
                                    <h4>team</h4>
                                    <p></p>
                                    <a href="assets/img/portfolio/our-customer1.jpeg" title="team"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/teknis-4.JPG" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/teknis-4.JPG" title="team"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product4.JPG" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product4.JPG" title="team"
+                                       data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                           class="bi bi-zoom-in"></i></a>
+                                   <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                           class="bi bi-link-45deg"></i></a>
+                               </div>
+                           </div>
+                       </div><!-- End Portfolio Item -->
+
+
+
+                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                           <div class="portfolio-content h-100">
+                               <img src="assets/img/portfolio/product5.JPG" class="img-fluid" alt="">
+                               <div class="portfolio-info">
+                                   <h4>team</h4>
+                                   <p></p>
+                                   <a href="assets/img/portfolio/product5.JPG" title="team"
                                        data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                            class="bi bi-zoom-in"></i></a>
                                    <a href="portfolio-details.html" title="More Details" class="details-link"><i

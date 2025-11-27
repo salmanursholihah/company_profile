@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
   <div class="page-title dark-background">
     <div class="container position-relative">
       <h1>Product Catalog</h1>
-      <p>Solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+      Solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
       <nav class="breadcrumbs">
         <ol>
           <li class="current">Home</li>

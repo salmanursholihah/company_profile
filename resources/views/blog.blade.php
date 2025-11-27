@@ -7,7 +7,7 @@
        <div class="page-title dark-background">
            <div class="container position-relative">
                <h1>Blog</h1>
-               <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+               solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
                <nav class="breadcrumbs">
                    <ol>
                        <li class="current">Home</li>

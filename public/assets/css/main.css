@@ -14,6 +14,15 @@
 
 
 
+
+/*----------main untuk meratakan content------------------------------------*/
+
+ main p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        
 /*footer dan headder*/
 
 /*--------------------------------------------------------------

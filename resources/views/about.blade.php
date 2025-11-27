@@ -6,7 +6,7 @@
      <div class="page-title dark-background">
          <div class="container position-relative">
              <h1>About</h1>
-             <p>solusi terpercaya pengelolaan limbah cair yang ramah lingkungan</p>
+             solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
              <nav class="breadcrumbs">
                  <ol>
                      <li class="current">Home</li>
@@ -27,51 +27,55 @@
                      <a href="https://www.youtube.com/watch?v=HoDKTWGVqmw" class="glightbox pulsating-play-btn"></a>
                  </div>
                  <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                     <h3>Selayang pandang PT Utama Cipta Tata Asri</h3>
-                     <p class="fst-italic">
-
-                         PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak di bidang
-                         rekayasa lingkungan, dengan fokus utama pada pengolahan air limbah (Wastewater Treatment) dan
-                         sistem IPAL (Instalasi Pengolahan Air Limbah). Sebagai produsen IPAL terpercaya, kami
-                         menghadirkan rangkaian solusi pengolahan limbah yang inovatif, efisien, dan ramah lingkungan,
-                         mulai dari perencanaan desain, produksi instalasi, konstruksi, hingga operasional dan perawatan
-                         sistem.
-<br><br>
-                         Kami menyediakan solusi komprehensif bagi berbagai kebutuhan pengolahan limbah, mencakup:
-<br>
-                         - Limbah industri (makanan dan minuman, tekstil, kimia, farmasi, peternakan, dan manufaktur),
-<br>
-                         - Limbah medis (rumah sakit, klinik, laboratorium kesehatan, dan fasilitas kesehatan lainnya).
+                     <h3>Selayang pandang </h3>
+                     <p>
+                         PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak di bidang rekayasa
+                         lingkungan dengan fokus utama pada pengolahan air limbah (Wastewater Treatment) dan sistem IPAL
+                         (Instalasi Pengolahan Air Limbah). Sebagai produsen IPAL terpercaya, kami menghadirkan
+                         rangkaian solusi pengolahan limbah yang inovatif, efisien, dan ramah lingkungan. mencakup
+                         produksi, instalasi, konstruksi, operasional, hingga maintenance.
                          <br><br>
-
-                         Setiap sistem IPAL yang kami produksi mengikuti standar baku mutu lingkungan sesuai Peraturan
-                         Menteri Lingkungan Hidup dan Kehutanan (PerMen LHK) serta mengacu pada standar internasional
-                         seperti WHO dan EPA untuk memastikan hasil pengolahan limbah aman, stabil, dan tidak mencemari
-                         lingkungan.
-<br><br>
-                         Dengan pengalaman lebih dari 10 tahun dalam industri teknologi pengolahan limbah, PT Utama
-                         Cipta Tata Asri didukung oleh tenaga ahli profesional di bidang teknik lingkungan, teknik
-                         sipil, desain proses, dan instrumentasi. Komitmen kami adalah terus melakukan inovasi teknologi
-                         guna menghadirkan produk yang:
-
-                         Lebih efisien dalam penggunaan energi,
-
-                         Ramah lingkungan melalui penerapan proses biologi yang aman,
-
-                         Handal dan mudah dioperasikan,
-
-                         Berumur panjang dan minim biaya perawatan (low maintenance).
-                         <br><br><br>
-
-                         Selain memproduksi sistem IPAL, kami juga berperan sebagai mitra strategis bagi perusahaan,
+                         Kami menyediakan solusi komprehensif untuk berbagai sektor, antara lain:
+                         <br>
+                         - Limbah medis (rumah sakit, klinik, laboratorium kesehatan, dan fasilitas kesehatan lainnya),
+                         <br>
+                         - Limbah industri (makanan dan minuman, kimia, farmasi, peternakan, dan manufaktur).
+                         <br><br>
+                         Setiap unit IPAL yang kami produksi dikembangkan sesuai standar baku mutu lingkungan
+                         berdasarkan Peraturan Menteri Lingkungan Hidup dan Kehutanan (PerMen LHK), serta mengacu pada
+                         standar internasional seperti WHO dan EPA, guna memastikan hasil olahan limbah aman, stabil,
+                         dan tidak mencemari lingkungan.
+                         <br><br>
+                         Dengan pengalaman lebih dari 10 tahun dan dukungan tenaga ahli profesional, PT Utama Cipta Tata
+                         Asri terus berinovasi untuk menghadirkan produk yang efisien, ramah lingkungan, dan handal yang
+                         mendukung layanan medis agar lebih aman dan berkelanjutan.
+                         <br><br>
+                         Sebagai bentuk komitmen kami terhadap kualitas, PT Utama Cipta Tata Asri mengimplementasikan
+                         filosofi Reliable, Ecolable, and Reasonable dalam seluruh proses pengembangan produk.
+                         <br><br>
+                         - Reliable: Sistem IPAL dirancang dengan tingkat kehandalan tinggi, mampu beroperasi secara
+                         konsisten selama 24 jam tanpa memerlukan pendampingan operator yang stand by.
+                         <br><br>
+                         - Ecolable: Hasil kerja produk kami terbukti ramah lingkungan karena tidak menggunakan bahan
+                         kimia berbahaya dalam proses pengolahannya, sehingga aman bagi operator maupun lingkungan.
+                         Sebagai gantinya, kami menerapkan system Osmosis(oksidasi ozon) yang mampu meniru proses alami
+                         dalam pengolahan air, menghasilkan kualitas air olahan yang lebih stabil, aman, dan memenuhi
+                         standar baku mutu.
+                         <br><br>
+                         - Reasonable: Setiap produk dikembangkan untuk mencapai efisiensi maksimal dengan biaya
+                         operasional yang rendah, membantu perusahaan mencapai target efisiensi tanpa mengorbankan
+                         kualitas.
+                         <br><br>
+                         Selain menjadi produsen IPAL, kami juga berperan sebagai mitra strategis bagi perusahaan,
                          pemerintah daerah, dan lembaga kesehatan dalam mewujudkan pengelolaan limbah yang sesuai
                          regulasi dan berkelanjutan. Produk dan layanan kami dirancang untuk mendukung implementasi
-                         prinsip kesehatan lingkungan, keamanan operasional, dan tanggung jawab sosial lingkungan (CSR).
-<br><br>
+                         kesehatan lingkungan, keamanan operasional, serta tanggung jawab sosial perusahaan (CSR).
+                         <br><br>
                          Kami meyakini bahwa ketersediaan air bersih dan lingkungan yang sehat adalah kebutuhan
-                         fundamental untuk keberlangsungan hidup manusia dan masa depan generasi berikutnya. Oleh karena
-                         itu, kami berkomitmen untuk terus menghadirkan solusi rekayasa lingkungan yang memberikan
-                         manfaat nyata, berdaya guna, dan berorientasi masa depan
+                         fundamental bagi keberlangsungan hidup manusia dan masa depan generasi berikutnya. Oleh karena
+                         itu, PT Utama Cipta Tata Asri berkomitmen untuk terus menghadirkan solusi rekayasa lingkungan
+                         yang memberikan manfaat nyata, berdaya guna, dan berorientasi masa depan.
+
                      </p>
                      <!-- <ul>
                          <li><i class="bi bi-check2-all"></i> <span>Instalasi cepat & handal.</span></li>
@@ -92,57 +96,59 @@
 
      </section><!-- /About Section -->
 
-    <!--visi misi-->
-    <section class="section py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="zoom-in">
-                    <div class="card border-0 shadow h-100 p-4">
-                        <br>
-                        <i class="fa-solid fa-eye fa-2xl text-primary"></i>
-                        <br>
-                        <h5 class="fw-bold">Visi</h5>
-                        {{-- <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan Dengan
+     <!--visi misi-->
+     <section class="section py-5">
+         <div class="container text-center">
+             <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
+             <div class="row g-4">
+                 <div class="col-md-6" data-aos="zoom-in">
+                     <div class="card border-0 shadow h-100 p-4">
+                         <br>
+                         <i class="fa-solid fa-eye fa-2xl text-primary"></i>
+                         <br>
+                         <h5 class="fw-bold">Visi</h5>
+                         {{-- <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan Dengan
                             kualitas terbaik.</p> --}}
-                        <p>Menjadi perusahaan penyedia layanan pengelolaan air limbah yang inovatif, tepercaya, dan
-                            berkelanjutan dengan kualitas terbaik.</p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card border-0 shadow h-100 p-4">
-                        <br>
-                        <i class="fa-solid fa-lightbulb fa-2xl display-5 text-success mb-3" style="color: #ffc107;"></i>
-                        <br>
+                         <p>Menjadi perusahaan penyedia layanan pengelolaan air limbah yang inovatif, tepercaya, dan
+                             berkelanjutan dengan kualitas terbaik.</p>
+                     </div>
+                 </div>
+                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                     <div class="card border-0 shadow h-100 p-4">
+                         <br>
+                         <i class="fa-solid fa-lightbulb fa-2xl display-5 text-success mb-3"
+                             style="color: #ffc107;"></i>
+                         <br>
 
-                        <h5 class="fw-bold">Misi</h5>
-                        <ul class="text-start">
-                            <li>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen lingkungan
-                                yang berkelanjutan</li>
-                            <li>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
-                                kendala operasional</li>
-                            <li>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang efektif
-                                dan berkualitas.</li>
-                            <li>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</li>
-                            <li>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku mutu
-                                lingkungan.</li>
-                            <li>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional IPAL.
+                         <h5 class="fw-bold">Misi</h5>
+                         <ul class="text-start">
+                            <li><p>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen lingkungan
+                                yang berkelanjutan</p></li>
+                            <li><p>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
+                                kendala operasional</p></li>
+                            <li><p>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang efektif
+                                dan berkualitas.</p></li>
+                            <li><p>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</p></li>
+                            <li><p>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku mutu
+                                lingkungan.</p></li>
+                            <li><p>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional IPAL.</p>
                             </li>
                             <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
                                 sistem IPAL.</li>
-                            <li>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
-                                teknis.</li>
-                            <li>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi sumber
-                                daya air.</li>
+                            <li><p>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
+                                teknis.</p></li>
+                            <li><p>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi sumber
+                                daya air.</p></li>
 
 
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--end visi misi-->
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <!--end visi misi-->
 
 
 
@@ -335,7 +341,7 @@
          </section><!-- /Clients Section -->
 
          <!-- Testimonials Section -->
-         <section id="testimonials" class="testimonials section">
+         {{-- <section id="testimonials" class="testimonials section">
 
              <!-- Section Title -->
              <div class="container section-title" data-aos="fade-up">
@@ -503,5 +509,5 @@
              </div>
 
          </section><!-- /Testimonials Section -->
-
+ --}}
  </main>

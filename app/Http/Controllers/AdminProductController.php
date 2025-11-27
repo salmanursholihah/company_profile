@@ -21,20 +21,24 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'kategori' => 'required',
-            'deskripsi' => 'required',
-            'price' => 'required',
+            'name' => 'required|string|max:255',
+            'kategori' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'price' => 'required|numeric',
             'discount' => 'nullable|numeric',
             'stok' => 'required|integer',
-            'lokasi' => 'required',
-            'status' => 'required',
+            'lokasi' => 'required|string|max:255',
+            'status' => 'required|string',
             'image' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->all();
+        // Only take the fields we expect to avoid mass-assignment issues
+        $data = $request->only([
+            'name', 'kategori', 'deskripsi', 'price', 'discount', 'stok', 'lokasi', 'status'
+        ]);
 
         if ($request->hasFile('image')) {
+            // store on the public disk under "products" directory
             $data['image'] = $request->file('image')->store('products', 'public');
         }
 
@@ -79,4 +83,5 @@ class AdminProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil dihapus');
     }
 }
+
 
