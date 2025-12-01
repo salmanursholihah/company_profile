@@ -130,4 +130,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::middleware('role:vendor')->group(function () {
         Route::resource('product_vendor', AdminProductVendorController::class);
     });
+
+    ////profile
+    Route::resource('admin_profile', AdminProfileController::class);
 });
+
+
