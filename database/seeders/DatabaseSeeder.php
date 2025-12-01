@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\Abouts;
+use Database\Seeders\FooterSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +18,18 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin123'),
         ]);
+
+
+        $this->call([
+            abouts::class,
+        ]);
+        $this->call([
+            FooterSeed::class,
+        ]);
+
     }
 }

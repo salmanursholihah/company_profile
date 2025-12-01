@@ -36,8 +36,7 @@
                       <div class="member-info text-center">
                           <h4>Dwi dora Nurul Arifah</h4>
                           <span>Accountant</span>
-                          <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio
-                              dire flow</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -54,8 +53,7 @@
                       <div class="member-info text-center">
                           <h4>Rudi Hartono</h4>
                           <span>BM</span>
-                          <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores
-                              exercitationem ut</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -72,8 +70,7 @@
                       <div class="member-info text-center">
                           <h4>Mattsania aulan Nati Jati</h4>
                           <span>auditor</span>
-                          <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque
-                              sed facilis at qui</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -90,8 +87,7 @@
                       <div class="member-info text-center">
                           <h4>Diesta Ayu Lia Maharani</h4>
                           <span>Radiografer</span>
-                          <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi
-                              quam consectetur</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -108,8 +104,7 @@
                       <div class="member-info text-center">
                           <h4>Abi Damar Jati</h4>
                           <span>Sistem  Administrasi</span>
-                          <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus
-                              quia impedit laborum velit</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -126,8 +121,7 @@
                       <div class="member-info text-center">
                           <h4>Dicky Zidane Maulana</h4>
                           <span>Operation</span>
-                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
-                              eligendi cupiditate vel</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -144,8 +138,7 @@
                       <div class="member-info text-center">
                           <h4>Atsna Fathanu Nizar</h4>
                           <span>Arsitek</span>
-                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
-                              eligendi cupiditate vel</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -162,8 +155,7 @@
                       <div class="member-info text-center">
                           <h4>Salma NurSholihah</h4>
                           <span>Web Dev</span>
-                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
-                              eligendi cupiditate vel</p>
+
                       </div>
                   </div><!-- End Team Member -->
 
@@ -180,8 +172,7 @@
                       <div class="member-info text-center">
                           <h4>Nasirudin</h4>
                           <span>.....</span>
-                          <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit
-                              eligendi cupiditate vel</p>
+                          
                       </div>
                   </div><!-- End Team Member -->
 

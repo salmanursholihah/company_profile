@@ -172,10 +172,10 @@
 
 
 
-     <!-- Legalitas Accordion -->
+     <!-- legalitas Accordion -->
      <section class="py-5 bg-light">
          <div class="container">
-             <h2 class="fw-bold mb-4 text-center">Legalitas & Sertifikasi</h2>
+             <h2 class="fw-bold mb-4 text-center">legalitas & Sertifikasi</h2>
              <p>Klaim atas kualitas produk IPAL kami didukung oleh berbagai sertifikasi resmi yang memastikan performa,
                  keamanan, dan mutu sesuai standar nasional maupun internasional. Setiap unit IPAL telah melalui
                  serangkaian uji fungsi dan uji kualitas yang ketat, serta memperoleh pengakuan seperti sertifikasi ISO
@@ -184,7 +184,7 @@
                  kami. Dengan kelengkapan sertifikasi tersebut, produk IPAL kami tidak hanya teruji handal dan efisien,
                  tetapi juga memenuhi persyaratan regulasi, audit teknis, serta kebutuhan proyek pemerintah maupun
                  swasta.</p>
-                 <br><br>
+             <br><br>
              <div class="accordion" id="legalitasAccordion">
                  <div class="accordion-item">
                      <h2 class="accordion-header">
@@ -205,7 +205,7 @@
                      <h2 class="accordion-header">
                          <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
                              data-bs-target="#legalitas">
-                             Legalitas
+                             legalitas
                          </button>
                      </h2>
                      <div id="legalitas" class="accordion-collapse collapse show" data-bs-parent="#legalitasAccordion">
