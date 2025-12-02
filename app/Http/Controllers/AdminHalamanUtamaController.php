@@ -40,7 +40,7 @@ class AdminHalamanUtamaController extends Controller
                         ->with('success', 'Data berhasil ditambahkan.');
     }
 
-   
+
     public function edit($id)
 {
     $halaman_utama = HalamanUtama::findOrFail($id);

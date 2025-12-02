@@ -12,7 +12,7 @@
 
         <div>
             <label class="block font-medium mb-1">Nama Produk</label>
-            <input type="text" name="name" value="{{ old('name', $katalog->name) }}" 
+            <input type="text" name="name" value="{{ old('name', $katalog->name) }}"
                 class="w-full border rounded-lg px-3 py-2 @error('name') border-red-500 @enderror">
             @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
         </div>

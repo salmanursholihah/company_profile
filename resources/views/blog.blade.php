@@ -1,4 +1,4 @@
-   @extends('layouts.app_landing')
+   {{-- @extends('layouts.app_landing')
 
 
    <main class="main">
@@ -211,4 +211,79 @@
 
        </section><!-- /Blog Pagination Section -->
 
-   </main>
+   </main> --}}
+
+
+
+   @extends('layouts.app_landing')
+
+@section('content')
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+        <div class="container position-relative">
+            <h1>Blog</h1>
+            solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
+            <nav class="breadcrumbs">
+                <ol>
+                    <li class="current">Home</li>
+                    <li class="current">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+        <div class="container">
+            <div class="row gy-4">
+
+                @foreach ($blogs as $blog)
+                <div class="col-lg-4">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="{{ asset('storage/' . $blog->thumbnail) }}" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">{{ $blog->category }}</p>
+
+                        <h2 class="title">
+                            <a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('storage/' . $blog->author_image) }}"
+                                 class="img-fluid post-author-img flex-shrink-0"
+                                 alt="">
+
+                            <div class="post-meta">
+                                <p class="post-author">{{ $blog->author_name }}</p>
+                                <p class="post-date">
+                                    <time datetime="{{ $blog->published_at }}">
+                                        {{ \Carbon\Carbon::parse($blog->published_at)->format('M d, Y') }}
+                                    </time>
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Pagination -->
+    <section id="blog-pagination" class="blog-pagination section">
+        <div class="container d-flex justify-content-center">
+            {{ $blogs->links() }}
+        </div>
+    </section>
+
+</main>
+
+@endsection

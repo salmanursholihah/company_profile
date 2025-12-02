@@ -22,7 +22,35 @@
             text-justify: inter-word;
         }
 
-        
+/*
+        .expandable-services .accordion-button {
+    font-weight: 600;
+}
+
+.expandable-services .sub-btn {
+    background: #f8f9fa;
+    padding-left: 30px;
+}
+
+.expandable-services .accordion-body p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.expandable-services .btn-primary {
+    border-radius: 8px;
+    padding: 5px 15px;
+} */
+
+
+    .card:hover {
+        transform: translateY(-4px);
+        transition: 0.3s ease;
+        box-shadow: 0 20px 35px rgba(0,0,0,0.08) !important;
+    }
+
+
+
 /*footer dan headder*/
 
 /*--------------------------------------------------------------
@@ -3025,7 +3053,7 @@ section,
 
 
     /*style katalog*/
-   
+
     .catalog {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

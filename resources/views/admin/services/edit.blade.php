@@ -3,7 +3,7 @@
 @section('content')
 <h3>Edit Layanan</h3>
 
-<form action="{{ route('services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('admin.services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -21,6 +21,10 @@
         <label>Gambar</label><br>
         <img src="{{ asset('storage/' . $service->image) }}" width="150">
         <input type="file" name="image" class="form-control mt-2">
+    </div>
+    <div class="mb-3">
+        <label>Link</label>
+        <input type="url" name="link" value="{{ $service->link }}" class="form-control">
     </div>
 
     <button class="btn btn-primary">Update</button>

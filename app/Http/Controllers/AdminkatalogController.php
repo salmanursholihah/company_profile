@@ -7,7 +7,7 @@ use App\Models\Katalog;
 
 class AdminkatalogController extends Controller
 {
- 
+
     public function index()
 {
     $katalogs = Katalog::paginate(10); // tampilkan 10 data per halaman
@@ -24,26 +24,27 @@ class AdminkatalogController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'deskripsi' => 'required',
-            'company' => 'required',
-            'image' => 'nullable|image|max:2048',
-        ]);
+{
+    $request->validate([
+        'name' => 'required',
+        'deskripsi' => 'required',
+        'company' => 'required',
+        'image' => 'nullable|image|max:2048',
+    ]);
 
-        $data = $request->all();
+    $data = $request->except('_token');
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('katalogs', 'public');
-        }
-
-        Katalog::create($data);
-
-        return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil ditambahkan');
+    if ($request->hasFile('image')) {
+        $data['image'] = $request->file('image')->store('katalogs', 'public');
     }
 
-    public function edit(Katalog $katalog)
+    Katalog::create($data);
+
+    return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil ditambahkan');
+}
+
+
+public function edit(Katalog $katalog)
     {
         return view('admin.katalogs.edit', compact('katalog'));
     }

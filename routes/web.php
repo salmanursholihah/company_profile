@@ -21,13 +21,14 @@ use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminFooterController;
 use App\Http\Controllers\AdminlegalitasController;
 use App\Http\Controllers\AdminTeamController;
+use App\Http\Controllers\LandingController;
 /*
 |--------------------------------------------------------------------------
 | FRONTEND ROUTES
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', fn() => view('index'))->name('index');
+Route::get('/', [LandingController::class, 'index'])->name('index');
 Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/portfolio', fn() => view('portfolio'))->name('portfolio');
 Route::get('/produksi_pabrikasi_ipal', fn() => view('produksi_pabrikasi_ipal'))->name('produksi_pabrikasi_ipal');

@@ -1,4 +1,4 @@
-   @extends('layouts.app_landing')
+   {{-- @extends('layouts.app_landing')
   <main class="main">
 
     <!-- Page Title -->
@@ -363,4 +363,158 @@
     </div>
 
   </main>
+ --}}
 
+
+ @extends('layouts.app_landing')
+
+@section('content')
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+        <div class="container position-relative">
+            <h1>{{ $blog->title }}</h1>
+            {{ Str::limit(strip_tags($blog->content), 150) }}
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="{{ route('blog.index') }}">Home</a></li>
+                    <li class="current">Blog Details</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- BLOG CONTENT -->
+            <div class="col-lg-8">
+
+                <section id="blog-details" class="blog-details section">
+                    <div class="container">
+
+                        <article class="article">
+
+                            <div class="post-img">
+                                <img src="{{ asset('storage/' . $blog->thumbnail) }}" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="title">{{ $blog->title }}</h2>
+
+                            <div class="meta-top">
+                                <ul>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i>
+                                        <a href="#">{{ $blog->author_name }}</a>
+                                    </li>
+
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-clock"></i>
+                                        <a href="#">
+                                            <time datetime="{{ $blog->published_at }}">
+                                                {{ \Carbon\Carbon::parse($blog->published_at)->format('M d, Y') }}
+                                            </time>
+                                        </a>
+                                    </li>
+
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-folder"></i>
+                                        <a href="#">{{ $blog->category }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- BLOG CONTENT -->
+                            <div class="content">
+                                {!! $blog->content !!}
+                            </div>
+
+                            <div class="meta-bottom">
+                                <i class="bi bi-tags"></i>
+                                <ul class="tags">
+                                    <li><a href="#">{{ $blog->category }}</a></li>
+                                </ul>
+                            </div>
+
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- COMMENTS (STATIC / OPTIONAL) -->
+                @include('landing.blog.partials.comments')
+
+                <!-- COMMENT FORM (STATIC) -->
+                @include('landing.blog.partials.comment-form')
+
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="col-lg-4 sidebar">
+
+                <div class="widgets-container">
+
+                    <!-- BLOG AUTHOR WIDGET -->
+                    <div class="blog-author-widget widget-item">
+                        <div class="d-flex flex-column align-items-center">
+
+                            <img src="{{ asset('storage/' . $blog->author_image) }}" class="rounded-circle flex-shrink-0" alt="">
+
+                            <h4>{{ $blog->author_name }}</h4>
+
+                            <p>
+                                Penulis konten di {{ config('app.name') }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH WIDGET -->
+                    <div class="search-widget widget-item">
+                        <h3 class="widget-title">Search</h3>
+                        <form action="">
+                            <input type="text">
+                            <button type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- RECENT POSTS WIDGET -->
+                    <div class="recent-posts-widget widget-item">
+
+                        <h3 class="widget-title">Recent Posts</h3>
+
+                        @foreach ($recentPosts as $post)
+                        <div class="post-item">
+                            <img src="{{ asset('storage/' . $post->thumbnail) }}" class="flex-shrink-0" alt="">
+                            <div>
+                                <h4><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h4>
+                                <time datetime="{{ $post->published_at }}">
+                                    {{ \Carbon\Carbon::parse($post->published_at)->format('M d, Y') }}
+                                </time>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+
+                    <!-- TAGS (optional static) -->
+                    <div class="tags-widget widget-item">
+                        <h3 class="widget-title">Tags</h3>
+                        <ul>
+                            <li><a href="#">IT</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Creative</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+@endsection

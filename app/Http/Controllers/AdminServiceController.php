@@ -43,7 +43,7 @@ class AdminServiceController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
-
+            
             if ($service->image) {
                 Storage::disk('public')->delete($service->image);
             }

@@ -11,7 +11,7 @@
 
         <div>
             <label class="block font-medium mb-1">Nama Produk</label>
-            <input type="text" name="name" value="{{ old('name') }}" 
+            <input type="text" name="name" value="{{ old('name') }}"
                 class="w-full border rounded-lg px-3 py-2 @error('name') border-red-500 @enderror">
             @error('name') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
         </div>
@@ -19,16 +19,16 @@
 
         <div>
             <label class="block font-medium mb-1">Deskripsi</label>
-            <textarea name="deskripsi" rows="4" 
+            <textarea name="deskripsi" rows="4"
                 class="w-full border rounded-lg px-3 py-2 @error('deskripsi') border-red-500 @enderror">{{ old('deskripsi') }}</textarea>
             @error('deskripsi') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
         </div>
 
-    
+
 
      <div>
             <label class="block font-medium mb-1">Company</label>
-            <input type="text" name="company" value="{{ old('company') }}" 
+            <input type="text" name="company" value="{{ old('company') }}"
                 class="w-full border rounded-lg px-3 py-2 @error('company') border-red-500 @enderror">
             @error('company') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
         </div>
@@ -44,3 +44,5 @@
     </form>
 </div>
 @endsection
+
+

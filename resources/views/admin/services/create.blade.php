@@ -16,9 +16,13 @@
         <textarea name="description" class="form-control" rows="4"></textarea>
     </div>
 
+        <div class="mb-3">
+            <label>Gambar</label>
+            <input type="file" name="image" class="form-control">
+        </div>
     <div class="mb-3">
-        <label>Gambar</label>
-        <input type="file" name="image" class="form-control">
+        <label>Link</label>
+        <input type="url" name="link" class="form-control">
     </div>
 
     <button class="btn btn-primary">Simpan</button>
