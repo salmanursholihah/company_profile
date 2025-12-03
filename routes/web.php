@@ -26,7 +26,7 @@ Route::get('/instalasi', fn() => view('instalasi'))->name('instalasi');
 Route::get('/konstruksi_pembangunan', fn() => view('konstruksi_pembangunan'))->name('konstruksi_pembangunan');
 Route::get('/team', fn() => view('team'))->name('team');
 Route::get('/backend', fn() => view('backend'))->name('backend');
-Route::get('/testing', fn() => view('testing'))->name('testing');
+// Route::get('/testing', fn() => view('testing'))->name('testing');
 // Blog
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
