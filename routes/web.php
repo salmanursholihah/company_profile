@@ -22,6 +22,10 @@ use App\Http\Controllers\AdminFooterController;
 use App\Http\Controllers\AdminlegalitasController;
 use App\Http\Controllers\AdminTeamController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\AdminPortfolioController;
+use App\Http\Controllers\PortfolioController;
+
 /*
 |--------------------------------------------------------------------------
 | FRONTEND ROUTES
@@ -30,12 +34,14 @@ use App\Http\Controllers\LandingController;
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
 Route::get('/about', fn() => view('about'))->name('about');
-Route::get('/portfolio', fn() => view('portfolio'))->name('portfolio');
+// Route::get('/portfolio', fn() => view('portfolio'))->name('portfolio');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/produksi_pabrikasi_ipal', fn() => view('produksi_pabrikasi_ipal'))->name('produksi_pabrikasi_ipal');
 Route::get('/perawatan', fn() => view('perawatan'))->name('perawatan');
 Route::get('/instalasi', fn() => view('instalasi'))->name('instalasi');
 Route::get('/konstruksi_pembangunan', fn() => view('konstruksi_pembangunan'))->name('konstruksi_pembangunan');
-Route::get('/team', fn() => view('team'))->name('team');
+// Route::get('/team', fn() => view('team'))->name('team');
+Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/backend', fn() => view('backend'))->name('backend');
 
 /* Blog */
@@ -95,6 +101,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         Route::view('/contacts', 'admin.contacts.index')->name('admin.contacts.index');
         Route::view('/admin_profiles', 'admin.profile.admin_profile')->name('admin.profile.admin_profile');
         Route::view('/setting', 'admin.setting')->name('admin.setting');
+
     });
 
     /* VENDOR ONLY — VIEW PAGES */
@@ -138,6 +145,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
         'legalitas' => 'legalitas'
         ]);
         route::resource('team', AdminTeamController::class);
+        route::resource('portfolio', AdminPortfolioController::class);
     });
 
     /* VENDOR CRUD */
