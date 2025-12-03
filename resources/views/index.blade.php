@@ -527,38 +527,6 @@
 
 
 
-    <div class="catalog">
-        @foreach ($katalogs as $katalog)
-            <div class="product-card">
-
-                {{-- Image --}}
-                @if ($item->image)
-                    <img src="{{ asset('storage/' . $item->image) }}" class="img-fluid" alt="katalog">
-                @else
-                    <img src="{{ asset('assets/img/no-image.png') }}" class="img-fluid" alt="no image">
-                @endif
-
-                {{-- Title --}}
-                <div class="product-title">{{ $katalog->name }}</div>
-
-                {{-- Location --}}
-                <div class="location">{{ $katalog->lokasi ?? 'Indonesia' }}</div>
-
-                {{-- Buttons --}}
-                <div class="btn-group">
-                    <a href="https://wa.me/{{ $katalog->whatsapp ?? '6281234567890' }}" class="btn">
-                        <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
-                    </a>
-
-                    <a href="{{ $katalog->link_toko ?? 'https://id.shp.ee/ZS6izam' }}" class="btnn">
-                        <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
-                    </a>
-                </div>
-            </div>
-        @endforeach
-    </div>
-
-
     <!-- Clients Section -->
     <section id="clients" class="clients section">
 
