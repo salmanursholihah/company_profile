@@ -3,7 +3,7 @@
 @section('content')
 <h2>Create Blog</h2>
 
-<form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('admin.blogs.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="mb-3">

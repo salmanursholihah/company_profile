@@ -2,21 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Katalog;
+use Illuminate\Http\Request;
 
 class AdminkatalogController extends Controller
 {
-
     public function index()
-{
-    $katalogs = Katalog::paginate(10); // tampilkan 10 data per halaman
-    return view('admin.katalogs.index', compact('katalogs'));
-}
-
-
-
-
+    {
+        $katalogs = Katalog::latest()->get();
+        return view('admin.katalogs.index', compact('katalogs'));
+    }
 
     public function create()
     {
@@ -24,27 +19,27 @@ class AdminkatalogController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required',
-        'deskripsi' => 'required',
-        'company' => 'required',
-        'image' => 'nullable|image|max:2048',
-    ]);
+    {
+        $request->validate([
+            'name'      => 'required',
+            'deskripsi' => 'required',
+            'company'   => 'required',
+            'image'     => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
 
-    $data = $request->except('_token');
+        $imagePath = $request->file('image')->store('katalog', 'public');
 
-    if ($request->hasFile('image')) {
-        $data['image'] = $request->file('image')->store('katalogs', 'public');
+        Katalog::create([
+            'name'      => $request->name,
+            'deskripsi' => $request->deskripsi,
+            'company'   => $request->company,
+            'image'     => $imagePath,
+        ]);
+
+        return redirect()->route('admin.katalogs.index')->with('success', 'Katalog berhasil ditambahkan');
     }
 
-    Katalog::create($data);
-
-    return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil ditambahkan');
-}
-
-
-public function edit(Katalog $katalog)
+    public function edit(Katalog $katalog)
     {
         return view('admin.katalogs.edit', compact('katalog'));
     }
@@ -52,29 +47,31 @@ public function edit(Katalog $katalog)
     public function update(Request $request, Katalog $katalog)
     {
         $request->validate([
-            'name' => 'required',
+            'name'      => 'required',
             'deskripsi' => 'required',
-            'company' => 'required',
-            'image' => 'nullable|image|max:2048',
+            'company'   => 'required',
+            'image'     => 'sometimes|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
-        $data = $request->all();
+        $data = $request->only(['name','deskripsi','company']);
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('katalogs', 'public');
+            $data['image'] = $request->file('image')->store('katalog', 'public');
         }
 
         $katalog->update($data);
 
-        return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil diperbarui');
+        return redirect()->route('admin.katalogs.index')->with('success', 'Katalog berhasil diperbarui');
     }
 
     public function destroy(Katalog $katalog)
     {
         $katalog->delete();
-        return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil dihapus');
+        return redirect()->route('admin.katalogs.index')->with('success', 'Katalog berhasil dihapus');
     }
+  public function show(Katalog $katalog)
+{
+    return abort(404);
 }
 
-
-
+}

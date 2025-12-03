@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\HalamanUtama;
 use App\Models\VisiMisi;
 use App\Models\Service;
 use App\Models\Team;
@@ -14,6 +15,7 @@ class LandingController extends Controller
     public function index()
     {
   $about = About::first();
+  $halaman_utama = HalamanUtama::all();
 
     $aboutPreview = $about
         ? Str::limit(strip_tags($about->description), 993, '...')
@@ -35,7 +37,8 @@ class LandingController extends Controller
             'layanan',
             'services',
             'katalogs',
-            'teams'
+            'teams',
+            'halaman_utama'
         ));
     }
 }

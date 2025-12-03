@@ -33,7 +33,8 @@ use App\Http\Controllers\PortfolioController;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
-Route::get('/about', fn() => view('about'))->name('about');
+// Route::get('/about', fn() => view('about'))->name('about');
+route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 // Route::get('/portfolio', fn() => view('portfolio'))->name('portfolio');
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('/produksi_pabrikasi_ipal', fn() => view('produksi_pabrikasi_ipal'))->name('produksi_pabrikasi_ipal');

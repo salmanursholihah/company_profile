@@ -7,76 +7,40 @@
 <main class="main">
 
 
-    <!--hero section -->
     <section id="hero" class="hero section dark-background">
 
-        <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
+    <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-        <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="container position-relative">
 
-            <div class="container position-relative">
-
-                <div class="carousel-item active">
+            @foreach ($halaman_utama as $index => $halaman_utama)
+                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                     <div class="carousel-container">
-                        <h2>PT Utama Cipta Tata Asri</h2>
-                        {{-- <p>Solusi Pengolahan Air Limbah Terpercaya
-                            Kami adalah perusahaan yang bergerak di bidang perencanaan, pembangunan, dan pengelolaan
-                            Instalasi Pengolahan Air Limbah (IPAL). Dengan standar teknologi ramah lingkungan dan hasil
-                            yang terukur, kami membantu industri, perumahan, rumah sakit, dan pemerintahan dalam
-                            mewujudkan pengelolaan limbah yang aman dan berkelanjutan.</p> --}}
-                        <p>Kami adalah perusahaan manufaktur yang bergerak dalam bidang rekayasa lingkungan pengelolaan
-                            limbah, khususnya limbah cair. kami merupakan produsen ipal (instalasi pengolahan air
-                            limbah) yang inovatif, efisien, dan ramah lingkungan.
-                            menghadirkan solusi yang komprehensif untuk pengelolaan limbah medis, limbah domestik, serta
-                            limbah industri yang memenuhi standar regulasi lingkungan nasional, sesuai dengan PerMen
-                            LHK.</p>
+                        <h2>{{ $halaman_utama->headline }}</h2>
+
+                        <p>{!! nl2br(e($halaman_utama->sub_headline)) !!}</p>
+
                         <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
                     </div>
-                </div><!-- End Carousel Item -->
+                </div>
+            @endforeach
 
-                <div class="carousel-item">
-                    <div class="carousel-container">
-                        <h2>Instalasi & Maintenance IPAL</h2>
-                        <p> Menyediakan layanan lengkap mulai dari Pengadaan, konstruksi, instalasi alat, uji kualitas
-                            air,
-                            hingga perawatan berkala. Setiap sistem dirancang sesuai kebutuhan dan kapabilitas pelanggan
-                            yang mengacu kepada standar Permen LHK di Indonesia. sehingga menghasilkan limbah yang aman,
-                            biaya yang efisien, dan fasilitas mudah dioperasikan.</p>
-                        <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
-                    </div>
-                </div><!-- End Carousel Item -->
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
 
-                <div class="carousel-item">
-                    <div class="carousel-container">
-                        <h2>Reliable, Ecolable, and Reasonable</h2>
-                        <p>
-                            Dengan motto Reliable, Ecolable, and Reasonable, kami menghadirkan solusi pengolahan limbah
-                            cair
-                            yang bekerja secara otomatis tanpa pendampingan operator yang harus stand by, ramah
-                            lingkungan,
-                            dan hemat biaya. Produk-produk kami dirancang untuk beroperasi sepanjang waktu, mengurangi
-                            dampak pencemaran, serta membantu perusahaan mencapai efisiensi energi dan operasional
-                            secara
-                            lebih mudah dan berkelanjutan.</p>
-                        <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
-                    </div>
-                </div><!-- End Carousel Item -->
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
 
-                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-                </a>
-
-                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-                </a>
-
-                <ol class="carousel-indicators"></ol>
-
-            </div>
+            <ol class="carousel-indicators"></ol>
 
         </div>
 
-    </section><!-- /Hero Section -->
+    </div>
+
+</section>
+
 
     {{-- About Section (safe) --}}
     @if (isset($about) && $about)
@@ -466,11 +430,7 @@
                         'title' => '60m3',
                         'location' => 'Magelang, Indonesia',
                     ],
-                    [
-                        'img' => '80m3.jpg',
-                        'title' => '80m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
+    
                     [
                         'img' => 'IPAL 100m3.png',
                         'title' => 'IPAL 100m3',

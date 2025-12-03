@@ -22,11 +22,11 @@
          <div class="container">
 
              <div class="row gy-4">
-                 <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+                 {{-- <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                      <img src="assets/img/team2.jpeg" class="img-fluid" alt="">
                      <a href="https://www.youtube.com/watch?v=HoDKTWGVqmw" class="glightbox pulsating-play-btn"></a>
-                 </div>
-                 <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+                 </div> --}}
+                 {{-- <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
                      <h3>Selayang pandang </h3>
                      <p>
                          PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak di bidang rekayasa
@@ -89,86 +89,98 @@
                          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                          proident
                      </p> --}}
-                 </div>
+                 {{-- </div>  --}}
+                 {{-- About Section (safe) --}}
+@foreach ($abouts as $about)
+
+<section id="about" class="section py-5">
+    <div class="container">
+        <div class="row align-items-center gy-4">
+
+            <!-- IMAGE -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="{{ $about->image ? asset('storage/' . $about->image) : asset('assets/img/team2.jpeg') }}"
+                    class="img-fluid rounded shadow" alt="About Image">
+            </div>
+
+            <!-- CONTENT -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 class="fw-bold mb-4" data-aos="fade-up">{{ $about->headline ?? 'Selayang Pandang' }}</h2>
+
+                <p>{!! nl2br(e(Str::limit(strip_tags($about->description),5000))) !!}</p>
+
+                <br><br><br>
+                <h5>Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan diantaranya :</h5>
+
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Instalasi cepat & handal</li>
+                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Pelatihan operator & pendampingan</li>
+                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Produk ramah lingkungan & hemat energi</li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@endforeach
              </div>
 
          </div>
 
      </section><!-- /About Section -->
 
-     <!--visi misi-->
-     <section class="section py-5">
-         <div class="container text-center">
-             <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
-             <div class="row g-4">
-                 <div class="col-md-6" data-aos="zoom-in">
-                     <div class="card border-0 shadow h-100 p-4">
-                         <br>
-                         <i class="fa-solid fa-eye fa-2xl text-primary"></i>
-                         <br>
-                         <h5 class="fw-bold">Visi</h5>
-                         {{-- <p>Menjadi perusahaan pengelolaan air limbah yang inovatif, terpercaya, dan berkelanjutan Dengan
-                            kualitas terbaik.</p> --}}
-                         <p>Menjadi perusahaan penyedia layanan pengelolaan air limbah yang inovatif, tepercaya, dan
-                             berkelanjutan dengan kualitas terbaik.</p>
-                     </div>
-                 </div>
-                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                     <div class="card border-0 shadow h-100 p-4">
-                         <br>
-                         <i class="fa-solid fa-lightbulb fa-2xl display-5 text-success mb-3"
-                             style="color: #ffc107;"></i>
-                         <br>
+    <!--visi misi-->
+    <section class="section py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
 
-                         <h5 class="fw-bold">Misi</h5>
-                         <ul class="text-start">
-                             <li>
-                                 <p>Mengurangi dampak pencemaran lingkungan melalui penerapan sistem manajemen
-                                     lingkungan
-                                     yang berkelanjutan</p>
-                             </li>
-                             <li>
-                                 <p>Melakukan pemeliharaan preventif dan korektif terhadap peralatan IPAL untuk menjaga
-                                     kendala operasional</p>
-                             </li>
-                             <li>
-                                 <p>Mengembangkan dan memproduksi unit instalasi pengolahan air limbah (IPAL) yang
-                                     efektif
-                                     dan berkualitas.</p>
-                             </li>
-                             <li>
-                                 <p>Menerapkan teknologi pengolahan limbah cair yang efisien dan ramah lingkungan.</p>
-                             </li>
-                             <li>
-                                 <p>Mendukung pengendalian pencemaran air melalui pengolahan limbah yang sesuai baku
-                                     mutu
-                                     lingkungan.</p>
-                             </li>
-                             <li>
-                                 <p>Memberikan layanan instalasi, pengujian (commissioning), dan pelatihan operasional
-                                     IPAL.</p>
-                             </li>
-                             <li>Menyediakan layanan perawatan dan perbaikan (maintenance) untuk menjamin keandalan
-                                 sistem IPAL.</li>
-                             <li>
-                                 <p>Mengoptimalkan pengelolaan lumpur hasil olahan (sludge) agar aman dan sesuai standar
-                                     teknis.</p>
-                             </li>
-                             <li>
-                                 <p>Mendorong pemanfaatan kembali air hasil olahan (reuse) untuk mendukung efisiensi
-                                     sumber
-                                     daya air.</p>
-                             </li>
+            <div class="row g-4">
 
+                {{-- VISI --}}
+                <div class="col-md-6" data-aos="zoom-in">
+                    <div class="card border-0 shadow h-100 p-4">
+                        <br>
+                        <i class="fa-solid fa-eye fa-2xl text-primary"></i>
+                        <br>
+                        <h5 class="fw-bold">Visi</h5>
 
-                         </ul>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-     <!--end visi misi-->
+                        @if ($visi)
+                            <p>{{ $visi->text }}</p>
+                        @else
+                            <p><em>Belum ada visi di backend.</em></p>
+                        @endif
+                    </div>
+                </div>
+
+                {{-- MISI --}}
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card border-0 shadow h-100 p-4">
+                        <br>
+                        <i class="fa-solid fa-lightbulb fa-2xl text-success mb-3"></i>
+                        <br>
+
+                        <h5 class="fw-bold">Misi</h5>
+
+                        @if ($misi->count())
+                            <ul class="text-start">
+                                @foreach ($misi as $item)
+                                    <li>
+                                        <p>{{ $item->text }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @else
+                            <p><em>Belum ada misi di backend.</em></p>
+                        @endif
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--end visi misi-->
 
 
 
