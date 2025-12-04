@@ -329,9 +329,9 @@
                     <div class="social-links d-flex">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-tiktok"></i></a>
-                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@ospod67?_r=1&_t=ZS-91w18C0s2NU"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@ospod-milos"><i class="bi bi-youtube"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>

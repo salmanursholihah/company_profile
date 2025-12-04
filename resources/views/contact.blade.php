@@ -5,8 +5,7 @@
      <div class="page-title dark-background">
          <div class="container position-relative">
              <h1>Contact</h1>
-             Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-                 molestias.
+             Terhubung dengan kami untuk konsultasi atau kebutuhan layanan anda.
              <nav class="breadcrumbs">
                  <ol>
                      <li class="current">Home</li>
@@ -40,7 +39,7 @@
                                  data-aos="fade-up" data-aos-delay="300">
                                  <i class="bi bi-telephone"></i>
                                  <h3>Call Us</h3>
-                                 <p>+62 8123 457 689</p>
+                                 <p>+62 831 1666 8809</p>
                              </div>
                          </div><!-- End Info Item -->
 
@@ -49,7 +48,7 @@
                                  data-aos="fade-up" data-aos-delay="400">
                                  <i class="bi bi-envelope"></i>
                                  <h3>Email Us</h3>
-                                 <p>utamacta@gmail.com</p>
+                                 <p>ptutamacta@gmail.com</p>
                              </div>
                          </div><!-- End Info Item -->
 
@@ -93,7 +92,7 @@
                          </div>
                      </form>
                  </div><!-- End Contact Form -->
-                 
+
 
              </div>
 

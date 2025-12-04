@@ -9,37 +9,37 @@
 
     <section id="hero" class="hero section dark-background">
 
-    <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-        <div class="container position-relative">
+            <div class="container position-relative">
 
-            @foreach ($halaman_utama as $index => $halaman_utama)
-                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                    <div class="carousel-container">
-                        <h2>{{ $halaman_utama->headline }}</h2>
+                @foreach ($halaman_utama as $index => $halaman_utama)
+                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                        <div class="carousel-container">
+                            <h2>{{ $halaman_utama->headline }}</h2>
 
-                        <p>{!! nl2br(e($halaman_utama->sub_headline)) !!}</p>
+                            <p>{!! nl2br(e($halaman_utama->sub_headline)) !!}</p>
 
-                        <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
+                            <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
 
-            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
+                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
 
-            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
+                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
 
-            <ol class="carousel-indicators"></ol>
+                <ol class="carousel-indicators"></ol>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
     {{-- About Section (safe) --}}
@@ -47,9 +47,8 @@
         <section id="about" class="section py-5">
             <div class="container">
                 <div class="row align-items-center gy-4">
-                    <div class="col-lg-6" data-aos="fade-right">
-                        <img src="{{ isset($about->image) && $about->image ? asset('storage/' . $about->image) : asset('assets/img/team2.jpeg') }}"
-                            class="img-fluid rounded shadow" alt="About Us">
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <img src="{{ asset($about->image) }}" class="img-fluid rounded shadow" alt="About Image">
                     </div>
                     <div class="col-lg-6" data-aos="fade-left">
                         <h2 class="fw-bold mb-4" data-aos="fade-up">{{ $about->headline ?? 'Selayang Pandang' }}</h2>
@@ -393,11 +392,11 @@
     </section>
 
     <!-- /Featured Products sparepart Section --> --}}
-        <!-- Featured Products sparepart Section -->
+    <!-- Featured Products sparepart Section -->
     <section id="featured-products" class="section py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
-            <h2 class="text-center fw-bold mb-5">Produk</h2>
+                <h2 class="text-center fw-bold mb-5">Produk</h2>
                 <p data-aos="fade-up" data-aos-delay="100"></p>Solusi inovatif kami yang banyak diminati instansi
                 medis &
                 swasta.
@@ -430,7 +429,7 @@
                         'title' => '60m3',
                         'location' => 'Magelang, Indonesia',
                     ],
-    
+
                     [
                         'img' => 'IPAL 100m3.png',
                         'title' => 'IPAL 100m3',
@@ -465,16 +464,29 @@
             @endphp
 
             <div class="catalog">
-                @foreach ($products as $product)
+                @foreach ($katalogs as $katalog)
                     <div class="product-card">
-                        <img src="{{ asset('assets/img/portfolio/' . $product['img']) }}" alt="">
-                        <div class="product-title">{{ $product['title'] }}</div>
-                        <div class="location">{{ $product['location'] }}</div>
+
+                        {{-- Image --}}
+                        @if ($katalog->image)
+                            <img src="{{ asset('storage/' . $katalog->image) }}" class="img-fluid" alt="katalog">
+                        @else
+                            <img src="{{ asset('assets/img/no-image.png') }}" class="img-fluid" alt="no image">
+                        @endif
+
+                        {{-- Title --}}
+                        <div class="product-title">{{ $katalog->name }}</div>
+
+                        {{-- Location --}}
+                        <div class="location">{{ $katalog->lokasi ?? 'Indonesia' }}</div>
+
+                        {{-- Buttons --}}
                         <div class="btn-group">
-                            <a href="https://wa.me/6281234567890" class="btn">
+                            <a href="https://wa.me/{{ $katalog->whatsapp ?? '6281234567890' }}" class="btn">
                                 <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
                             </a>
-                            <a href="https://id.shp.ee/ZS6izam" class="btnn">
+
+                            <a href="{{ $katalog->link_toko ?? 'https://id.shp.ee/ZS6izam' }}" class="btnn">
                                 <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
                             </a>
                         </div>
@@ -482,95 +494,47 @@
                 @endforeach
             </div>
 
+
         </div>
     </section><!-- /Featured Products sparepart Section -->
 
-
-<div class="catalog">
-    @foreach ($katalogs as $katalog)
-        <div class="product-card">
-
-            {{-- Image --}}
-            @if ($katalog->image)
-                <img src="{{ asset('storage/' . $katalog->image) }}" class="img-fluid" alt="katalog">
-            @else
-                <img src="{{ asset('assets/img/no-image.png') }}" class="img-fluid" alt="no image">
-            @endif
-
-            {{-- Title --}}
-            <div class="product-title">{{ $katalog->name }}</div>
-
-            {{-- Location --}}
-            <div class="location">{{ $katalog->lokasi ?? 'Indonesia' }}</div>
-
-            {{-- Buttons --}}
-            <div class="btn-group">
-                <a href="https://wa.me/{{ $katalog->whatsapp ?? '6281234567890' }}" class="btn">
-                    <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
-                </a>
-
-                <a href="{{ $katalog->link_toko ?? 'https://id.shp.ee/ZS6izam' }}" class="btnn">
-                    <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
-                </a>
-            </div>
-        </div>
-    @endforeach
-</div>
-
-    <!-- Clients Section -->
     <section id="clients" class="clients section">
-
         <div class="container">
 
             <div class="swiper init-swiper">
+
                 <script type="application/json" class="swiper-config">
-                 {
-                     "loop": true,
-                     "speed": 600,
-                     "autoplay": {
-                         "delay": 5000
-                     },
-                     "slidesPerView": "auto",
-                     "pagination": {
-                         "el": ".swiper-pagination",
-                         "type": "bullets",
-                         "clickable": true
-                     },
-                     "breakpoints": {
-                         "320": {
-                             "slidesPerView": 2,
-                             "spaceBetween": 40
-                         },
-                         "480": {
-                             "slidesPerView": 3,
-                             "spaceBetween": 60
-                         },
-                         "640": {
-                             "slidesPerView": 4,
-                             "spaceBetween": 80
+            {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {"delay": 5000},
+                "slidesPerView": "auto",
+                "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                },
+                "breakpoints": {
+                    "320": {"slidesPerView": 2, "spaceBetween": 40},
+                    "480": {"slidesPerView": 3, "spaceBetween": 60},
+                    "640": {"slidesPerView": 4, "spaceBetween": 80}
+                }
+            }
+            </script>
 
-                         }
-                     }
-                 }
-                 </script>
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="assets/img/bsn.jpeg" class="img-fluid" alt="">
-                    </div>
-                    <div class="swiper-slide"><img src="assets/img/iso-9001.jpeg" class="img-fluid" alt="">
-                    </div>
-                    <div class="swiper-slide"><img src="assets/img/vkan.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="swiper-slide"><img src="assets/img/iapmo.png" class="img-fluid" alt="">
-                    </div>
-
+                    @foreach ($legalitas as $item)
+                        <div class="swiper-slide">
+                            <img src="{{ asset('uploads/legalitas/' . $item->image) }}" class="img-fluid"
+                                alt="Legalitas Image">
+                        </div>
+                    @endforeach
                 </div>
+
             </div>
         </div>
+    </section>
 
-
-        </div>
-
-    </section><!-- /Clients Section -->
 
 
 

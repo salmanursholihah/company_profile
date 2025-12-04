@@ -41,7 +41,7 @@ use Illuminate\Support\Str;
         @forelse($products ?? [] as $product)
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item {{ Str::slug($product->company) }}">
             <div class="card h-100 shadow-sm border-0">
-              <img src="{{ $product->image ? asset('storage/'.$product->image) : asset('assets/img/no-image.png') }}" 
+              <img src="{{ $product->image ? asset('storage/'.$product->image) : asset('assets/img/no-image.png') }}"
                    class="card-img-top" alt="{{ $product->name }}">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">{{ $product->name }}</h5>
@@ -61,8 +61,8 @@ use Illuminate\Support\Str;
                 </details>
 
                 {{-- Preview --}}
-                <a href="{{ $product->image ? asset('storage/'.$product->image) : '#' }}" 
-                   class="btn btn-outline-primary mt-3 glightbox" 
+                <a href="{{ $product->image ? asset('storage/'.$product->image) : '#' }}"
+                   class="btn btn-outline-primary mt-3 glightbox"
                    title="{{ $product->name }}">
                   <i class="bi bi-zoom-in"></i> Preview
                 </a>
@@ -79,13 +79,13 @@ use Illuminate\Support\Str;
   </section>
 
   <!-- Contact Info -->
-  <section class="contact-info bg-light py-4">
+  {{-- <section class="contact-info bg-light py-4">
     <div class="container text-center">
       <h5>Hubungi Kami</h5>
       <p>📞 +62 711 419005 | +62 859 3281 8611</p>
       <p>✉️ utamacta@gmail.com</p>
     </div>
-  </section>
+  </section> --}}
 
 </main>
 

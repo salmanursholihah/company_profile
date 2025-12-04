@@ -1065,7 +1065,7 @@ section,
 .hero p {
   width: 80%;
   margin: 0 auto 30px auto;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--default-color), transparent 0%);
   animation: fadeInDown 1s both 0.2s;
 }
 
@@ -1116,7 +1116,7 @@ section,
   width: 12px;
   height: 12px;
   border-radius: 50px;
-  opacity: 0.3;
+  opacity: 0.5;
   transition: 0.3s;
 }
 
@@ -1164,6 +1164,40 @@ section,
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+/* ======== MOBILE FIX FOR HERO IMAGE ======== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh !important; /* Tidak terlalu panjang */
+  }
+
+  .hero::after {
+    height: 90% !important; /* Mengecilkan tinggi background */
+    background-size: contain !important; /* Biar tidak nge-zoom */
+  }
+
+  .hero img {
+    object-fit: contain !important;
+    height: auto !important;
+    max-height: 60vh !important; /* Membatasi agar tidak memenuhi 1 layar */
+  }
+
+  .hero h2 {
+    font-size: 24px !important;
+  }
+
+  .hero p {
+    width: 90% !important;
+    font-size: 14px;
+  }
+
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    display: none; /* Opsional, tombol navigasi disembunyikan */
   }
 }
 
