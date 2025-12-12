@@ -7,38 +7,74 @@ use Illuminate\Http\Request;
 
 class AdminHalamanUtamaController extends Controller
 {
-    public function index()
-    {
-        $halaman_utamas = HalamanUtama::all();
-        return view('admin.halaman_utama.index', compact('halaman_utamas'));
-    }
+
+//     public function index()
+// {
+//     $halaman_utama = HalamanUtama::all();
+//     return view('landingpage.index', compact('halaman_utama'));
+// }
+
+
+public function index()
+{
+    // Ambil semua data slider
+    $halaman_utama_list = HalamanUtama::all();
+
+    // Kirim hanya variabel yang dipakai oleh view
+    return view('admin.halaman_utama.index', compact('halaman_utama_list'));
+}
+
+public function store(Request $request)
+{
+    $request->validate([
+        'headline' => 'required',
+        'sub_headline' => 'required',
+        'image' => 'required|image'
+    ]);
+
+    $imagePath = $request->file('image')->store('uploads/halaman_utama', 'public');
+
+    HalamanUtama::create([
+        'headline' => $request->headline,
+        'sub_headline' => $request->sub_headline,
+        'image' => 'storage/' . $imagePath
+    ]);
+
+    return back()->with('success', 'Berhasil menambah data');
+}
+
+    // public function index()
+    // {
+    //     $halaman_utamas = HalamanUtama::all();
+    //     return view('admin.halaman_utama.index', compact('halaman_utamas'));
+    // }
 
     public function create()
     {
         return view('admin.halaman_utama.create');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'headline' => 'required',
-            'sub_headline' => 'nullable',
-            'url' => 'nullable|url',
-            'image' => 'required|image|mimes:jpg,png,jpeg,webp'
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'headline' => 'required',
+    //         'sub_headline' => 'nullable',
+    //         'url' => 'nullable|url',
+    //         'image' => 'required|image|mimes:jpg,png,jpeg,webp'
+    //     ]);
 
-        $imagePath = $request->image->store('uploads/halaman_utama', 'public');
+    //     $imagePath = $request->image->store('uploads/halaman_utama', 'public');
 
-        HalamanUtama::create([
-            'headline' => $request->headline,
-            'sub_headline' => $request->sub_headline,
-            'url' => $request->url,
-            'image' => 'storage/' . $imagePath
-        ]);
+    //     HalamanUtama::create([
+    //         'headline' => $request->headline,
+    //         'sub_headline' => $request->sub_headline,
+    //         'url' => $request->url,
+    //         'image' => 'storage/' . $imagePath
+    //     ]);
 
-        return redirect()->route('admin.halaman_utama.index')
-                        ->with('success', 'Data berhasil ditambahkan.');
-    }
+    //     return redirect()->route('admin.halaman_utama.index')
+    //                     ->with('success', 'Data berhasil ditambahkan.');
+    // }
 
 
     public function edit($id)

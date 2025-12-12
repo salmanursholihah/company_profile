@@ -25,6 +25,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\AdminImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,15 @@ Route::get('/produksi_pabrikasi_ipal', fn() => view('produksi_pabrikasi_ipal'))-
 Route::get('/perawatan', fn() => view('perawatan'))->name('perawatan');
 Route::get('/instalasi', fn() => view('instalasi'))->name('instalasi');
 Route::get('/konstruksi_pembangunan', fn() => view('konstruksi_pembangunan'))->name('konstruksi_pembangunan');
+Route::get('/Commissioning', fn() => view('Commissioning'))->name('Commissioning');
+Route::get('/desain_konsultasi', fn() => view('desain_konsultasi'))->name('desain_konsultasi');
+Route::get('/fabrikasi_unit', fn() => view('fabrikasi_unit'))->name('fabrikasi_unit');
+Route::get('/instalasi_pemasangan', fn() => view('instalasi_pemasangan'))->name('instalasi_pemasangan');
+Route::get('/monitoring_pengujian', fn() => view('monitoring_pengujian'))->name('monitoring_pengujian');
+Route::get('/operator_training', fn() => view('operator_training'))->name('operator_training');
+Route::get('/penyediaan_bahan', fn() => view('penyediaan_bahan'))->name('penyediaan_bahan');
+Route::get('/Perawatan_dan_Maintenance', fn() => view('Perawatan_dan_Maintenance'))->name('Perawatan_dan_Maintenance');
+Route::get('/renovasi_ipal', fn() => view('renovasi_ipal'))->name('renovasi_ipal');
 // Route::get('/team', fn() => view('team'))->name('team');
 Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/backend', fn() => view('backend'))->name('backend');
@@ -147,6 +157,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
         ]);
         route::resource('team', AdminTeamController::class);
         route::resource('portfolio', AdminPortfolioController::class);
+        route::resource('images', AdminImageController::class);
     });
 
     /* VENDOR CRUD */

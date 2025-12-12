@@ -43,6 +43,7 @@
                     <a href="{{ route('admin.legalitas.index') }}" class="nav-link text-white">legalitas</a>
                     <a href="{{ route('admin.team.index') }}" class="nav-link text-white">team</a>
                     <a href="{{ route('admin.portfolio.index') }}" class="nav-link text-white">Portfolio</a>
+                    <a href="{{ route('admin.images.index') }}" class="nav-link text-white">Images</a>
                 @elseif(auth()->user()->role === 'vendor')
                     <a href="{{ route('admin.product_vendor.index') }}" class="nav-link text-white">Product Vendor</a>
                     <a href="{{ route('admin.profile.vendor_profile') }}" class="nav-link text-white">Profile

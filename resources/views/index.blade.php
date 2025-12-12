@@ -7,13 +7,28 @@
 <main class="main">
 
 
-    <section id="hero" class="hero section dark-background">
 
-        <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+{{-- <section id="hero" class="hero section dark-background"
+    style="--hero-bg: url('{{ asset($halaman_utama[0]->image) }}');">
 
-            <div class="container position-relative">
+    <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-                @foreach ($halaman_utama as $index => $halaman_utama)
+        @foreach ($halaman_utama as $index => $item)
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}"
+                style="--hero-bg: url('{{ asset($item->image) }}');">
+
+
+                <div class="carousel-container">
+                    <h2>{{ $item->headline }}</h2>
+                    <p>{!! nl2br(e($item->sub_headline)) !!}</p>
+                    <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
+                </div>
+
+            </div>
+        @endforeach
+
+
+        @foreach ($halaman_utama as $index => $halaman_utama)
                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                         <div class="carousel-container">
                             <h2>{{ $halaman_utama->headline }}</h2>
@@ -25,21 +40,77 @@
                     </div>
                 @endforeach
 
-                <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-                </a>
+        <a class="carousel-control-prev" href="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
 
-                <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-                </a>
+        <a class="carousel-control-next" href="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
 
-                <ol class="carousel-indicators"></ol>
+    </div>
+
+</section> --}}
+
+<section id="hero" class="hero section dark-background">
+
+    <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        @foreach ($halaman_utama as $index => $item)
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}"
+                style="background-image: url('{{ asset($item->image) }}');">
+
+                <div class="container position-relative">
+                    <div class="carousel-container">
+                        <h2>{{ $item->headline }}</h2>
+                        <p>{!! nl2br(e($item->sub_headline)) !!}</p>
+                    </div>
+                </div>
 
             </div>
+        @endforeach
 
-        </div>
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
 
-    </section>
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+
+</section>
+
+{{-- <section id="hero" class="hero section dark-background">
+
+    <div id="hero-carousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        @foreach ($halaman_utama as $index => $item)
+            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}"
+                style="background-image: url('{{ asset($item->image) }}');">
+
+                <div class="carousel-container">
+                    <h2>{{ $item->headline }}</h2>
+                    <p>{!! nl2br(e($item->sub_headline)) !!}</p>
+                    <a href="{{ route('about') }}" class="btn-get-started">Read More</a>
+                </div>
+            </div>
+        @endforeach
+
+        <a class="carousel-control-prev" href="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+</section> --}}
+
+
+
+
 
 
     {{-- About Section (safe) --}}
@@ -126,7 +197,6 @@
             </div>
         </div>
     </section>
-    <!--end visi misi-->
     <!--end visi misi-->
 
     <br><br><br>
