@@ -1,4 +1,6 @@
 @extends('layouts.app_landing')
+@section('title', 'company profile')
+@section('content')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('assets/css/style_katalog_index.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/product_bestseller.css') }}">
@@ -610,3 +612,4 @@
 
 
 </main>
+@endsection

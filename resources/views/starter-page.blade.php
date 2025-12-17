@@ -1,6 +1,6 @@
   @extends('layouts'.'app_landing')
-
-
+@section('title', 'company profile')
+@section('content')
   <main class="main">
 
     <!-- Page Title -->
@@ -33,4 +33,4 @@
     </section><!-- /Starter Section Section -->
 
   </main>
-
+@endsection

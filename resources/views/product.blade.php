@@ -1,5 +1,6 @@
 @extends('layouts.app_landing')
-
+@section('title', 'company profile')
+@section('content')
 @push('styles')
 <style>
     .e-katalog-page {
@@ -120,3 +121,4 @@
     </div>
 
 </main>
+@endsection
