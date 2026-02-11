@@ -74,4 +74,9 @@ class KatalogController extends Controller{
         $katalog->delete();
         return redirect()->route('admin.katalogs.index')->with('success', 'Produk berhasil dihapus');
     }
+
+    public function show(Katalog $katalog)
+    {
+        return view('katalog.detail', compact('katalog'));
+    }
 }

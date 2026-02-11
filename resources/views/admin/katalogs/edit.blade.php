@@ -1,28 +1,63 @@
 @extends('layouts.admin')
 
 @section('content')
+    <h2>Edit Katalog</h2>
 
-<h2>Edit Katalog</h2>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-<form action="{{ route('admin.katalogs.update', $katalog->id) }}" method="POST" enctype="multipart/form-data">
-    @csrf @method('PUT')
+    <form action="{{ route('admin.katalogs.update', $katalog) }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
-    <label>Name</label>
-    <input type="text" name="name" value="{{ $katalog->name }}" class="form-control">
+        <div class="mb-3">
+            <label>Nama Produk</label>
+            <input type="text" name="name" class="form-control" value="{{ old('name', $katalog->name) }}">
+        </div>
 
-    <label>Company</label>
-    <input type="text" name="company" value="{{ $katalog->company }}" class="form-control">
+        <div class="mb-3">
+            <label>Company</label>
+            <input type="text" name="company" class="form-control" value="{{ old('company', $katalog->company) }}">
+        </div>
 
-    <label>Deskripsi</label>
-    <textarea name="deskripsi" class="form-control" rows="5">{{ $katalog->deskripsi }}</textarea>
+        <div class="mb-3">
+            <label>Kategori</label>
+            <input type="text" name="kategori" class="form-control" value="{{ old('kategori', $katalog->kategori) }}">
+        </div>
 
-    <label>Current Image</label><br>
-    <img src="{{ asset('storage/' . $katalog->image) }}" width="120" class="mb-2">
+        <div class="mb-3">
+            <label>Preview Deskripsi</label>
+            <textarea name="preview_desc" class="form-control">{{ old('preview_desc', $katalog->preview_desc) }}</textarea>
+        </div>
 
-    <label>New Image</label>
-    <input type="file" name="image" class="form-control">
+        <div class="mb-3">
+            <label>Deskripsi Lengkap</label>
+            <textarea name="deskripsi" class="form-control" rows="5">{{ old('deskripsi', $katalog->deskripsi) }}</textarea>
+        </div>
 
-    <button class="btn btn-success mt-3">Update</button>
-</form>
+        <div class="mb-3">
+            <label>Spesifikasi</label>
+            <textarea name="spesifikasi" class="form-control">{{ old('spesifikasi', $katalog->spesifikasi) }}</textarea>
+        </div>
 
+        <div class="mb-3">
+            <label>Image Lama</label><br>
+            <img src="{{ asset('storage/' . $katalog->image) }}" width="120">
+        </div>
+
+        <div class="mb-3">
+            <label>Upload Image Baru (Optional)</label>
+            <input type="file" name="image" class="form-control">
+        </div>
+
+        <button class="btn btn-success">Update</button>
+
+    </form>
 @endsection

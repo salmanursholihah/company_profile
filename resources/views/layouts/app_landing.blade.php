@@ -206,7 +206,7 @@
 
  --}}
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -236,8 +236,7 @@
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Main CSS File -->
@@ -285,9 +284,9 @@
     <!-- =============== END MAIN ================= -->
 
 
-
+    <!--footer manual code-->
     <!-- ================= FOOTER ================= -->
-    <footer id="footer" class="footer dark-background">
+    {{-- <footer id="footer" class="footer dark-background">
 
         <div class="container footer-top">
             <div class="row gy-4">
@@ -343,7 +342,120 @@
             <p>© Copyright <strong class="sitename">UCTA by Ositech</strong>. All Rights Reserved</p>
         </div>
 
+    </footer> --}}
+
+    {{-- FOOTER IMAGE TOP --}}
+    @if (isset($footerImage))
+        <div class="footer-top-image">
+            <img src="{{ asset('storage/' . $footerImage->image_path) }}" class="img-fluid w-100"
+                style="max-height:250px; object-fit:cover;">
+        </div>
+    @endif
+
+
+    <!--footer crud-->
+    <footer id="footer" class="footer dark-background">
+
+        <div class="container footer-top">
+            <div class="row gy-4">
+
+                {{-- COMPANY --}}
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="{{ route('index') }}" class="d-flex align-items-center">
+                        <span class="sitename">
+                            {{ $footer->company_name ?? 'PT Utama Cipta Tata Asri' }}
+                        </span>
+                    </a>
+
+                    <div class="footer-contact pt-3">
+                        <p>{{ $footer->address }}</p>
+
+                        <p class="mt-3">
+                            <strong>Phone:</strong> {{ $footer->phone }}
+                        </p>
+
+                        <p>
+                            <strong>Email:</strong> {{ $footer->email }}
+                        </p>
+                    </div>
+                </div>
+
+                {{-- USEFUL LINKS --}}
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+
+                        @foreach ($footer->useful_links ?? [] as $link)
+                            <li>
+                                <i class="bi bi-chevron-right"></i>
+                                <a href="{{ $link['url'] }}">
+                                    {{ $link['name'] }}
+                                </a>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+
+                {{-- SERVICES --}}
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+
+                        @foreach ($footer->our_services ?? [] as $service)
+                            <li>
+                                <i class="bi bi-chevron-right"></i>
+                                <a href="#">
+                                    {{ is_array($service) ? $service['name'] : $service }}
+                                </a>
+                            </li>
+                        @endforeach
+
+                    </ul>
+                </div>
+
+                {{-- SOCIAL --}}
+                <div class="col-lg-4 col-md-12">
+                    <h4>Follow Us</h4>
+
+                    <p class="italic">
+                        {{ $footer->tagline }}
+                    </p>
+
+                    <div class="social-links d-flex">
+
+                        @php
+                            $icons = [
+                                'twitter' => 'twitter-x',
+                                'facebook' => 'facebook',
+                                'instagram' => 'instagram',
+                                'tiktok' => 'tiktok',
+                                'youtube' => 'youtube',
+                                'linkedin' => 'linkedin',
+                            ];
+                        @endphp
+
+                        @foreach ($footer->social_links ?? [] as $platform => $url)
+                            <a href="{{ $url }}">
+                                <i class="bi bi-{{ $icons[$platform] ?? $platform }}"></i>
+                            </a>
+                        @endforeach
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {{-- COPYRIGHT --}}
+        <div class="container copyright text-center mt-4">
+            <p>
+                {{ $footer->copyright }}
+            </p>
+        </div>
+
     </footer>
+
     <!-- =============== END FOOTER ================= -->
 
 

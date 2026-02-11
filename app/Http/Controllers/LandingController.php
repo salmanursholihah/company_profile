@@ -10,6 +10,8 @@ use App\Models\Team;
 use App\Models\Katalog;
 use App\Models\Legalitas;
 use Illuminate\Support\Str;
+use App\Models\Footer;
+use App\Models\Image;
 
 class LandingController extends Controller
 {
@@ -28,6 +30,10 @@ class LandingController extends Controller
         $katalogs = Katalog::all();
         $teams = Team::all();
         $legalitas = Legalitas::select('image')->get();
-        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'teams', 'halaman_utama', 'legalitas'));
+        $images = HalamanUtama::select('image')->get();
+        $halaman_utama_list = HalamanUtama::all();
+        $footer = Footer::first();
+        $footerImage = Image::latest()->first();
+        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'teams', 'halaman_utama', 'legalitas', 'images', 'halaman_utama_list', 'footer', 'footerImage'));
     }
 }

@@ -22,7 +22,7 @@ class AdminImageController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         $path = $request->file('image')->store('images', 'public');
@@ -46,7 +46,7 @@ class AdminImageController extends Controller
         $image = Image::findOrFail($id);
 
         $request->validate([
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:4089',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
         ]);
 
         // Jika upload gambar baru

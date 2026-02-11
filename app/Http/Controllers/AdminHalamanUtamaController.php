@@ -8,40 +8,40 @@ use Illuminate\Http\Request;
 class AdminHalamanUtamaController extends Controller
 {
 
-//     public function index()
-// {
-//     $halaman_utama = HalamanUtama::all();
-//     return view('landingpage.index', compact('halaman_utama'));
-// }
+    //     public function index()
+    // {
+    //     $halaman_utama = HalamanUtama::all();
+    //     return view('landingpage.index', compact('halaman_utama'));
+    // }
 
 
-public function index()
-{
-    // Ambil semua data slider
-    $halaman_utama_list = HalamanUtama::all();
+    public function index()
+    {
+        // Ambil semua data slider
+        $halaman_utama_list = HalamanUtama::all();
 
-    // Kirim hanya variabel yang dipakai oleh view
-    return view('admin.halaman_utama.index', compact('halaman_utama_list'));
-}
+        // Kirim hanya variabel yang dipakai oleh view
+        return view('admin.halaman_utama.index', compact('halaman_utama_list'));
+    }
 
-public function store(Request $request)
-{
-    $request->validate([
-        'headline' => 'required',
-        'sub_headline' => 'required',
-        'image' => 'required|image'
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'headline' => 'required',
+            'sub_headline' => 'required',
+            'image' => 'required|image'
+        ]);
 
-    $imagePath = $request->file('image')->store('uploads/halaman_utama', 'public');
+        $imagePath = $request->file('image')->store('uploads/halaman_utama', 'public');
 
-    HalamanUtama::create([
-        'headline' => $request->headline,
-        'sub_headline' => $request->sub_headline,
-        'image' => 'storage/' . $imagePath
-    ]);
+        HalamanUtama::create([
+            'headline' => $request->headline,
+            'sub_headline' => $request->sub_headline,
+            'image' => 'storage/' . $imagePath
+        ]);
 
-    return back()->with('success', 'Berhasil menambah data');
-}
+        return back()->with('success', 'Berhasil menambah data');
+    }
 
     // public function index()
     // {
@@ -78,10 +78,10 @@ public function store(Request $request)
 
 
     public function edit($id)
-{
-    $halaman_utama = HalamanUtama::findOrFail($id);
-    return view('admin.halaman_utama.edit', compact('halaman_utama'));
-}
+    {
+        $halaman_utama = HalamanUtama::findOrFail($id);
+        return view('admin.halaman_utama.edit', compact('halaman_utama'));
+    }
 
 
     public function update(Request $request, $id)
@@ -109,7 +109,7 @@ public function store(Request $request)
         $halaman_utama->update($data);
 
         return redirect()->route('admin.halaman_utama.index')
-                        ->with('success', 'Data berhasil diperbarui.');
+            ->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -118,6 +118,6 @@ public function store(Request $request)
         $halaman_utama->delete();
 
         return redirect()->route('admin.halaman_utama.index')
-                        ->with('success', 'Data berhasil dihapus.');
+            ->with('success', 'Data berhasil dihapus.');
     }
 }

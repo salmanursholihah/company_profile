@@ -66,6 +66,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 /* Products & Katalog */
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/e-katalog', [KatalogController::class, 'index'])->name('e-katalog');
+Route::get('/e-katalog/{id}', [KatalogController::class, 'show'])->name('e-katalog.show');
 
 
 
