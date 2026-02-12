@@ -68,8 +68,6 @@ Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/e-katalog', [KatalogController::class, 'index'])->name('e-katalog');
 Route::get('/e-katalog/{id}', [KatalogController::class, 'show'])->name('e-katalog.show');
 
-
-
 /*
 |--------------------------------------------------------------------------
 | AUTH ROUTES
@@ -81,7 +79,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::middleware('auth')->post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware('auth')
+    ->post('/logout', [AuthController::class, 'logout'])
+    ->name('logout');
 
 /* Profile */
 Route::middleware('auth')->group(function () {
@@ -89,40 +89,36 @@ Route::middleware('auth')->group(function () {
     Route::put('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
 });
 
-
-
 /*
 |--------------------------------------------------------------------------
 | ADMIN PANEL (Dashboard + Profiles)
 |--------------------------------------------------------------------------
 */
 
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('admin')
+    ->middleware('auth')
+    ->group(function () {
+        /* Dashboard untuk semua yang login */
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard', [
+                'usersCount' => 120,
+                'subsCount' => 45,
+            ]);
+        })->name('admin.dashboard');
 
-    /* Dashboard untuk semua yang login */
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard', [
-            'usersCount' => 120,
-            'subsCount'  => 45,
-        ]);
-    })->name('admin.dashboard');
+        /* SUPER ADMIN ONLY — VIEW PAGES */
+        Route::middleware('role:super_admin')->group(function () {
+            Route::view('/users', 'admin.users.index')->name('admin.users.index');
+            Route::view('/contacts', 'admin.contacts.index')->name('admin.contacts.index');
+            Route::view('/admin_profiles', 'admin.profile.admin_profile')->name('admin.profile.admin_profile');
+            Route::view('/setting', 'admin.setting')->name('admin.setting');
+        });
 
-    /* SUPER ADMIN ONLY — VIEW PAGES */
-    Route::middleware('role:super_admin')->group(function () {
-        Route::view('/users', 'admin.users.index')->name('admin.users.index');
-        Route::view('/contacts', 'admin.contacts.index')->name('admin.contacts.index');
-        Route::view('/admin_profiles', 'admin.profile.admin_profile')->name('admin.profile.admin_profile');
-        Route::view('/setting', 'admin.setting')->name('admin.setting');
-
+        /* VENDOR ONLY — VIEW PAGES */
+        Route::middleware('role:vendor')->group(function () {
+            Route::view('/vendor_profiles', 'admin.profile.vendor_profile')->name('admin.profile.vendor_profile');
+        });
     });
-
-    /* VENDOR ONLY — VIEW PAGES */
-    Route::middleware('role:vendor')->group(function () {
-        Route::view('/vendor_profiles', 'admin.profile.vendor_profile')->name('admin.profile.vendor_profile');
-    });
-});
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -134,35 +130,46 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 |
 */
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+Route::prefix('admin')
+    ->name('admin.')
+    ->middleware('auth')
+    ->group(function () {
+        /* SUPER ADMIN CRUD */
+        Route::middleware('role:super_admin')->group(function () {
+            Route::resource('products', AdminProductController::class);
+            Route::resource('katalogs', AdminKatalogController::class);
+            Route::resource('users', AdminUserController::class);
+            Route::resource('contacts', AdminContactController::class);
+            Route::resource('blogs', AdminBlogController::class);
+            Route::resource('vendors', AdminVendorController::class);
 
-    /* SUPER ADMIN CRUD */
-    Route::middleware('role:super_admin')->group(function () {
+            // ABOUT, HALAMAN UTAMA, VISI MISI, SERVICES, FOOTER → super admin only
+            Route::resource('about', AdminAboutController::class);
 
-        Route::resource('products', AdminProductController::class);
-        Route::resource('katalogs', AdminKatalogController::class);
-        Route::resource('users', AdminUserController::class);
-        Route::resource('contacts', AdminContactController::class);
-        Route::resource('blogs', AdminBlogController::class);
-        Route::resource('vendors', AdminVendorController::class);
+            Route::post('/about/store-about', [AdminAboutController::class, 'storeAbout'])
+                ->name('about.storeAbout');
 
-        // ABOUT, HALAMAN UTAMA, VISI MISI, SERVICES, FOOTER → super admin only
-        Route::resource('about', AdminAboutController::class);
-        Route::resource('halaman_utama', AdminHalamanUtamaController::class);
-        Route::resource('visi_misi', AdminVisiMisiController::class);
-        Route::resource('services', AdminServiceController::class);
-        Route::resource('footer', AdminFooterController::class)->only(['index', 'edit', 'update']);
-        Route::resource('legalitas', AdminLegalitasController::class)
-        ->parameters([
-        'legalitas' => 'legalitas'
-        ]);
-        route::resource('team', AdminTeamController::class);
-        route::resource('portfolio', AdminPortfolioController::class);
-        route::resource('images', AdminImageController::class);
+            Route::post('/about/store-legalitas', [AdminAboutController::class, 'storeLegalitas'])
+                ->name('about.storeLegalitas');
+
+            Route::post('/about/store-visimisi', [AdminAboutController::class, 'storeVisiMisi'])
+                ->name('about.storeVisiMisi');
+
+
+            Route::resource('halaman_utama', AdminHalamanUtamaController::class);
+            Route::resource('visi_misi', AdminVisiMisiController::class);
+            Route::resource('services', AdminServiceController::class);
+            Route::resource('footer', AdminFooterController::class)->only(['index', 'edit', 'update']);
+            Route::resource('legalitas', AdminLegalitasController::class)->parameters([
+                'legalitas' => 'legalitas',
+            ]);
+            route::resource('team', AdminTeamController::class);
+            route::resource('portfolio', AdminPortfolioController::class);
+            route::resource('images', AdminImageController::class);
+        });
+
+        /* VENDOR CRUD */
+        Route::middleware('role:vendor')->group(function () {
+            Route::resource('product_vendor', AdminProductVendorController::class);
+        });
     });
-
-    /* VENDOR CRUD */
-    Route::middleware('role:vendor')->group(function () {
-        Route::resource('product_vendor', AdminProductVendorController::class);
-    });
-});

@@ -1,33 +1,33 @@
  @extends('layouts.app_landing')
-@section('title', 'company profile')
-@section('content')
- <main class="main">
+ @section('title', 'company profile')
+ @section('content')
+     <main class="main">
 
-     <!-- Page Title -->
-     <div class="page-title dark-background">
-         <div class="container position-relative">
-             <h1>About</h1>
-             solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
-             <nav class="breadcrumbs">
-                 <ol>
-                     <li class="current">Home</li>
-                     <li class="current">About</li>
-                 </ol>
-             </nav>
-         </div>
-     </div><!-- End Page Title -->
+         <!-- Page Title -->
+         <div class="page-title dark-background">
+             <div class="container position-relative">
+                 <h1>About</h1>
+                 solusi terpercaya pengelolaan limbah cair yang ramah lingkungan
+                 <nav class="breadcrumbs">
+                     <ol>
+                         <li class="current">Home</li>
+                         <li class="current">About</li>
+                     </ol>
+                 </nav>
+             </div>
+         </div><!-- End Page Title -->
 
-     <!-- About Section -->
-     <section id="about" class="about section">
+         <!-- About Section -->
+         <section id="about" class="about section">
 
-         <div class="container">
+             <div class="container">
 
-             <div class="row gy-4">
-                 {{-- <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+                 <div class="row gy-4">
+                     {{-- <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                      <img src="assets/img/team2.jpeg" class="img-fluid" alt="">
                      <a href="https://www.youtube.com/watch?v=HoDKTWGVqmw" class="glightbox pulsating-play-btn"></a>
                  </div> --}}
-                 {{-- <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+                     {{-- <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
                      <h3>Selayang pandang </h3>
                      <p>
                          PT Utama Cipta Tata Asri merupakan perusahaan manufaktur yang bergerak di bidang rekayasa
@@ -90,257 +90,183 @@
                          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                          proident
                      </p> --}}
-                 {{-- </div>  --}}
-                 {{-- About Section (safe) --}}
-                 @foreach ($abouts as $about)
-                     <section id="about" class="section py-5">
-                         <div class="container">
-                             <div class="row align-items-start gy-5">
+                     {{-- </div>  --}}
+                     {{-- About Section (safe) --}}
+                     @foreach ($abouts as $about)
+                         <section id="about" class="section py-5">
+                             <div class="container">
+                                 <div class="row align-items-start gy-5">
 
-                                 <!-- IMAGE -->
-                                 <div class="col-lg-6" data-aos="fade-right">
-                                     <img src="{{ asset($about->image) }}" class="img-fluid rounded shadow-lg w-100"
-                                         alt="About Image">
+                                     <!-- IMAGE -->
+                                     <div class="col-lg-6" data-aos="fade-right">
+                                         <img src="{{ asset($about->image) }}" class="img-fluid rounded shadow-lg w-100"
+                                             alt="About Image">
+                                     </div>
+
+                                     <!-- CONTENT -->
+                                     <div class="col-lg-6" data-aos="fade-left">
+
+                                         <h2 class="fw-bold mb-4">
+                                             {{ $about->headline ?? 'Selayang Pandang' }}
+                                         </h2>
+
+                                         <p class="text-muted mb-4">
+                                             {!! nl2br(e(Str::limit(strip_tags($about->description), 5000))) !!}
+                                         </p>
+
+                                         <h5 class="fw-semibold mb-3">
+                                             Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan
+                                             diantaranya:
+                                         </h5>
+
+                                         <ul class="list-unstyled">
+                                             <li class="mb-2">
+                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
+                                                 Instalasi cepat & handal
+                                             </li>
+                                             <li class="mb-2">
+                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
+                                                 Pelatihan operator & pendampingan
+                                             </li>
+                                             <li class="mb-2">
+                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
+                                                 Produk ramah lingkungan & hemat energi
+                                             </li>
+                                         </ul>
+
+                                     </div>
+
+                                 </div>
+                             </div>
+                         </section>
+                     @endforeach
+
+
+                     <!--visi misi-->
+                     <section class="section py-5">
+                         <div class="container text-center">
+                             <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
+
+                             <div class="row g-4">
+
+                                 {{-- VISI --}}
+                                 <div class="col-md-6" data-aos="zoom-in">
+                                     <div class="card border-0 shadow h-100 p-4">
+                                         <br>
+                                         <i class="fa-solid fa-eye fa-2xl text-primary"></i>
+                                         <br>
+                                         <h5 class="fw-bold">Visi</h5>
+
+                                         @if ($visi)
+                                             <p>{{ $visi->text }}</p>
+                                         @else
+                                             <p><em>Belum ada visi di backend.</em></p>
+                                         @endif
+                                     </div>
                                  </div>
 
-                                 <!-- CONTENT -->
-                                 <div class="col-lg-6" data-aos="fade-left">
+                                 {{-- MISI --}}
+                                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                                     <div class="card border-0 shadow h-100 p-4">
+                                         <br>
+                                         <i class="fa-solid fa-lightbulb fa-2xl text-success mb-3"></i>
+                                         <br>
 
-                                     <h2 class="fw-bold mb-4">
-                                         {{ $about->headline ?? 'Selayang Pandang' }}
-                                     </h2>
+                                         <h5 class="fw-bold">Misi</h5>
 
-                                     <p class="text-muted mb-4">
-                                         {!! nl2br(e(Str::limit(strip_tags($about->description), 5000))) !!}
-                                     </p>
-
-                                     <h5 class="fw-semibold mb-3">
-                                         Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan
-                                         diantaranya:
-                                     </h5>
-
-                                     <ul class="list-unstyled">
-                                         <li class="mb-2">
-                                             <i class="bi bi-check2-circle text-primary me-2"></i>
-                                             Instalasi cepat & handal
-                                         </li>
-                                         <li class="mb-2">
-                                             <i class="bi bi-check2-circle text-primary me-2"></i>
-                                             Pelatihan operator & pendampingan
-                                         </li>
-                                         <li class="mb-2">
-                                             <i class="bi bi-check2-circle text-primary me-2"></i>
-                                             Produk ramah lingkungan & hemat energi
-                                         </li>
-                                     </ul>
-
+                                         @if ($misi->count())
+                                             <ul class="text-start">
+                                                 @foreach ($misi as $item)
+                                                     <li>
+                                                         <p>{{ $item->text }}</p>
+                                                     </li>
+                                                 @endforeach
+                                             </ul>
+                                         @else
+                                             <p><em>Belum ada misi di backend.</em></p>
+                                         @endif
+                                     </div>
                                  </div>
 
                              </div>
                          </div>
                      </section>
-                 @endforeach
-
-
-                 <!--visi misi-->
-                 <section class="section py-5">
-                     <div class="container text-center">
-                         <h2 class="fw-bold mb-4" data-aos="fade-up">Visi & Misi</h2>
-
-                         <div class="row g-4">
-
-                             {{-- VISI --}}
-                             <div class="col-md-6" data-aos="zoom-in">
-                                 <div class="card border-0 shadow h-100 p-4">
-                                     <br>
-                                     <i class="fa-solid fa-eye fa-2xl text-primary"></i>
-                                     <br>
-                                     <h5 class="fw-bold">Visi</h5>
-
-                                     @if ($visi)
-                                         <p>{{ $visi->text }}</p>
-                                     @else
-                                         <p><em>Belum ada visi di backend.</em></p>
-                                     @endif
-                                 </div>
-                             </div>
-
-                             {{-- MISI --}}
-                             <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                                 <div class="card border-0 shadow h-100 p-4">
-                                     <br>
-                                     <i class="fa-solid fa-lightbulb fa-2xl text-success mb-3"></i>
-                                     <br>
-
-                                     <h5 class="fw-bold">Misi</h5>
-
-                                     @if ($misi->count())
-                                         <ul class="text-start">
-                                             @foreach ($misi as $item)
-                                                 <li>
-                                                     <p>{{ $item->text }}</p>
-                                                 </li>
-                                             @endforeach
-                                         </ul>
-                                     @else
-                                         <p><em>Belum ada misi di backend.</em></p>
-                                     @endif
-                                 </div>
-                             </div>
-
-                         </div>
-                     </div>
-                 </section>
-                 <!--end visi misi-->
+                     <!--end visi misi-->
 
 
 
-                 <!-- legalitas Accordion -->
-                 <section class="py-5 bg-light">
-                     <div class="container">
-                         <h2 class="fw-bold mb-4 text-center">legalitas & Sertifikasi</h2>
-                         <p>Klaim atas kualitas produk IPAL kami didukung oleh berbagai sertifikasi resmi yang
-                             memastikan performa,
-                             keamanan, dan mutu sesuai standar nasional maupun internasional. Setiap unit IPAL telah
-                             melalui
-                             serangkaian uji fungsi dan uji kualitas yang ketat, serta memperoleh pengakuan seperti
-                             sertifikasi ISO
-                             sebagai standar manajemen mutu, sertifikasi BSN yang menjamin kesesuaian terhadap Standar
-                             Nasional
-                             Indonesia, dan sertifikasi TKDN yang membuktikan besarnya kandungan komponen dalam negeri
-                             pada produk
-                             kami. Dengan kelengkapan sertifikasi tersebut, produk IPAL kami tidak hanya teruji handal
-                             dan efisien,
-                             tetapi juga memenuhi persyaratan regulasi, audit teknis, serta kebutuhan proyek pemerintah
-                             maupun
-                             swasta.</p>
-                         <br><br>
-                         <div class="accordion" id="legalitasAccordion">
-                             <div class="accordion-item">
-                                 <h2 class="accordion-header">
-                                     <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                                         data-bs-target="#akta">
-                                         Akta Pendirian
-                                     </button>
-                                 </h2>
-                                 <div id="akta" class="accordion-collapse collapse show"
-                                     data-bs-parent="#legalitasAccordion">
-                                     <div class="accordion-body">AHU PT Utama Cipta Tata Asri</div>
-                                     <img src="" alt="gambar sertifikat">
-                                     <div class="accordion-body">Nomor induk berusaha (NIB)</div>
-                                     <img src="" alt="gambar sertifikat">
-                                 </div>
-                             </div>
-
-                             <div class="accordion-item">
-                                 <h2 class="accordion-header">
-                                     <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
-                                         data-bs-target="#legalitas">
-                                         legalitas
-                                     </button>
-                                 </h2>
-                                 <div id="legalitas" class="accordion-collapse collapse show"
-                                     data-bs-parent="#legalitasAccordion">
-                                     <div class="accordion-body">Sertifikat Hak Paten</div>
-                                     <img src="" alt="gambar sertifikat">
-                                     <div class="accordion-body">Sertifikat Merek</div>
-                                     <img src="" alt="gambar sertifikat">
-                                     <div class="accordion-body">Sertifikat Merek</div>
-                                     <img src="" alt="gambar sertifikat">
-                                 </div>
-                             </div>
-
-                             <div class="accordion-item">
-                                 <h2 class="accordion-header">
-                                     <button class="accordion-button collapsed fw-bold" type="button"
-                                         data-bs-toggle="collapse" data-bs-target="#sertifikat">
-                                         Sertifikat SNI & ISO
-                                     </button>
-                                 </h2>
-                                 <div id="sertifikat" class="accordion-collapse collapse"
-                                     data-bs-parent="#legalitasAccordion">
-                                     <div class="accordion-body">
-                                         <ul>
-                                             <li>ISO 9001:2015</li>
-                                             <img src="" alt="gambar sertifikat">
-                                             <li>SNI 7504:2011</li>
-                                             <img src="" alt="gambar sertifikat">
-                                             <li>SNI_OSITECH_MINIIPAL_2019</li>
-                                             <img src="" alt="gambar sertifikat">
-                                         </ul>
-                                     </div>
-                                 </div>
-                             </div>
-
-                             <div class="accordion-item">
-                                 <div class="accordion-item">
-                                     <h2 class="accordion-header">
-                                         <button class="accordion-button fw-bold" type="button"
-                                             data-bs-toggle="collapse" data-bs-target="#legalitas">
-                                             TKDN
-                                         </button>
-                                     </h2>
-                                     <div id="legalitas" class="accordion-collapse collapse show"
-                                         data-bs-parent="#legalitasAccordion">
-                                         <div class="accordion-body">TKDN</div>
-                                         <img src="" alt="gambar sertifikat">
-
-                                     </div>
-                                 </div>
-                                 <!-- Tambahkan item lain sesuai kebutuhan -->
-                             </div>
-                         </div>
-                 </section>
-
-
-
-
-
-
-                 <!--hasil uji lab-->
-                 <section>
-                     <section id="hasil-uji-lab" class="py-5 bg-light">
+                     <!-- legalitas Accordion -->
+                     <section class="py-5 bg-light">
                          <div class="container">
-                             <div class="row align-items-center">
+                             <h2 class="fw-bold mb-4 text-center">legalitas & Sertifikasi</h2>
+                             <p>Klaim atas kualitas produk IPAL kami didukung oleh berbagai sertifikasi resmi yang
+                                 memastikan performa,
+                                 keamanan, dan mutu sesuai standar nasional maupun internasional. Setiap unit IPAL telah
+                                 melalui
+                                 serangkaian uji fungsi dan uji kualitas yang ketat, serta memperoleh pengakuan seperti
+                                 sertifikasi ISO
+                                 sebagai standar manajemen mutu, sertifikasi BSN yang menjamin kesesuaian terhadap Standar
+                                 Nasional
+                                 Indonesia, dan sertifikasi TKDN yang membuktikan besarnya kandungan komponen dalam negeri
+                                 pada produk
+                                 kami. Dengan kelengkapan sertifikasi tersebut, produk IPAL kami tidak hanya teruji handal
+                                 dan efisien,
+                                 tetapi juga memenuhi persyaratan regulasi, audit teknis, serta kebutuhan proyek pemerintah
+                                 maupun
+                                 swasta.</p>
+                             <br><br>
 
-                                 <!-- Text Content -->
-                                 <div class="col-lg-7" data-aos="fade-right">
-                                     <h3 class="fw-bold mb-3">Hasil Uji Laboratorium</h3>
-                                     <p class="mb-4">
-                                         <strong>1.</strong> Baku Mutu Air hasil proses <strong>MINI IPAL</strong> ini
-                                         sudah sesuai
-                                         dengan
-                                         <em>PERMEN LINGKUNGAN HIDUP DAN KEHUTANAN REPUBLIK INDONESIA
-                                             NOMOR P.68/Menlhk/Setjen/Kum.1/8/2016</em> tentang
-                                         <strong>Baku Mutu Air Limbah Domestik</strong>.
-                                     </p>
-                                     <p class="mb-4">
-                                         <strong>2.</strong> Kami selalu konsisten melakukan pengujian terlebih dahulu
-                                         ke
-                                         <strong>laboratorium terakreditasi KAN</strong> sebelum produk dilepas ke
-                                         pasaran.
-                                     </p>
-                                 </div>
-
-                                 <!-- Image -->
-                                 <div class="col-lg-5 text-center" data-aos="fade-left">
-                                     <img src="assets/img/sertifikat.png" alt="Sertifikat hasil instalasi"
-                                         class="img-fluid rounded shadow">
-                                     <p class="mt-2 text-muted"><em>Contoh sertifikat hasil uji</em></p>
-                                 </div>
-
-                             </div>
-                         </div>
                      </section>
 
 
-                     <!-- Clients Section -->
-                     <section id="clients" class="clients section">
 
-                         <div class="container">
 
-                             <div class="swiper init-swiper">
-                                 <script type="application/json" class="swiper-config">
+
+
+                     <!--hasil uji lab-->
+                     <section>
+                         <section id="hasil-uji-lab" class="py-5 bg-light">
+                             <div class="container">
+                                 <div class="row align-items-center">
+
+                                     <!-- Text Content -->
+                                     <div class="col-lg-7" data-aos="fade-right">
+                                         <h3 class="fw-bold mb-3">Hasil Uji Laboratorium</h3>
+                                         <p class="mb-4">
+                                             <strong>1.</strong> Baku Mutu Air hasil proses <strong>MINI IPAL</strong> ini
+                                             sudah sesuai
+                                             dengan
+                                             <em>PERMEN LINGKUNGAN HIDUP DAN KEHUTANAN REPUBLIK INDONESIA
+                                                 NOMOR P.68/Menlhk/Setjen/Kum.1/8/2016</em> tentang
+                                             <strong>Baku Mutu Air Limbah Domestik</strong>.
+                                         </p>
+                                         <p class="mb-4">
+                                             <strong>2.</strong> Kami selalu konsisten melakukan pengujian terlebih dahulu
+                                             ke
+                                             <strong>laboratorium terakreditasi KAN</strong> sebelum produk dilepas ke
+                                             pasaran.
+                                         </p>
+                                     </div>
+
+                                     <!-- Image -->
+                                     <div class="col-lg-5 text-center" data-aos="fade-left">
+                                         <img src="assets/img/sertifikat.png" alt="Sertifikat hasil instalasi"
+                                             class="img-fluid rounded shadow">
+                                         <p class="mt-2 text-muted"><em>Contoh sertifikat hasil uji</em></p>
+                                     </div>
+
+                                 </div>
+                             </div>
+                         </section>
+
+
+                         <!-- Clients Section -->
+                         <section id="clients" class="clients section">
+
+                             <div class="container">
+
+                                 <div class="swiper init-swiper">
+                                     <script type="application/json" class="swiper-config">
                  {
                      "loop": true,
                      "speed": 600,
@@ -373,37 +299,37 @@
                      }
                  }
                  </script>
-                                 <div class="swiper-wrapper align-items-center">
-                                     <div class="swiper-slide"><img src="assets/img/clients/rumah_sakit.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/puskesmas.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/restoran.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/klinik.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/farmasi.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/laborat.jpeg"
-                                             class="img-fluid" alt="">
-                                     </div>
-                                     <div class="swiper-slide"><img src="assets/img/clients/kimia.jpeg"
-                                             class="img-fluid" alt="">
+                                     <div class="swiper-wrapper align-items-center">
+                                         <div class="swiper-slide"><img src="assets/img/clients/rumah_sakit.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/puskesmas.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/restoran.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/klinik.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/farmasi.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/laborat.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
+                                         <div class="swiper-slide"><img src="assets/img/clients/kimia.jpeg"
+                                                 class="img-fluid" alt="">
+                                         </div>
                                      </div>
                                  </div>
+
                              </div>
 
-                         </div>
+                         </section><!-- /Clients Section -->
 
-                     </section><!-- /Clients Section -->
-
-                     <!-- Testimonials Section -->
-                     {{-- <section id="testimonials" class="testimonials section">
+                         <!-- Testimonials Section -->
+                         {{-- <section id="testimonials" class="testimonials section">
 
              <!-- Section Title -->
              <div class="container section-title" data-aos="fade-up">
@@ -572,6 +498,6 @@
 
          </section><!-- /Testimonials Section -->
  --}}
- </main>
+     </main>
 
  @endsection

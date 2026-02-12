@@ -10,6 +10,7 @@
             <tr>
                 <th>Urutan</th>
                 <th>Judul</th>
+                <th>Deskripsi</th>
                 <th>Gambar</th>
                 <th>Aksi</th>
             </tr>
@@ -19,6 +20,7 @@
                 <tr>
                     <td>{{ $item->urutan }}</td>
                     <td>{{ $item->judul }}</td>
+                    <td>{{ $item->deskripsi }}</td>
                     <td>
                         @if ($item->image)
                             <img src="{{ asset('uploads/legalitas/' . $item->image) }}" width="80">

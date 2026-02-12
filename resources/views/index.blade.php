@@ -369,209 +369,111 @@
 
         <!--end layanan kami-->
 
-        <!-- Featured Products sparepart Section -->
-        {{-- <section id="featured-products" class="section py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-        <h2 class="text-center fw-bold mb-5">Produk</h2>
-                <p data-aos="fade-up" data-aos-delay="100"></p>Solusi inovatif kami yang banyak diminati instansi
-                medis &
-                swasta.
-            </div>
+        {{-- Produk --}}
+        <div class="row g-4 isotope-container" data-aos="fade-up">
+            @forelse($products ?? [] as $product)
+                <div class="col-lg-4 col-md-6 isotope-item {{ Str::slug($product->company) }}">
+                    <div class="card h-100 shadow border-0 katalog-card">
 
-            @php
-                $products = [
-                    // [
-                    //     'img' => '1 3,5m3+solar panel.png',
-                    //     'title' => '1 3,5m3+solar panel',
-                    //     'location' => 'Magelang, Indonesia',
-                    // ],
-                    // [
-                    //     'img' => '1 4,5m3+solar panel.jpg',
-                    //     'title' => '1 4,5m3+solar panel',
-                    //     'location' => 'Magelang, Indonesia',
-                    // ],
-                    // [
-                    //     'img' => '1 5,5m3+solar panel.png',
-                    //     'title' => '1 5,5m3+solar panel',
-                    //     'location' => 'Magelang, Indonesia',
-                    // ],
-                    [
-                        'img' => '1m3.jpg',
-                        'title' => '1m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => '60m3.png',
-                        'title' => '60m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => '80m3.jpg',
-                        'title' => '80m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'IPAL 100m3.png',
-                        'title' => 'IPAL 100m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'IPAL 100m3.png',
-                        'title' => 'IPAL 100m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'IPAL 130m3.png',
-                        'title' => 'IPAL 130m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'IPAL 160m3.png',
-                        'title' => 'IPAL 160m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'IPAL 180m3.png',
-                        'title' => 'IPAL 180m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                    [
-                        'img' => 'RUMAH IPAL 3,5m3.jpg',
-                        'title' => 'RUMAH IPAL 3,5m3',
-                        'location' => 'Magelang, Indonesia',
-                    ],
-                ];
-            @endphp
+                        <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/img/no-image.png') }}"
+                            class="card-img-top katalog-img" alt="{{ $product->name }}">
 
-            <div class="catalog">
-                @foreach ($products as $product)
-                    <div class="product-card">
-                        <img src="{{ asset('assets/img/portfolio/' . $product['img']) }}" alt="">
-                        <div class="product-title">{{ $product['title'] }}</div>
-                        <div class="location">{{ $product['location'] }}</div>
-                        <div class="btn-group">
-                            <a href="https://wa.me/6281234567890" class="btn">
-                                <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
-                            </a>
-                            <a href="https://id.shp.ee/ZS6izam" class="btnn">
-                                <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
-                            </a>
+                        <div class="card-body d-flex flex-column">
+
+                            <small class="text-muted">{{ $product->company }}</small>
+
+                            <h5 class="fw-bold">{{ $product->name }}</h5>
+
+                            <p class="text-muted small">
+                                {{ $product->preview_desc ?? Str::limit($product->deskripsi, 120) }}
+                            </p>
+
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                                data-bs-target="#detailModal{{ $product->id }}">
+                                Detail Produk
+                            </button>
+
                         </div>
                     </div>
-                @endforeach
-            </div>
-
-        </div>
-    </section>
-
-    <!-- /Featured Products sparepart Section --> --}}
-        <!-- Featured Products sparepart Section -->
-        <section id="featured-products" class="section py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="text-center fw-bold mb-5">Produk</h2>
-                    <p data-aos="fade-up" data-aos-delay="100"></p>Solusi inovatif kami yang banyak diminati instansi
-                    medis &
-                    swasta.
                 </div>
 
-                @php
-                    $products = [
-                        // [
-                        //     'img' => '1 3,5m3+solar panel.png',
-                        //     'title' => '1 3,5m3+solar panel',
-                        //     'location' => 'Magelang, Indonesia',
-                        // ],
-                        // [
-                        //     'img' => '1 4,5m3+solar panel.jpg',
-                        //     'title' => '1 4,5m3+solar panel',
-                        //     'location' => 'Magelang, Indonesia',
-                        // ],
-                        // [
-                        //     'img' => '1 5,5m3+solar panel.png',
-                        //     'title' => '1 5,5m3+solar panel',
-                        //     'location' => 'Magelang, Indonesia',
-                        // ],
-                        [
-                            'img' => '1m3.jpg',
-                            'title' => '1m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => '60m3.png',
-                            'title' => '60m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
+                {{-- ✅ MODAL DETAIL PRODUK --}}
+                <div class="modal fade" id="detailModal{{ $product->id }}" tabindex="-1">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content border-0 shadow">
 
-                        [
-                            'img' => 'IPAL 100m3.png',
-                            'title' => 'IPAL 100m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => 'IPAL 100m3.png',
-                            'title' => 'IPAL 100m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => 'IPAL 130m3.png',
-                            'title' => 'IPAL 130m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => 'IPAL 160m3.png',
-                            'title' => 'IPAL 160m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => 'IPAL 180m3.png',
-                            'title' => 'IPAL 180m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                        [
-                            'img' => 'RUMAH IPAL 3,5m3.jpg',
-                            'title' => 'RUMAH IPAL 3,5m3',
-                            'location' => 'Magelang, Indonesia',
-                        ],
-                    ];
-                @endphp
+                            <div class="modal-body p-0">
 
-                <div class="catalog">
-                    @foreach ($katalogs as $katalog)
-                        <div class="product-card">
+                                <div class="row g-0">
 
-                            {{-- Image --}}
-                            @if ($katalog->image)
-                                <img src="{{ asset('storage/' . $katalog->image) }}" class="img-fluid" alt="katalog">
-                            @else
-                                <img src="{{ asset('assets/img/no-image.png') }}" class="img-fluid" alt="no image">
-                            @endif
+                                    {{-- IMAGE --}}
+                                    <div class="col-md-6">
+                                        <img src="{{ asset('storage/' . $product->image) }}"
+                                            class="w-100 h-100 object-fit-cover">
+                                    </div>
 
-                            {{-- Title --}}
-                            <div class="product-title">{{ $katalog->name }}</div>
+                                    {{-- DETAIL --}}
+                                    <div class="col-md-6 p-4">
 
-                            {{-- Location --}}
-                            <div class="location">{{ $katalog->lokasi ?? 'Indonesia' }}</div>
+                                        <h3 class="fw-bold mb-3">{{ $product->name }}</h3>
 
-                            {{-- Buttons --}}
-                            <div class="btn-group">
-                                <a href="https://wa.me/{{ $katalog->whatsapp ?? '6281234567890' }}" class="btn">
-                                    <i class="fa-solid fa-phone-volume"></i> Hubungi Kami
-                                </a>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary">{{ $product->kategori }}</span>
+                                            <span class="badge bg-dark">{{ $product->brand }}</span>
+                                        </div>
 
-                                <a href="{{ $katalog->link_toko ?? 'https://id.shp.ee/ZS6izam' }}" class="btnn">
-                                    <i class="fa-solid fa-bag-shopping"></i> Kunjungi Toko Kami
-                                </a>
+                                        <p class="text-muted">
+                                            {{ $product->deskripsi }}
+                                        </p>
+
+                                        <hr>
+
+                                        {{-- INFO TEKNIS --}}
+                                        <h6 class="fw-bold">Informasi Produk</h6>
+
+                                        <table class="table table-sm">
+                                            <tr>
+                                                <td>Kode Produk</td>
+                                                <td>{{ $product->kode_produk ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Brand</td>
+                                                <td>{{ $product->brand ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Model</td>
+                                                <td>{{ $product->model_produk ?? '-' }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Seri</td>
+                                                <td>{{ $product->seri_produk ?? '-' }}</td>
+                                            </tr>
+                                        </table>
+
+                                        {{-- SPESIFIKASI --}}
+                                        @if ($product->spesifikasi)
+                                            <h6 class="fw-bold mt-3">Spesifikasi</h6>
+                                            <p class="small text-muted">
+                                                {!! nl2br(e($product->spesifikasi)) !!}
+                                            </p>
+                                        @endif
+
+                                    </div>
+
+                                </div>
                             </div>
+
                         </div>
-                    @endforeach
+                    </div>
                 </div>
 
+            @empty
+                <p class="text-center">Belum ada produk</p>
+            @endforelse
+        </div>
 
-            </div>
-        </section><!-- /Featured Products sparepart Section -->
 
+        <!--end product-->
         <section id="clients" class="clients section">
             <div class="container">
 
