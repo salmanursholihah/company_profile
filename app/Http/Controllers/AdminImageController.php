@@ -23,16 +23,19 @@ class AdminImageController extends Controller
     {
         $request->validate([
             'image' => 'required|image|mimes:jpg,jpeg,png,webp',
+            'type'  => 'required|string'
         ]);
 
         $path = $request->file('image')->store('images', 'public');
 
         Image::create([
-            'title' => $request->image->getClientOriginalName(),
+            'title'      => $request->file('image')->getClientOriginalName(),
             'image_path' => $path,
+            'type'       => $request->type, // ✅ TYPE MASUK
         ]);
 
-        return redirect()->route('admin.images.index')->with('success', 'Image berhasil ditambahkan');
+        return redirect()->route('admin.images.index')
+            ->with('success', 'Image berhasil ditambahkan');
     }
 
     public function edit($id)
@@ -47,50 +50,45 @@ class AdminImageController extends Controller
 
         $request->validate([
             'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'type'  => 'required|string'
         ]);
+
+        // Data update default (tanpa ganti gambar)
+        $data = [
+            'type' => $request->type // ✅ TYPE TETAP KE UPDATE
+        ];
 
         // Jika upload gambar baru
         if ($request->hasFile('image')) {
 
-            // hapus gambar lama
-            if ($image->path && Storage::disk('public')->exists($image->path)) {
-                Storage::disk('public')->delete($image->path);
+            // Hapus gambar lama
+            if ($image->image_path && Storage::disk('public')->exists($image->image_path)) {
+                Storage::disk('public')->delete($image->image_path);
             }
 
             $path = $request->file('image')->store('images', 'public');
-            $image->update([
-                'title' => $request->image->getClientOriginalName(),
-                'image_path' => $path,
-            ]);
+
+            $data['title'] = $request->file('image')->getClientOriginalName();
+            $data['image_path'] = $path;
         }
 
-        return redirect()->route('admin.images.index')->with('success', 'Image berhasil diupdate');
+        $image->update($data);
+
+        return redirect()->route('admin.images.index')
+            ->with('success', 'Image berhasil diupdate');
     }
 
-    // public function destroy($id)
-    // {
-    //     $image = Image::findOrFail($id);
-
-    //     // hapus file fisik
-    //     if (Storage::disk('public')->exists($image->path)) {
-    //         Storage::disk('public')->delete($image->path);
-    //     }
-
-    //     // hapus database
-    //     $image->delete();
-
-    //     return redirect()->route('admin.images.index')->with('success', 'Image berhasil dihapus');
-    // }
     public function destroy($id)
     {
         $image = Image::findOrFail($id);
 
-        // Hapus file fisik
-        Storage::disk('public')->delete($image->image_path);
+        if ($image->image_path && Storage::disk('public')->exists($image->image_path)) {
+            Storage::disk('public')->delete($image->image_path);
+        }
 
-        // Hapus row database
         $image->delete();
 
-        return redirect()->route('admin.images.index')->with('success', 'Gambar berhasil dihapus');
+        return redirect()->route('admin.images.index')
+            ->with('success', 'Gambar berhasil dihapus');
     }
 }
