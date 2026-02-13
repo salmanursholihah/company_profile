@@ -34,9 +34,11 @@ class LandingController extends Controller
         $halaman_utama_list = HalamanUtama::all();
         $footer = Footer::first();
         $footerImage = Image::latest()->first();
-$products = Katalog::take(4)->get();
-       
+        $products = Katalog::take(4)->get();
+        $footerLogos = Image::where('type', 'footer_logo')->get();
 
-        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'teams', 'halaman_utama', 'legalitas', 'images', 'halaman_utama_list', 'footer', 'footerImage','products'));
+
+
+        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'teams', 'halaman_utama', 'legalitas', 'images', 'halaman_utama_list', 'footer', 'footerImage', 'products', 'footerLogos'));
     }
 }
