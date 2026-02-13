@@ -369,66 +369,99 @@
 
         <!--end layanan kami-->
 
-        {{-- Produk --}}
+{{-- ================= PRODUK ================= --}}
+{{-- ================= PRODUK ================= --}}
+<section id="catalog" class="catalog section py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Produk Kami</h2>
+            <p class="text-muted">Produk unggulan yang kami sediakan</p>
+        </div>
+
         <div class="row g-4 isotope-container" data-aos="fade-up">
+
             @forelse($products ?? [] as $product)
-                <div class="col-lg-4 col-md-6 isotope-item {{ Str::slug($product->company) }}">
+
+                <div class="col-lg-4 col-md-6 isotope-item {{ \Illuminate\Support\Str::slug($product->company ?? 'company') }}">
+
                     <div class="card h-100 shadow border-0 katalog-card">
 
-                        <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/img/no-image.png') }}"
-                            class="card-img-top katalog-img" alt="{{ $product->name }}">
+                        {{-- IMAGE --}}
+                        <img
+                            src="{{ $product->image ? asset('storage/'.$product->image) : asset('assets/img/no-image.png') }}"
+                            class="card-img-top katalog-img"
+                            alt="{{ $product->name ?? 'Product Image' }}"
+                        >
 
+                        {{-- BODY --}}
                         <div class="card-body d-flex flex-column">
 
-                            <small class="text-muted">{{ $product->company }}</small>
+                            <small class="text-muted">
+                                {{ $product->company ?? '-' }}
+                            </small>
 
-                            <h5 class="fw-bold">{{ $product->name }}</h5>
+                            <h5 class="fw-bold">
+                                {{ $product->name ?? '-' }}
+                            </h5>
 
                             <p class="text-muted small">
-                                {{ $product->preview_desc ?? Str::limit($product->deskripsi, 120) }}
+                                {{ $product->preview_desc ?? \Illuminate\Support\Str::limit($product->deskripsi ?? '-', 120) }}
                             </p>
 
-                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal"
-                                data-bs-target="#detailModal{{ $product->id }}">
+                            <button
+                                class="btn btn-primary mt-auto"
+                                data-bs-toggle="modal"
+                                data-bs-target="#detailModal{{ $product->id }}"
+                            >
                                 Detail Produk
                             </button>
 
                         </div>
                     </div>
+
                 </div>
 
-                {{-- ✅ MODAL DETAIL PRODUK --}}
+                {{-- MODAL --}}
                 <div class="modal fade" id="detailModal{{ $product->id }}" tabindex="-1">
                     <div class="modal-dialog modal-xl modal-dialog-centered">
                         <div class="modal-content border-0 shadow">
 
                             <div class="modal-body p-0">
-
                                 <div class="row g-0">
 
                                     {{-- IMAGE --}}
                                     <div class="col-md-6">
-                                        <img src="{{ asset('storage/' . $product->image) }}"
-                                            class="w-100 h-100 object-fit-cover">
+                                        <img
+                                            src="{{ $product->image ? asset('storage/'.$product->image) : asset('assets/img/no-image.png') }}"
+                                            class="w-100 h-100 object-fit-cover"
+                                        >
                                     </div>
 
                                     {{-- DETAIL --}}
                                     <div class="col-md-6 p-4">
 
-                                        <h3 class="fw-bold mb-3">{{ $product->name }}</h3>
+                                        <h3 class="fw-bold mb-3">
+                                            {{ $product->name }}
+                                        </h3>
 
                                         <div class="mb-3">
-                                            <span class="badge bg-primary">{{ $product->kategori }}</span>
-                                            <span class="badge bg-dark">{{ $product->brand }}</span>
+                                            <span class="badge bg-primary">
+                                                {{ $product->kategori ?? '-' }}
+                                            </span>
+
+                                            <span class="badge bg-dark">
+                                                {{ $product->brand ?? '-' }}
+                                            </span>
                                         </div>
 
                                         <p class="text-muted">
-                                            {{ $product->deskripsi }}
+                                            {{ $product->deskripsi ?? '-' }}
                                         </p>
 
                                         <hr>
 
-                                        {{-- INFO TEKNIS --}}
                                         <h6 class="fw-bold">Informasi Produk</h6>
 
                                         <table class="table table-sm">
@@ -450,8 +483,7 @@
                                             </tr>
                                         </table>
 
-                                        {{-- SPESIFIKASI --}}
-                                        @if ($product->spesifikasi)
+                                        @if(!empty($product->spesifikasi))
                                             <h6 class="fw-bold mt-3">Spesifikasi</h6>
                                             <p class="small text-muted">
                                                 {!! nl2br(e($product->spesifikasi)) !!}
@@ -468,12 +500,18 @@
                 </div>
 
             @empty
-                <p class="text-center">Belum ada produk</p>
+                <div class="col-12 text-center">
+                    <p class="text-muted">Belum ada produk</p>
+                </div>
             @endforelse
+
         </div>
 
+    </div>
 
-        <!--end product-->
+</section>
+{{-- ================= END PRODUK ================= --}}
+
         <section id="clients" class="clients section">
             <div class="container">
 
@@ -516,4 +554,35 @@
 
 
     </main>
+    @push('scripts')
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+    var iso = new Isotope('.isotope-container', {
+        itemSelector: '.isotope-item',
+        layoutMode: 'fitRows'
+    });
+
+    document.querySelectorAll('.isotope-filters li').forEach(function(btn){
+
+        btn.addEventListener('click', function(){
+
+            var filterValue = this.getAttribute('data-filter');
+            iso.arrange({ filter: filterValue });
+
+            document.querySelectorAll('.filter-active')
+                .forEach(el => el.classList.remove('filter-active'));
+
+            this.classList.add('filter-active');
+
+        });
+
+    });
+
+});
+</script>
+@endpush
+
 @endsection

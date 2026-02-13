@@ -134,7 +134,7 @@
                                 </td>
                                 <td>{{ $item->url }}</td>
                                 <td>
-                                    <a href="{{ route('admin.about.editAbout', $item->id) }}"
+                                    <a href="{{ route('admin.about.edit', $item->id) }}"
                                         class="btn btn-warning btn-sm">Edit</a>
                                 </td>
                             </tr>

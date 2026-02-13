@@ -37,10 +37,11 @@
                     <a href="{{ route('admin.profile.admin_profile') }}" class="nav-link text-white">Profile Admin</a>
                     <a href="{{ route('admin.about.index') }}" class="nav-link text-white">About</a>
                     <a href="{{ route('admin.halaman_utama.index') }}" class="nav-link text-white">Halaman Utama</a>
-                    <a href="{{ route('admin.visi_misi.index') }}" class="nav-link text-white">Visi Misi</a>
+                    <!-- <a href="{{ route('admin.visi_misi.index') }}" class="nav-link text-white">Visi Misi</a> -->
                     <a href="{{ route('admin.services.index') }}" class="nav-link text-white">Layanan Kami</a>
                     <a href="{{ route('admin.footer.index') }}" class="nav-link text-white">Footer</a>
-                    <a href="{{ route('admin.legalitas.index') }}" class="nav-link text-white">legalitas</a>
+                    <!-- <a href="{{ route('admin.legalitas.index') }}" class="nav-link text-white">legalitas</a> -->
+                     <a href="{{ route('admin.hasil-uji-lab.index') }}" class="nav-link text-white">Hasil Uji Lab</a>
                     <a href="{{ route('admin.team.index') }}" class="nav-link text-white">team</a>
                     <a href="{{ route('admin.portfolio.index') }}" class="nav-link text-white">Portfolio</a>
                     <a href="{{ route('admin.images.index') }}" class="nav-link text-white">Images</a>

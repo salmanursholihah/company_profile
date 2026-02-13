@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUjiLabController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -151,9 +152,15 @@ Route::prefix('admin')
 
             Route::post('/about/store-legalitas', [AdminAboutController::class, 'storeLegalitas'])
                 ->name('about.storeLegalitas');
+            Route::get('/admin/about/legalitas/{id}/edit', [AdminAboutController::class, 'editLegalitas'])->name('about.editLegalitas');
+
 
             Route::post('/about/store-visimisi', [AdminAboutController::class, 'storeVisiMisi'])
                 ->name('about.storeVisiMisi');
+            Route::get('/admin/about/visi-misi/{id}/edit', [AdminAboutController::class, 'editVisiMisi'])->name('about.editVisiMisi');
+
+            Route::resource('hasil-uji-lab',AdminUjiLabController::class);
+
 
 
             Route::resource('halaman_utama', AdminHalamanUtamaController::class);
