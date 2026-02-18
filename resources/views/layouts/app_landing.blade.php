@@ -65,17 +65,17 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{{ route('index') }}">Home</a></li>
-                    <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('product') }}">Product</a></li>
-                    <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
-                    <li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
-                    <li><a href="{{ route('team') }}">Team</a></li>
-                    <li><a href="{{ route('blog.index') }}">Blog</a></li>
-                    <li><a href="{{ route('register') }}">sign up</a></li>
-                    <li><a href="{{ route('login') }}">sign in</a></li>
+<li><a href="{{ route('about') }}">About</a></li>
+<li><a href="{{ route('product') }}">Product</a></li>
+<li><a href="{{ route('portfolio') }}">Portfolio</a></li>
+<li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
+<li><a href="{{ route('team') }}">Team</a></li>
+<li><a href="{{ route('blog.index') }}">Blog</a></li>
+<li><a href="{{ route('register') }}">sign up</a></li>
+<li><a href="{{ route('login') }}">sign in</a></li>
 
 
-                    <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+<!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -92,111 +92,110 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
+<li><a href="{{ route('contact.index') }}">Contact</a></li>
+</ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+</div>
+</header>
+
+@yield('content')
+
+
+
+
+<footer id="footer" class="footer dark-background">
+
+
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6 footer-about">
+                <a href="index.html" class="d-flex align-items-center">
+                    <span class="sitename">PT Utama Cipta Tata Asri </span>
+                </a>
+                <div class="footer-contact pt-3">
+                    <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Kec. Magelang Utara, Kota Magelang,
+                        Jawa Tengah</p>
+                    <p class="mt-3"><strong>Phone:</strong> <span>0831-1666-8809</span></p>
+                    <p><strong>Email:</strong> <span>ptutamacta@gmail.com</span></p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="{{ route('product') }}">Product</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
                 </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
+            </div>
 
-        </div>
-    </header>
-
-        @yield('content')
-
-
-
-
-    <footer id="footer" class="footer dark-background">
-
-
-
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="index.html" class="d-flex align-items-center">
-                        <span class="sitename">PT Utama Cipta Tata Asri </span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Kec. Magelang Utara, Kota Magelang,
-                            Jawa Tengah</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>0831-1666-8809</span></p>
-                        <p><strong>Email:</strong> <span>ptutamacta@gmail.com</span></p>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('product') }}">Product</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">P
+            <div class="col-lg-2 col-md-3 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">P
                             roduct Management</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-12">
-                    <h4>Follow Us</h4>
-                    <p class="italic">Reliable, Ecodable, and Reasonable</p>
-                    <div class="social-links d-flex">
-                        <a href="https://www.twitter.com"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ospod67?_t=ZS-8ycKl7yOd2G&_r=1"><i
-                                class="bi bi-tiktok"></i></a>
-                        <a href="https://youtube.com/@ospod-milos?si=pJO2FPcFW9RLsaY9"><i class="bi bi-youtube"></i></a>
-
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
+                    <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+                </ul>
             </div>
-        </div>
 
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">UCTA by ositech</strong> <span>All Rights
-                    Reserved</span></p>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+            <div class="col-lg-4 col-md-12">
+                <h4>Follow Us</h4>
+                <p class="italic">Reliable, Ecodable, and Reasonable</p>
+                <div class="social-links d-flex">
+                    <a href="https://www.twitter.com"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ospod67?_t=ZS-8ycKl7yOd2G&_r=1"><i class="bi bi-tiktok"></i></a>
+                    <a href="https://youtube.com/@ospod-milos?si=pJO2FPcFW9RLsaY9"><i class="bi bi-youtube"></i></a>
+
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
+
         </div>
+    </div>
 
-    </footer>
+    <div class="container copyright text-center mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">UCTA by ositech</strong> <span>All Rights
+                Reserved</span></p>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you've purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+            <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+        </div>
+    </div>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+</footer>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<!-- Preloader -->
+<div id="preloader"></div>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
 
 </body>
 
@@ -204,7 +203,7 @@
 
 
 
- --}}
+--}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -218,7 +217,7 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/favicon.jpeg') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
@@ -293,54 +292,55 @@
 
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="{{ route('index') }}" class="d-flex align-items-center">
-                        <span class="sitename">PT Utama Cipta Tata Asri</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Magelang Utara, Jawa Tengah</p>
-                        <p class="mt-3"><strong>Phone:</strong> 0831-1666-8809</p>
-                        <p><strong>Email:</strong> ptutamacta@gmail.com</p>
-                    </div>
-                </div>
+    <span class="sitename">PT Utama Cipta Tata Asri</span>
+    </a>
+    <div class="footer-contact pt-3">
+        <p>Jl. Ahmad Yani Perum PJKA No.4, RT.03/RW.02, Magelang, Magelang Utara, Jawa Tengah</p>
+        <p class="mt-3"><strong>Phone:</strong> 0831-1666-8809</p>
+        <p><strong>Email:</strong> ptutamacta@gmail.com</p>
+    </div>
+    </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="{{ route('product') }}">Product</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                    </ul>
-                </div>
+    <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('index') }}">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('about') }}">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ route('product') }}">Product</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+        </ul>
+    </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Development</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-                    </ul>
-                </div>
+    <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+        </ul>
+    </div>
 
-                <div class="col-lg-4 col-md-12">
-                    <h4>Follow Us</h4>
-                    <p class="italic">Reliable, Ecodable, and Reasonable</p>
-                    <div class="social-links d-flex">
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@ospod67?_r=1&_t=ZS-91w18C0s2NU"><i class="bi bi-tiktok"></i></a>
-                        <a href="https://www.youtube.com/@ospod-milos"><i class="bi bi-youtube"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-            </div>
+    <div class="col-lg-4 col-md-12">
+        <h4>Follow Us</h4>
+        <p class="italic">Reliable, Ecodable, and Reasonable</p>
+        <div class="social-links d-flex">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/pt_utama_ciptatataasri?igsh=MTc1a3Vnem9qN2NvbQ=="><i
+                    class="bi bi-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ospod67?_r=1&_t=ZS-91w18C0s2NU"><i class="bi bi-tiktok"></i></a>
+            <a href="https://www.youtube.com/@ospod-milos"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
         </div>
+    </div>
 
-        <div class="container copyright text-center mt-4">
-            <p>© Copyright <strong class="sitename">UCTA by Ositech</strong>. All Rights Reserved</p>
-        </div>
+    </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© Copyright <strong class="sitename">UCTA by Ositech</strong>. All Rights Reserved</p>
+    </div>
 
     </footer> --}}
 
@@ -348,34 +348,33 @@
     {{-- @if (isset($footerImage))
         <div class="footer-top-image">
             <img src="{{ asset('storage/' . $footerImage->image_path) }}" class="img-fluid w-100"
-                style="max-height:250px; object-fit:cover;">
-        </div>
+    style="max-height:250px; object-fit:cover;">
+    </div>
     @endif --}}
     @if ($footerLogos->count())
-        <section class="footer-logo-slider py-5">
-            <div class="container">
+    <section class="footer-logo-slider py-5">
+        <div class="container">
 
-                <div class="swiper footerSwiper">
+            <div class="swiper footerSwiper">
 
-                    <div class="swiper-wrapper align-items-center">
+                <div class="swiper-wrapper align-items-center">
 
-                        @foreach ($footerLogos as $logo)
-                            <div class="swiper-slide text-center">
+                    @foreach ($footerLogos as $logo)
+                    <div class="swiper-slide text-center">
 
-                                <div class="logo-card">
-                                    <img src="{{ asset('storage/' . $logo->image_path) }}"
-                                        class="img-fluid footer-logo-img">
-                                </div>
-
-                            </div>
-                        @endforeach
+                        <div class="logo-card">
+                            <img src="{{ asset('storage/' . $logo->image_path) }}" class="img-fluid footer-logo-img">
+                        </div>
 
                     </div>
+                    @endforeach
 
                 </div>
 
             </div>
-        </section>
+
+        </div>
+    </section>
     @endif
 
 
@@ -397,17 +396,16 @@
                         </span>
                     </a>
 
-                    <div class="footer-contact pt-3">
-                        <p>{{ $footer->address }}</p>
+                    <p>{{ $footer?->address ?? '-' }}</p>
 
-                        <p class="mt-3">
-                            <strong>Phone:</strong> {{ $footer->phone }}
-                        </p>
+                    <p class="mt-3">
+                        <strong>Phone:</strong> {{ $footer?->phone ?? '-' }}
+                    </p>
 
-                        <p>
-                            <strong>Email:</strong> {{ $footer->email }}
-                        </p>
-                    </div>
+                    <p>
+                        <strong>Email:</strong> {{ $footer?->email ?? '-' }}
+                    </p>
+
                 </div>
 
                 {{-- USEFUL LINKS --}}
@@ -416,12 +414,12 @@
                     <ul>
 
                         @foreach ($footer->useful_links ?? [] as $link)
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="{{ $link['url'] }}">
-                                    {{ $link['name'] }}
-                                </a>
-                            </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="{{ $link['url'] }}">
+                                {{ $link['name'] }}
+                            </a>
+                        </li>
                         @endforeach
 
                     </ul>
@@ -433,12 +431,12 @@
                     <ul>
 
                         @foreach ($footer->our_services ?? [] as $service)
-                            <li>
-                                <i class="bi bi-chevron-right"></i>
-                                <a href="#">
-                                    {{ is_array($service) ? $service['name'] : $service }}
-                                </a>
-                            </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">
+                                {{ is_array($service) ? $service['name'] : $service }}
+                            </a>
+                        </li>
                         @endforeach
 
                     </ul>
@@ -449,26 +447,28 @@
                     <h4>Follow Us</h4>
 
                     <p class="italic">
-                        {{ $footer->tagline }}
+                        {{ $footer?->tagline ?? '-' }}
                     </p>
 
+
+                       
                     <div class="social-links d-flex">
 
                         @php
-                            $icons = [
-                                'twitter' => 'twitter-x',
-                                'facebook' => 'facebook',
-                                'instagram' => 'instagram',
-                                'tiktok' => 'tiktok',
-                                'youtube' => 'youtube',
-                                'linkedin' => 'linkedin',
-                            ];
+                        $icons = [
+                        'twitter' => 'twitter-x',
+                        'facebook' => 'facebook',
+                        'instagram' => 'instagram',
+                        'tiktok' => 'tiktok',
+                        'youtube' => 'youtube',
+                        'linkedin' => 'linkedin',
+                        ];
                         @endphp
 
                         @foreach ($footer->social_links ?? [] as $platform => $url)
-                            <a href="{{ $url }}">
-                                <i class="bi bi-{{ $icons[$platform] ?? $platform }}"></i>
-                            </a>
+                        <a href="{{ $url }}">
+                            <i class="bi bi-{{ $icons[$platform] ?? $platform }}"></i>
+                        </a>
                         @endforeach
 
                     </div>
@@ -480,7 +480,7 @@
         {{-- COPYRIGHT --}}
         <div class="container copyright text-center mt-4">
             <p>
-                {{ $footer->copyright }}
+                {{ $footer?->copyright ?? '-'}}
             </p>
         </div>
 
@@ -511,33 +511,33 @@
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
-        new Swiper(".footerSwiper", {
-            loop: true,
-            speed: 800,
+    new Swiper(".footerSwiper", {
+        loop: true,
+        speed: 800,
 
-            autoplay: {
-                delay: 2300,
-                disableOnInteraction: false
+        autoplay: {
+            delay: 2300,
+            disableOnInteraction: false
+        },
+
+        slidesPerView: 2,
+        spaceBetween: 25,
+
+        breakpoints: {
+            480: {
+                slidesPerView: 3
             },
-
-            slidesPerView: 2,
-            spaceBetween: 25,
-
-            breakpoints: {
-                480: {
-                    slidesPerView: 3
-                },
-                768: {
-                    slidesPerView: 4
-                },
-                992: {
-                    slidesPerView: 5
-                },
-                1200: {
-                    slidesPerView: 6
-                }
+            768: {
+                slidesPerView: 4
+            },
+            992: {
+                slidesPerView: 5
+            },
+            1200: {
+                slidesPerView: 6
             }
-        });
+        }
+    });
     </script>
 
 
