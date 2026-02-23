@@ -20,7 +20,7 @@ class AboutController extends Controller
         $visi = VisiMisi::where('type', 'visi')->first();
         $misi = VisiMisi::where('type', 'misi')->get();
 
-        $legalitas = Legalitas::first();
+        $legalitas = Legalitas::select('deskripsi')->find(4);
         $hasilUji = HasilUjiLab::first();
         $clientLogos = Image::where('type', 'client_logo')
             ->where('is_active', 1)
