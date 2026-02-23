@@ -66,6 +66,8 @@ main p {
     padding: 15px 0;
     transition: all 0.5s;
     z-index: 997;
+       width: 100%;
+    max-width: 100%;
 }
 
 .header .logo {
@@ -89,6 +91,24 @@ main p {
     --background-color: #30a4bc;
     /* tetap sama saat scroll */
 }
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 
 
@@ -3232,3 +3252,69 @@ section,
         background: #1e7e34;
     }
  */
+
+ /* ===== FIX HEADER MOBILE OVERFLOW ===== */
+
+/* Pastikan semua element hitung padding dengan benar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal leak */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header container */
+header,
+.header,
+.navbar,
+.navbar-area {
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Jika ada section hero / slider */
+.hero,
+.banner,
+.slider,
+.carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Image dalam header / hero */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* FIX khusus mobile */
+@media (max-width: 768px) {
+
+    header,
+    .header,
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Hindari 100vw karena sering bikin overflow */
+    .container,
+    .wrapper {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

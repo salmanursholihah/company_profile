@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('images', function (Blueprint $table) {
 
+             $table->string('type')->nullable()->after('image_path');
             $table->boolean('is_active')
                 ->default(true)
                 ->after('type');
@@ -26,7 +27,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('images', function (Blueprint $table) {
-
+            $table->dropColumn('type');
             $table->dropColumn('is_active');
             $table->dropColumn('sort_order');
         });
