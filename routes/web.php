@@ -150,6 +150,12 @@ Route::prefix('admin')
             Route::post('/about/store-about', [AdminAboutController::class, 'storeAbout'])
                 ->name('about.storeAbout');
 
+
+            Route::post('/about/edit-about', [AdminAboutController::class, 'editAbout'])
+                ->name('about.editAbout');
+
+
+
             Route::post('/about/store-legalitas', [AdminAboutController::class, 'storeLegalitas'])
                 ->name('about.storeLegalitas');
             Route::get('/admin/about/legalitas/{id}/edit', [AdminAboutController::class, 'editLegalitas'])->name('about.editLegalitas');
@@ -159,7 +165,7 @@ Route::prefix('admin')
                 ->name('about.storeVisiMisi');
             Route::get('/admin/about/visi-misi/{id}/edit', [AdminAboutController::class, 'editVisiMisi'])->name('about.editVisiMisi');
 
-            Route::resource('hasil-uji-lab',AdminUjiLabController::class);
+            Route::resource('hasil-uji-lab', AdminUjiLabController::class);
 
 
 

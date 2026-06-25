@@ -215,7 +215,7 @@
 
 
 
-   @extends('layouts.app_landing')
+@extends('layouts.app_landing')
 
 @section('content')
 
@@ -240,28 +240,37 @@
         <div class="container">
             <div class="row gy-4">
 
-                @foreach ($blogs as $blog)
+                @forelse ($blogs as $blog)
                 <div class="col-lg-4">
                     <article>
 
                         <div class="post-img">
-                            <img src="{{ asset('storage/' . $blog->thumbnail) }}" alt="" class="img-fluid">
+                            <img src="{{ $blog->image ? asset('storage/' . $blog->image) : asset('assets/img/blog/default.jpg') }}"
+                                 alt="{{ $blog->title }}" class="img-fluid">
                         </div>
 
                         <p class="post-category">{{ $blog->category }}</p>
 
                         <h2 class="title">
-                            <a href="{{ route('blog.show', $blog->id) }}">{{ $blog->title }}</a>
+                            <a href="{{ route('blog.show', $blog->slug) }}">{{ $blog->title }}</a>
                         </h2>
 
                         <div class="d-flex align-items-center">
-                            <img src="{{ asset('storage/' . $blog->author_image) }}"
-                                 class="img-fluid post-author-img flex-shrink-0"
-                                 alt="">
+                            @php
+                                $initials = collect(explode(' ', $blog->author))
+                                    ->map(fn($word) => mb_substr($word, 0, 1))
+                                    ->take(2)
+                                    ->implode('');
+                            @endphp
 
-                            <div class="post-meta">
-                                <p class="post-author">{{ $blog->author_name }}</p>
-                                <p class="post-date">
+                            <div class="post-author-img flex-shrink-0 rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                                 style="width:40px;height:40px;font-size:14px;font-weight:600;">
+                                {{ strtoupper($initials) }}
+                            </div>
+
+                            <div class="post-meta ms-2">
+                                <p class="post-author mb-0">{{ $blog->author }}</p>
+                                <p class="post-date mb-0">
                                     <time datetime="{{ $blog->published_at }}">
                                         {{ \Carbon\Carbon::parse($blog->published_at)->format('M d, Y') }}
                                     </time>
@@ -271,18 +280,50 @@
 
                     </article>
                 </div>
-                @endforeach
+                @empty
+                <div class="col-12 text-center">
+                    <p>Belum ada artikel.</p>
+                </div>
+                @endforelse
 
             </div>
         </div>
     </section>
 
     <!-- Blog Pagination -->
+    @if ($blogs->hasPages())
     <section id="blog-pagination" class="blog-pagination section">
-        <div class="container d-flex justify-content-center">
-            {{ $blogs->links() }}
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+
+                {{-- Previous --}}
+                @if ($blogs->onFirstPage())
+                    <span class="btn btn-secondary disabled">
+                        <i class="bi bi-chevron-left"></i> Sebelumnya
+                    </span>
+                @else
+                    <a href="{{ $blogs->previousPageUrl() }}" rel="prev" class="btn btn-primary">
+                        <i class="bi bi-chevron-left"></i> Sebelumnya
+                    </a>
+                @endif
+
+                <span>Halaman {{ $blogs->currentPage() }} dari {{ $blogs->lastPage() }}</span>
+
+                {{-- Next --}}
+                @if ($blogs->hasMorePages())
+                    <a href="{{ $blogs->nextPageUrl() }}" rel="next" class="btn btn-primary">
+                        Selanjutnya <i class="bi bi-chevron-right"></i>
+                    </a>
+                @else
+                    <span class="btn btn-secondary disabled">
+                        Selanjutnya <i class="bi bi-chevron-right"></i>
+                    </span>
+                @endif
+
+            </div>
         </div>
     </section>
+    @endif
 
 </main>
 

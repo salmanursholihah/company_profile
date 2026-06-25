@@ -31,5 +31,9 @@ class DatabaseSeeder extends Seeder
             FooterSeed::class,
         ]);
 
+        $this->call([
+            BlogSeeder::class,
+        ]);
+
     }
 }

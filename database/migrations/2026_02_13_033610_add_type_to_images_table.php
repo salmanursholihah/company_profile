@@ -10,9 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::table('images', function (Blueprint $table) {
-            $table->string('type')->nullable()->after('image_path');
-        });
+
     }
 
     /**
@@ -20,8 +18,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::table('images', function (Blueprint $table) {
-            //
-        });
+       
     }
 };
