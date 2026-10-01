@@ -1,0 +1,125 @@
+/* ui-refresh.css — perbaikan tampilan, dimuat SETELAH main.css. Konten tidak diubah. */
+:root {
+  --ink: #0b2f39; --brand: #12808f; --brand-deep: #0b4a56; --mist: #eef6f7;
+  --line: #d6e6e9; --amber: #f2b134; --radius: 14px;
+  --default-font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --heading-font: var(--default-font); --nav-font: var(--default-font);
+  --default-color: #41565c; --heading-color: var(--ink); --accent-color: var(--brand);
+  --nav-hover-color: var(--amber); --nav-dropdown-hover-color: var(--brand);
+  --bs-primary: #12808f; --bs-primary-rgb: 18, 128, 143; --bs-link-color: #12808f;
+}
+body { font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { letter-spacing: -.015em; line-height: 1.25; }
+main p { text-align: left; }
+@media (min-width: 768px) { main p { text-align: justify; hyphens: auto; } }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Header */
+.header { --background-color: var(--brand-deep); background: var(--brand-deep); padding: 14px 0; }
+.scrolled .header { --background-color: var(--brand-deep); padding: 10px 0; box-shadow: 0 8px 24px rgba(5, 30, 36, .28); }
+.header .logo .sitename { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: #fff; margin: 0; }
+@media (min-width: 1200px) {
+  .navmenu a, .navmenu a:focus { padding: 9px 14px; font-size: 15px; font-weight: 500; border-radius: 999px; color: rgba(255, 255, 255, .88); }
+  .navmenu a:hover, .navmenu a.active { color: #fff; background: rgba(255, 255, 255, .12); }
+  .navmenu li:last-child a { padding-right: 18px; }
+  .navmenu a.nav-cta { background: var(--amber); color: var(--ink); font-weight: 700; margin-left: 6px; }
+  .navmenu a.nav-cta:hover { background: #ffc552; color: var(--ink); }
+}
+@media (max-width: 1199px) {
+  .navmenu a.active { color: var(--brand); font-weight: 700; }
+  .navmenu a.nav-cta { font-weight: 700; }
+}
+
+/* Pembungkus konten: hero / page-title menempel di bawah header */
+.site-main { padding-top: 0; }
+.site-main:not(:has(#hero, .page-title)) { padding-top: 90px; }
+
+/* Judul halaman */
+.page-title { background: linear-gradient(135deg, var(--brand-deep), var(--brand)); padding: 150px 0 70px; }
+.page-title:before { display: none; }
+.page-title .container { max-width: 780px; font-size: 1.05rem; color: rgba(255, 255, 255, .9); }
+.page-title h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; color: #fff; }
+.page-title .breadcrumbs { margin-top: 18px; }
+.page-title .breadcrumbs ol { font-size: 14px; opacity: .85; }
+
+/* Hero */
+.hero { min-height: 88vh; }
+.hero::before { display: none; }
+.hero::after { top: calc(100% - 60px); height: 200px; width: 140%; }
+.hero .carousel-item { height: 88vh; min-height: 540px; }
+.hero .carousel-item::before { background: linear-gradient(180deg, rgba(7, 38, 46, .55), rgba(7, 38, 46, .8)); }
+.hero .carousel-container { max-width: 820px; margin: 0 auto; padding-top: 40px; }
+.hero .carousel-container h2 { font-size: clamp(32px, 5.4vw, 60px); font-weight: 800; color: #fff; padding-top: 0; margin-bottom: 20px; }
+.hero .carousel-container p { width: 100%; max-width: 640px; font-size: clamp(16px, 2vw, 19px); color: rgba(255, 255, 255, .92); text-align: center; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px; }
+.btn-hero { background: var(--amber); color: var(--ink); border: 2px solid var(--amber); }
+.btn-hero:hover { background: #ffc552; border-color: #ffc552; color: var(--ink); }
+.btn-hero-ghost { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, .7); }
+.btn-hero-ghost:hover { background: rgba(255, 255, 255, .14); color: #fff; }
+.hero .carousel-control-prev-icon, .hero .carousel-control-next-icon { background-color: rgba(255, 255, 255, .16); border-radius: 50%; padding: 22px; background-size: 40%; }
+@media (max-width: 768px) {
+  .hero { min-height: 540px !important; }
+  .hero .carousel-item { height: auto; min-height: 540px; }
+  .hero .carousel-control-prev, .hero .carousel-control-next { display: none; }
+}
+
+/* Section */
+section, .section { padding: 84px 0; }
+@media (max-width: 767px) { section, .section { padding: 56px 0; } }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.section-head h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; margin-bottom: 10px; }
+.section-head p { color: #5d7379; margin: 0; text-align: center; }
+.section-alt { background: var(--mist); }
+
+/* Kartu & tombol */
+.card { border: 1px solid var(--line) !important; border-radius: var(--radius) !important; box-shadow: 0 1px 2px rgba(11, 47, 57, .04), 0 10px 28px -16px rgba(11, 47, 57, .16) !important; }
+.card:hover { transform: none; }
+.lift { transition: transform .2s ease, box-shadow .2s ease; }
+.lift:hover { transform: translateY(-3px); box-shadow: 0 16px 34px -16px rgba(11, 47, 57, .3) !important; }
+.btn { border-radius: 999px; font-weight: 600; padding: .6rem 1.35rem; }
+.btn-primary { --bs-btn-bg: var(--brand); --bs-btn-border-color: var(--brand); --bs-btn-hover-bg: var(--brand-deep); --bs-btn-hover-border-color: var(--brand-deep); --bs-btn-active-bg: var(--brand-deep); --bs-btn-active-border-color: var(--brand-deep); }
+.btn-outline-primary, .btn-outline-secondary { --bs-btn-color: var(--brand); --bs-btn-border-color: var(--brand); --bs-btn-hover-bg: var(--brand); --bs-btn-hover-border-color: var(--brand); --bs-btn-hover-color: #fff; --bs-btn-active-bg: var(--brand-deep); --bs-btn-active-border-color: var(--brand-deep); }
+.form-control, .form-select { border-radius: 10px; border-color: var(--line); padding: .7rem .9rem; }
+.form-control:focus, .form-select:focus { border-color: var(--brand); box-shadow: 0 0 0 .2rem rgba(18, 128, 143, .18); }
+.modal-content { border-radius: var(--radius); overflow: hidden; }
+
+/* Beranda */
+.about-media { position: relative; isolation: isolate; }
+.about-media img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border-radius: var(--radius); box-shadow: 0 18px 40px -22px rgba(11, 47, 57, .45); }
+.perks { background: var(--mist); border-radius: var(--radius); padding: 22px 26px; margin: 24px 0; }
+.perks h5 { font-size: 1rem; font-weight: 700; }
+.perks li { padding: 5px 0; }
+.vm-card { padding: 36px !important; text-align: left; }
+.vm-icon, .svc-icon { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; background: var(--mist); color: var(--brand); font-size: 22px; margin-bottom: 18px; }
+.vm-card ul { padding-left: 1.1rem; margin: 0; }
+.vm-card li p { margin: 0 0 .5rem; }
+.svc-card { padding: 28px !important; height: 100%; display: flex; flex-direction: column; }
+.svc-card h4 { font-size: 1.15rem; font-weight: 700; }
+.svc-card .svc-link { margin-top: auto; padding-top: 12px; font-weight: 600; }
+.katalog-card { overflow: hidden; }
+.katalog-img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--mist); }
+.clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.legal-band { background: var(--mist); }
+.legal-band .swiper-slide img { max-height: 90px; width: auto; margin: 0 auto; object-fit: contain; }
+
+/* Footer */
+.footer-logo-slider { background: #fff; border-top: 1px solid var(--line); }
+.logo-card { box-shadow: 0 1px 2px rgba(11, 47, 57, .05) !important; border: 1px solid var(--line); }
+.footer { --background-color: var(--brand-deep); --accent-color: var(--amber); background: var(--brand-deep); font-size: 15px; }
+.footer .footer-top { padding-top: 56px; }
+.footer h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+.footer a { color: rgba(255, 255, 255, .85); }
+.footer a:hover { color: #fff; }
+.footer .social-links a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, .1); display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; }
+.footer .social-links a:hover { background: var(--amber); color: var(--ink); }
+.footer .copyright { border-top: 1px solid rgba(255, 255, 255, .14); padding-top: 20px; }
+
+/* Tombol melayang */
+.wa-float { position: fixed; right: 16px; bottom: 78px; width: 52px; height: 52px; border-radius: 50%; background: #25d366; color: #fff; font-size: 26px; display: flex; align-items: center; justify-content: center; z-index: 990; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .4); }
+.wa-float:hover { background: #1ebe5b; color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .lift, .carousel-item { transition: none !important; }
+}
