@@ -545,6 +545,8 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    @stack('scripts')
     <script>
     new Swiper(".footerSwiper", {
         loop: true,

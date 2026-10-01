@@ -4,6 +4,7 @@
     use Illuminate\Support\Str;
 @endphp
 
+@section('content')
 <main class="main">
 
     <!-- Page Title -->
@@ -77,8 +78,8 @@
 
                                         {{-- IMAGE --}}
                                         <div class="col-md-6">
-                                            <img src="{{ asset('storage/' . $product->image) }}"
-                                                class="w-100 h-100 object-fit-cover">
+                                            <img src="{{ $product->image ? asset('storage/' . $product->image) : asset('assets/img/no-image.png') }}"
+                                            class="w-100 h-100 object-fit-cover" alt="{{ $product->name }}">
                                         </div>
 
                                         {{-- DETAIL --}}
@@ -155,6 +156,7 @@
   </section> --}}
 
 </main>
+@endsection
 
 @push('scripts')
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
