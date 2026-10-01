@@ -6,6 +6,9 @@ use App\Http\Requests\FooterRequest;
 
 class AdminFooterController extends Controller
 {
+    /** Platform sosial media yang bisa diisi dari admin (urutan = urutan tampil di footer) */
+    private const SOCIALS = ['whatsapp', 'instagram', 'facebook', 'twitter', 'linkedin', 'tiktok', 'youtube'];
+
     public function index()
     {
         $footer = Footer::first();
@@ -21,7 +24,6 @@ class AdminFooterController extends Controller
     {
         $data = $request->validated();
 
-        // Convert comma-separated strings to arrays
         // Useful links: satu baris satu link, format "Nama | /url"
         $links = [];
         foreach (preg_split('/\r\n|\r|\n/', (string) $request->useful_links) as $line) {
@@ -34,26 +36,33 @@ class AdminFooterController extends Controller
         }
         $data['useful_links'] = $links;
 
+        // Our services: pisahkan dengan koma
         $data['our_services'] = $request->our_services
             ? array_map('trim', explode(',', $request->our_services))
             : [];
 
-        // Convert JSON text to array
-        $data['social_links'] = $request->social_links
-            ? json_decode($request->social_links, true)
-            : [];
+        // Sosial media: dari kolom terpisah. Key lain yang sudah ada di database tetap dipertahankan.
+        $existing = $footer->social_links ?? [];
+        $social = [];
+        foreach (self::SOCIALS as $key) {
+            $value = trim((string) $request->input($key));
 
-        // Nomor WhatsApp: simpan ke social_links['whatsapp'] (hanya digit, format 62xxx)
-        $wa = preg_replace('/\D/', '', (string) $request->whatsapp);
-        if ($wa !== '' && str_starts_with($wa, '0')) {
-            $wa = '62' . substr($wa, 1);
+            if ($key === 'whatsapp') {
+                // Nomor: hanya digit, format 62xxx
+                $value = preg_replace('/\D/', '', $value);
+                if ($value !== '' && str_starts_with($value, '0')) {
+                    $value = '62' . substr($value, 1);
+                }
+            } elseif ($value !== '' && !preg_match('#^https?://#i', $value)) {
+                $value = 'https://' . $value;
+            }
+
+            if ($value !== '') {
+                $social[$key] = $value;
+            }
+            unset($existing[$key], $data[$key]);
         }
-        if ($wa !== '') {
-            $data['social_links']['whatsapp'] = $wa;
-        } else {
-            unset($data['social_links']['whatsapp']);
-        }
-        unset($data['whatsapp']);
+        $data['social_links'] = $social + $existing;
 
         $footer->update($data);
 

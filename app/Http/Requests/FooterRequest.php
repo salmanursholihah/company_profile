@@ -22,6 +22,12 @@ class FooterRequest extends FormRequest
             'our_services' => 'nullable|string',
             'social_links' => 'nullable|string',
             'whatsapp' => 'nullable|string|max:30',
+            'instagram' => 'nullable|string|max:255',
+            'facebook' => 'nullable|string|max:255',
+            'twitter' => 'nullable|string|max:255',
+            'linkedin' => 'nullable|string|max:255',
+            'tiktok' => 'nullable|string|max:255',
+            'youtube' => 'nullable|string|max:255',
 
             'tagline' => 'nullable|string|max:255',
             'copyright' => 'nullable|string|max:255',

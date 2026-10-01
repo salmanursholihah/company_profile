@@ -37,15 +37,38 @@
         <input type="text" name="our_services" value="{{ collect($footer->our_services ?? [])->map(fn($s) => is_array($s) ? ($s['name'] ?? '') : $s)->implode(',') }}" class="form-control">
     </div>
 
-    <div class="mb-3">
-        <label>Nomor WhatsApp (contoh: 0831xxxxxxxx atau 62831xxxxxxxx)</label>
-        <input type="text" name="whatsapp" value="{{ $footer->social_links['whatsapp'] ?? '' }}" class="form-control" placeholder="6283116668809">
-        <small class="text-muted">Kosongkan jika tidak ingin menampilkan ikon WhatsApp.</small>
-    </div>
+    <h5 class="mt-4">Sosial Media</h5>
+    <small class="text-muted d-block mb-3">Kosongkan kolom yang tidak ingin ditampilkan. Ikon hanya muncul untuk kolom yang terisi.</small>
+
+    @php $sl = $footer->social_links ?? []; @endphp
 
     <div class="mb-3">
-        <label>Social Links (format JSON, tanpa WhatsApp)</label>
-        <textarea name="social_links" rows="3" class="form-control">{{ json_encode(collect($footer->social_links ?? [])->except('whatsapp')->all(), JSON_PRETTY_PRINT) }}</textarea>
+        <label>WhatsApp (nomor, contoh: 083116668809 atau 6283116668809)</label>
+        <input type="text" name="whatsapp" value="{{ $sl['whatsapp'] ?? '' }}" class="form-control" placeholder="6283116668809">
+    </div>
+    <div class="mb-3">
+        <label>Instagram (link)</label>
+        <input type="text" name="instagram" value="{{ $sl['instagram'] ?? '' }}" class="form-control" placeholder="https://www.instagram.com/akun_anda">
+    </div>
+    <div class="mb-3">
+        <label>Facebook (link)</label>
+        <input type="text" name="facebook" value="{{ $sl['facebook'] ?? '' }}" class="form-control" placeholder="https://www.facebook.com/halaman_anda">
+    </div>
+    <div class="mb-3">
+        <label>Twitter / X (link)</label>
+        <input type="text" name="twitter" value="{{ $sl['twitter'] ?? '' }}" class="form-control" placeholder="https://x.com/akun_anda">
+    </div>
+    <div class="mb-3">
+        <label>LinkedIn (link)</label>
+        <input type="text" name="linkedin" value="{{ $sl['linkedin'] ?? '' }}" class="form-control" placeholder="https://www.linkedin.com/company/nama_perusahaan">
+    </div>
+    <div class="mb-3">
+        <label>TikTok (link)</label>
+        <input type="text" name="tiktok" value="{{ $sl['tiktok'] ?? '' }}" class="form-control" placeholder="https://www.tiktok.com/@akun_anda">
+    </div>
+    <div class="mb-3">
+        <label>YouTube (link)</label>
+        <input type="text" name="youtube" value="{{ $sl['youtube'] ?? '' }}" class="form-control" placeholder="https://www.youtube.com/@channel_anda">
     </div>
 
     <div class="mb-3">

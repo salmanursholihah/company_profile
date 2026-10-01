@@ -35,7 +35,32 @@
     </ul>
 
     <h5>Social Media:</h5>
-    <pre>{{ json_encode($footer->social_links ?? [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) }}</pre>
+    @php
+        $sl = $footer->social_links ?? [];
+        $platforms = [
+            'whatsapp'  => ['WhatsApp',  'bi-whatsapp'],
+            'instagram' => ['Instagram', 'bi-instagram'],
+            'facebook'  => ['Facebook',  'bi-facebook'],
+            'twitter'   => ['Twitter / X', 'bi-twitter-x'],
+            'linkedin'  => ['LinkedIn',  'bi-linkedin'],
+            'tiktok'    => ['TikTok',    'bi-tiktok'],
+            'youtube'   => ['YouTube',   'bi-youtube'],
+        ];
+    @endphp
+    <table class="table table-sm align-middle">
+        @foreach($platforms as $key => [$label, $icon])
+            <tr>
+                <td style="width:160px">{{ $label }}</td>
+                <td>
+                    @if(!empty($sl[$key]))
+                        <span class="text-success">{{ $sl[$key] }}</span>
+                    @else
+                        <span class="text-muted">Belum diisi</span>
+                    @endif
+                </td>
+            </tr>
+        @endforeach
+    </table>
 
     <hr>
 
