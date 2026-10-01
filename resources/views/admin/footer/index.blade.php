@@ -16,20 +16,26 @@
 
     <h5>Useful Links:</h5>
     <ul>
-        @foreach($footer->useful_links as $item)
-            <li>{{ $item }}</li>
+        @foreach($footer->useful_links ?? [] as $item)
+            <li>
+                @if(is_array($item))
+                    {{ $item['name'] ?? '' }} <small class="text-muted">({{ $item['url'] ?? '#' }})</small>
+                @else
+                    {{ $item }}
+                @endif
+            </li>
         @endforeach
     </ul>
 
     <h5>Our Services:</h5>
     <ul>
-        @foreach($footer->our_services as $item)
-            <li>{{ $item }}</li>
+        @foreach($footer->our_services ?? [] as $item)
+            <li>{{ is_array($item) ? ($item['name'] ?? '') : $item }}</li>
         @endforeach
     </ul>
 
     <h5>Social Media:</h5>
-    <pre>{{ print_r($footer->social_links, true) }}</pre>
+    <pre>{{ json_encode($footer->social_links ?? [], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) }}</pre>
 
     <hr>
 

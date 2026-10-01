@@ -6,7 +6,6 @@ use App\Models\About;
 use App\Models\HalamanUtama;
 use App\Models\VisiMisi;
 use App\Models\Service;
-use App\Models\Team;
 use App\Models\Katalog;
 use App\Models\Legalitas;
 use Illuminate\Support\Str;
@@ -28,7 +27,6 @@ class LandingController extends Controller
         $layanan = Service::all();
         $services = Service::all();
         $katalogs = Katalog::all();
-        $teams = Team::all();
         $legalitas = Legalitas::select('image')->get();
         $images = HalamanUtama::select('image')->get();
         $halaman_utama_list = HalamanUtama::all();
@@ -39,6 +37,6 @@ class LandingController extends Controller
 
 
 
-        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'teams', 'halaman_utama', 'legalitas', 'images', 'halaman_utama_list', 'footer', 'footerImage', 'products', 'footerLogos'));
+        return view('index', compact('about', 'aboutPreview', 'visi', 'misi', 'layanan', 'services', 'katalogs', 'halaman_utama', 'legalitas', 'images', 'halaman_utama_list', 'footer', 'footerImage', 'products', 'footerLogos'));
     }
 }

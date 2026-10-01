@@ -261,7 +261,6 @@
                     <li><a href="{{ route('product') }}">Product</a></li>
                     <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ route('e-katalog') }}">E-katalog</a></li>
-                    <li><a href="{{ route('team') }}">Team</a></li>
                     <li><a href="{{ route('blog.index') }}">Blog</a></li>
                     <li><a href="{{ route('register') }}">Sign Up</a></li>
                     <li><a href="{{ route('login') }}">Sign In</a></li>
@@ -416,8 +415,8 @@
                         @foreach ($footer->useful_links ?? [] as $link)
                         <li>
                             <i class="bi bi-chevron-right"></i>
-                            <a href="{{ $link['url'] }}">
-                                {{ $link['name'] }}
+                            <a href="{{ is_array($link) ? ($link['url'] ?? '#') : '#' }}">
+                                {{ is_array($link) ? ($link['name'] ?? '') : $link }}
                             </a>
                         </li>
                         @endforeach
@@ -451,7 +450,7 @@
                     </p>
 
 
-                       
+
                     <div class="social-links d-flex">
 
                         @php
@@ -462,11 +461,20 @@
                         'tiktok' => 'tiktok',
                         'youtube' => 'youtube',
                         'linkedin' => 'linkedin',
+                        'whatsapp' => 'whatsapp',
                         ];
                         @endphp
 
                         @foreach ($footer->social_links ?? [] as $platform => $url)
-                        <a href="{{ $url }}">
+                        @php
+                        // Kalau yang disimpan hanya nomor (mis. 6283116668809), ubah jadi link wa.me
+                        if ($platform === 'whatsapp' && !str_starts_with($url, 'http')) {
+                        $url = 'https://wa.me/' . preg_replace('/\D/', '', $url)
+                        . '?text=' . rawurlencode('Halo PT Utama Cipta Tata Asri, saya ingin bertanya tentang produk.');
+                        }
+                        @endphp
+
+                        <a href="{{ $url }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($platform) }}">
                             <i class="bi bi-{{ $icons[$platform] ?? $platform }}"></i>
                         </a>
                         @endforeach
@@ -489,6 +497,33 @@
     <!-- =============== END FOOTER ================= -->
 
 
+
+    {{-- WHATSAPP FLOATING BUTTON --}}
+    @php
+        $waRaw = $footer->social_links['whatsapp'] ?? null;
+        $waLink = null;
+        if ($waRaw) {
+            $waLink = str_starts_with($waRaw, 'http')
+                ? $waRaw
+                : 'https://wa.me/' . preg_replace('/\D/', '', $waRaw)
+                    . '?text=' . rawurlencode('Halo PT Utama Cipta Tata Asri, saya ingin bertanya tentang produk.');
+        }
+    @endphp
+    @if ($waLink)
+    <a href="{{ $waLink }}" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+    <style>
+        .wa-float {
+            position: fixed; right: 15px; bottom: 75px;
+            width: 46px; height: 46px; border-radius: 50%;
+            background: #25D366; color: #fff; font-size: 24px;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 9999; box-shadow: 0 2px 8px rgba(0,0,0,.3);
+        }
+        .wa-float:hover { background: #1ebe5b; color: #fff; }
+    </style>
+    @endif
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">

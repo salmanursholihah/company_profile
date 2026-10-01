@@ -21,9 +21,9 @@ use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminFooterController;
 use App\Http\Controllers\AdminlegalitasController;
-use App\Http\Controllers\AdminTeamController;
+// use App\Http\Controllers\AdminTeamController;
 use App\Http\Controllers\LandingController;
-use App\Http\Controllers\TeamController;
+// use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdminImageController;
@@ -53,7 +53,7 @@ Route::get('/penyediaan_bahan', fn() => view('penyediaan_bahan'))->name('penyedi
 Route::get('/Perawatan_dan_Maintenance', fn() => view('Perawatan_dan_Maintenance'))->name('Perawatan_dan_Maintenance');
 Route::get('/renovasi_ipal', fn() => view('renovasi_ipal'))->name('renovasi_ipal');
 // Route::get('/team', fn() => view('team'))->name('team');
-Route::get('/team', [TeamController::class, 'index'])->name('team');
+// Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/backend', fn() => view('backend'))->name('backend');
 
 /* Blog */
@@ -176,7 +176,7 @@ Route::prefix('admin')
             Route::resource('legalitas', AdminLegalitasController::class)->parameters([
                 'legalitas' => 'legalitas',
             ]);
-            route::resource('team', AdminTeamController::class);
+            // route::resource('team', AdminTeamController::class);
             route::resource('portfolio', AdminPortfolioController::class);
             route::resource('images', AdminImageController::class);
         });

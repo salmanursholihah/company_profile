@@ -42,7 +42,7 @@
                     <a href="{{ route('admin.footer.index') }}" class="nav-link text-white">Footer</a>
                     <!-- <a href="{{ route('admin.legalitas.index') }}" class="nav-link text-white">legalitas</a> -->
                      <a href="{{ route('admin.hasil-uji-lab.index') }}" class="nav-link text-white">Hasil Uji Lab</a>
-                    <a href="{{ route('admin.team.index') }}" class="nav-link text-white">team</a>
+                    {{-- <a href="{{ route('admin.team.index') }}" class="nav-link text-white">team</a> --}}
                     <a href="{{ route('admin.portfolio.index') }}" class="nav-link text-white">Portfolio</a>
                     <a href="{{ route('admin.images.index') }}" class="nav-link text-white">Images</a>
                 @elseif(auth()->user()->role === 'vendor')
