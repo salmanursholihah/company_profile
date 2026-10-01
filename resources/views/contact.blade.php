@@ -1,6 +1,6 @@
  @extends('layouts.app_landing')
-@section('title', 'company profile')
-@section('content')
+ @section('title', 'company profile')
+ @section('content')
  <main class="main">
 
      <!-- Page Title -->
@@ -41,7 +41,7 @@
                                  data-aos="fade-up" data-aos-delay="300">
                                  <i class="bi bi-telephone"></i>
                                  <h3>Call Us</h3>
-                                 <p>+62 831 1666 8809</p>
+                                 <p>085820027279</p>
                              </div>
                          </div><!-- End Info Item -->
 
@@ -60,7 +60,7 @@
                  <div class="col-lg-6">
                      <form action="{{ route('contact.store') }}" method="POST" class="php-email-form" data-aos="fade-up"
                          data-aos-delay="500">
-                          @csrf
+                         @csrf
                          <div class="row gy-4">
 
                              <div class="col-md-6">
@@ -110,4 +110,4 @@
      </section><!-- /Contact Section -->
 
  </main>
-@endsection
+ @endsection
