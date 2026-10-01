@@ -4,6 +4,15 @@
     @push('styles')
         <link rel="stylesheet" href="{{ asset('assets/css/style_katalog_index.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/product_bestseller.css') }}">
+        <style>
+            /* Ikon "Layanan Kami": di mobile jangan keluar dari layar sebelah kiri */
+            @media (max-width: 767.98px) {
+                .service-icon {
+                    left: 20px !important;
+                    transform: translateY(-50%) !important;
+                }
+            }
+        </style>
     @endpush
 
     <main class="main">
@@ -334,14 +343,14 @@
             <div class="container">
                 <h2 class="text-center fw-bold mb-5">Layanan Kami</h2>
 
-                <div class="row g-4">
+                <div class="row g-4 gy-5">
 
                     @foreach ($services as $service)
                         <div class="col-md-4">
                             <div class="card shadow-sm border-0 rounded-4 position-relative p-4">
 
                                 <!-- ICON -->
-                                <div class="position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
+                                <div class="service-icon position-absolute top-0 start-0 translate-middle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow"
                                     style="width:70px;height:70px;">
                                     <i class="fas fa-chart-line fs-3"></i>
                                 </div>
