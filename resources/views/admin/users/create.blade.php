@@ -41,6 +41,7 @@
                     <option value="super_admin" {{ old('role') == 'super_admin' ? 'selected' : '' }}>Super Admin</option>
                     <option value="vendor" {{ old('role') == 'vendor' ? 'selected' : '' }}>Vendor</option>
                     <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+                    <option value="blogger" {{ old('role') == 'blogger' ? 'selected' : '' }}>Blogger</option>
                 </select>
             </div>
             <div class="mb-3">

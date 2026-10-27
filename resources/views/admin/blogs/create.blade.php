@@ -22,6 +22,14 @@
     </div>
 
     <div class="mb-3">
+        <label>Status</label>
+        <select name="status" class="form-control">
+            <option value="published" {{ old('status','published')=='published' ? 'selected' : '' }}>Published (tampil di web &amp; mobile)</option>
+            <option value="draft" {{ old('status')=='draft' ? 'selected' : '' }}>Draft (disembunyikan)</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
         <label>Published At</label>
         <input type="date" name="published_at" class="form-control">
     </div>

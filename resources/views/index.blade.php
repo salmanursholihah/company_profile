@@ -33,8 +33,8 @@
                                 <h2>{{ $item->headline }}</h2>
                                 <p>{!! nl2br(e($item->sub_headline)) !!}</p>
                                 <div class="hero-actions">
-                                    <a href="{{ route('product') }}" class="btn btn-hero">Lihat Produk</a>
-                                    <a href="{{ route('contact.index') }}" class="btn btn-hero-ghost">Hubungi Kami</a>
+                                    <a href="{{ route('product') }}" class="btn btn-hero">{{ $site['hero_primary_label'] }}</a>
+                                    <a href="{{ route('contact.index') }}" class="btn btn-hero-ghost">{{ $site['hero_secondary_label'] }}</a>
                                 </div>
                             </div>
                         </div>
@@ -67,11 +67,11 @@
                             <p>{!! nl2br(e($aboutPreview)) !!}</p>
 
                             <div class="perks">
-                                <h5>Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan diantaranya :</h5>
+                                <h5>{{ $site['keunggulan_title'] }}</h5>
                                 <ul class="list-unstyled mb-0">
-                                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Instalasi cepat & handal</li>
-                                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Pelatihan operator & pendampingan</li>
-                                    <li><i class="bi bi-check2-circle text-primary me-2"></i>Produk ramah lingkungan & hemat energi</li>
+                                    @foreach ($site['keunggulan'] as $k)
+                                        <li><i class="bi bi-check2-circle text-primary me-2"></i>{{ $k['text'] ?? '' }}</li>
+                                    @endforeach
                                 </ul>
                             </div>
 

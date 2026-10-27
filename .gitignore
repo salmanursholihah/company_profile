@@ -16,9 +16,11 @@
 /public/build
 /public/hot
 /public/storage
+/public/storage_lama
 /storage/*.key
 /storage/pail
 /vendor
 Homestead.json
 Homestead.yaml
 Thumbs.db
+storage/app/firebase/

@@ -38,6 +38,7 @@
                         Admin</option>
                     <option value="vendor" {{ old('role', $user->role) == 'vendor' ? 'selected' : '' }}>Vendor</option>
                     <option value="user" {{ old('role', $user->role) == 'user' ? 'selected' : '' }}>User</option>
+                    <option value="blogger" {{ old('role', $user->role) == 'blogger' ? 'selected' : '' }}>Blogger</option>
                 </select>
             </div>
             <div class="mb-3">

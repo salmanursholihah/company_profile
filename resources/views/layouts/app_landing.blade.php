@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Company Profile PT Utama Cipta Tata Asri - Ositech</title>
+    <title>{{ $site['site_title'] ?: 'Company Profile' }}</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.jpeg') }}" rel="icon">
+    <link href="{{ $siteFaviconUrl ?? asset('assets/img/favicon.jpeg') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
@@ -30,6 +30,7 @@
     <!-- Main CSS + perbaikan tampilan (harus setelah main.css) -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/ui-refresh.css') }}" rel="stylesheet">
+    @include('partials.site-theme')
 
     @stack('styles')
 </head>
@@ -41,7 +42,11 @@
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
             <a href="{{ route('index') }}" class="logo d-flex align-items-center">
-                <span class="sitename">Ositech</span>
+                @if ($siteLogoUrl)
+                    <img src="{{ $siteLogoUrl }}" alt="{{ $site['brand_name'] }}" class="site-logo">
+                @else
+                    <span class="sitename">{{ $site['brand_name'] }}</span>
+                @endif
             </a>
 
             <nav id="navmenu" class="navmenu" aria-label="Menu utama">
@@ -148,9 +153,8 @@
                         @foreach ($footer->social_links ?? [] as $platform => $url)
                             @php
                                 // Kalau yang disimpan hanya nomor (mis. 6283116668809), ubah jadi link wa.me
-                                if ($platform === 'whatsapp' && !str_starts_with($url, 'http')) {
-                                    $url = 'https://wa.me/' . preg_replace('/\D/', '', $url)
-                                        . '?text=' . rawurlencode('Halo PT Utama Cipta Tata Asri, saya ingin bertanya tentang produk.');
+                                if ($platform === 'whatsapp') {
+                                    $url = \App\Models\SiteSetting::whatsappLink() ?? $url;
                                 }
                             @endphp
                             <a href="{{ $url }}" target="_blank" rel="noopener" aria-label="{{ ucfirst($platform) }}">
@@ -171,16 +175,7 @@
     <!-- =============== END FOOTER ================= -->
 
     {{-- WHATSAPP FLOATING BUTTON --}}
-    @php
-        $waRaw = $footer->social_links['whatsapp'] ?? null;
-        $waLink = null;
-        if ($waRaw) {
-            $waLink = str_starts_with($waRaw, 'http')
-                ? $waRaw
-                : 'https://wa.me/' . preg_replace('/\D/', '', $waRaw)
-                    . '?text=' . rawurlencode('Halo PT Utama Cipta Tata Asri, saya ingin bertanya tentang produk.');
-        }
-    @endphp
+    @php $waLink = $site['show_whatsapp'] ? \App\Models\SiteSetting::whatsappLink() : null; @endphp
     @if ($waLink)
         <a href="{{ $waLink }}" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
             <i class="bi bi-whatsapp"></i>

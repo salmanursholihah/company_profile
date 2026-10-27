@@ -1,96 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers;
-
-// use App\Models\About;
-// use App\Models\legalitas;
-// use App\Models\visimisi;
-// use Illuminate\Http\Request;
-
-
-// class AdminAboutController extends Controller
-// {
-//     public function index()
-//     {
-//         $abouts = About::latest()->get();
-//         $legalitas = legalitas::all();
-//         $visiMisi = visimisi::all();
-
-//         return view('admin.about.index', compact('abouts', 'legalitas', 'visiMisi'));
-//     }
-
-
-//     public function create()
-//     {
-//         return view('admin.about.create');
-//     }
-
-//     public function store(Request $request)
-//     {
-//         $request->validate([
-//             'headline' => 'required',
-//             'description' => 'required',
-//             'image' => 'required|image|mimes:jpg,jpeg,png,webp',
-//         ]);
-
-//         $imagePath = $request->file('image')->store('uploads/about', 'public');
-
-//         About::create([
-//             'headline' => $request->headline,
-//             'sub_headline' => $request->sub_headline,
-//             'description' => $request->description,
-//             'url' => $request->url,
-//             'image' => 'storage/' . $imagePath
-//         ]);
-
-//         return redirect()->route('admin.about.index')->with('success', 'Konten berhasil dibuat.');
-//     }
-
-//     public function edit($id)
-//     {
-//         $about = About::findOrFail($id);
-//         return view('admin.about.edit', compact('about'));
-//     }
-
-//     public function update(Request $request, $id)
-//     {
-//         $about = About::findOrFail($id);
-
-//         $request->validate([
-//             'headline' => 'required',
-//             'description' => 'required',
-//             'image' => 'image|mimes:jpg,jpeg,png,webp',
-//         ]);
-
-//         $data = [
-//             'headline' => $request->headline,
-//             'sub_headline' => $request->sub_headline,
-//             'description' => $request->description,
-//             'url' => $request->url,
-//         ];
-
-//         if ($request->hasFile('image')) {
-//             $imagePath = $request->file('image')->store('uploads/about', 'public');
-//             $data['image'] = 'storage/' . $imagePath;
-//         }
-
-//         $about->update($data);
-
-//         return redirect()->route('admin.about.index')->with('success', 'Konten berhasil diperbarui.');
-//     }
-
-//     public function destroy($id)
-//     {
-//         $about = About::findOrFail($id);
-//         $about->delete();
-
-//         return redirect()->route('admin.about.index')->with('success', 'Konten berhasil dihapus.');
-//     }
-// }
-
-
-
-
 namespace App\Http\Controllers;
 
 use App\Models\About;
@@ -98,6 +7,16 @@ use App\Models\Legalitas;
 use App\Models\VisiMisi;
 use Illuminate\Http\Request;
 
+/**
+ * Admin > About: konten "Tentang", Legalitas, dan Visi/Misi dalam satu halaman.
+ *
+ * Catatan perbaikan:
+ *  - Route::resource('about', ...) butuh method create/store/show/edit/update/destroy.
+ *    Sebelumnya hanya ada createAbout/storeAbout/editAbout/updateAbout sehingga tombol
+ *    Tambah/Edit/Simpan melempar BadMethodCallException ("Method ... does not exist").
+ *  - $request->all() ikut membawa _token & _method; dengan $guarded = [] itu menjadi
+ *    "Unknown column '_token'" saat create()/update(). Sekarang hanya field yang dipakai.
+ */
 class AdminAboutController extends Controller
 {
     /*
@@ -107,162 +26,222 @@ class AdminAboutController extends Controller
     */
     public function index()
     {
-        $abouts = About::latest()->get();
+        $abouts    = About::latest()->get();
         $legalitas = Legalitas::orderBy('urutan')->get();
-        $visiMisi = VisiMisi::all();
+        $visiMisi  = VisiMisi::all();
 
-        return view('admin.about.index', compact(
-            'abouts',
-            'legalitas',
-            'visiMisi'
-        ));
+        return view('admin.about.index', compact('abouts', 'legalitas', 'visiMisi'));
     }
 
     /*
     |--------------------------------------------------------------------------
-    | ABOUT CRUD
+    | ABOUT  (route resource: admin.about.*)
     |--------------------------------------------------------------------------
     */
-
-    public function createAbout()
+    public function create()
     {
         return view('admin.about.create');
     }
 
+    public function store(Request $request)
+    {
+        return $this->storeAbout($request);
+    }
+
+    public function show($id)
+    {
+        return redirect()->route('admin.about.edit', $id);
+    }
+
+    public function edit($id)
+    {
+        $about = About::findOrFail($id);
+
+        return view('admin.about.edit', compact('about'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        return $this->updateAbout($request, $id);
+    }
+
+    public function destroy($id)
+    {
+        About::findOrFail($id)->delete();
+
+        return redirect()->route('admin.about.index')->with('success', 'Konten About dihapus.');
+    }
+
+    /** Dipanggil form di halaman index (route: admin.about.storeAbout) dan store(). */
     public function storeAbout(Request $request)
     {
-        $request->validate([
-            'headline' => 'required',
-            'description' => 'required',
-            'image' => 'required|image'
+        $data = $request->validate([
+            'headline'     => 'required|string|max:255',
+            'sub_headline' => 'nullable|string|max:255',
+            'description'  => 'required|string',
+            'url'          => 'nullable|string|max:255',
+            'image'        => 'required|image|max:5120',
         ]);
 
         $imagePath = $request->file('image')->store('uploads/about', 'public');
 
         About::create([
-            'headline' => $request->headline,
-            'sub_headline' => $request->sub_headline,
-            'description' => $request->description,
-            'url' => $request->url,
-            'image' => 'storage/' . $imagePath
+            'headline'     => $data['headline'],
+            'sub_headline' => $data['sub_headline'] ?? null,
+            'description'  => $data['description'],
+            'url'          => $data['url'] ?? null,
+            'image'        => 'storage/' . $imagePath,
         ]);
 
-        return redirect()->route('admin.about.index');
-    }
-
-    public function editAbout($id)
-    {
-        $about = About::findOrFail($id);
-        return view('admin.about.edit', compact('about'));
+        return redirect()->route('admin.about.index')->with('success', 'Konten About dibuat.');
     }
 
     public function updateAbout(Request $request, $id)
     {
         $about = About::findOrFail($id);
 
-        $data = $request->all();
+        $data = $request->validate([
+            'headline'     => 'required|string|max:255',
+            'sub_headline' => 'nullable|string|max:255',
+            'description'  => 'required|string',
+            'url'          => 'nullable|string|max:255',
+            'image'        => 'nullable|image|max:5120',
+        ]);
+
+        $payload = [
+            'headline'     => $data['headline'],
+            'sub_headline' => $data['sub_headline'] ?? null,
+            'description'  => $data['description'],
+            'url'          => $data['url'] ?? null,
+        ];
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/about', 'public');
-            $data['image'] = 'storage/' . $imagePath;
+            $payload['image'] = 'storage/' . $request->file('image')->store('uploads/about', 'public');
         }
 
-        $about->update($data);
+        $about->update($payload);
 
-        return redirect()->route('admin.about.index');
+        return redirect()->route('admin.about.index')->with('success', 'Konten About diperbarui.');
     }
 
     /*
     |--------------------------------------------------------------------------
-    | LEGALITAS CRUD
+    | LEGALITAS
     |--------------------------------------------------------------------------
     */
-
-    public function createLegalitas()
-    {
-        return view('admin.legalitas.create');
-    }
-
     public function storeLegalitas(Request $request)
     {
-        $request->validate([
-            'judul' => 'required',
-            'deskripsi' => 'required'
+        $data = $request->validate([
+            'judul'     => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+            'urutan'    => 'nullable|integer',
+            'image'     => 'nullable|image',
         ]);
 
-        $data = $request->all();
+        $payload = [
+            'judul'     => $data['judul'],
+            'deskripsi' => $data['deskripsi'],
+            'urutan'    => (int) ($data['urutan'] ?? 0),
+        ];
 
         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '-' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/legalitas'), $filename);
-            $data['image'] = $filename;
+            $payload['image'] = $this->moveLegalitasImage($request);
         }
 
-        Legalitas::create($data);
+        Legalitas::create($payload);
 
-        return redirect()->route('admin.about.index');
+        return redirect()->route('admin.about.index')->with('success', 'Legalitas ditambahkan.');
     }
 
+    /** Edit legalitas dikerjakan CRUD resource AdminLegalitasController. */
     public function editLegalitas($id)
     {
-        $legalitas = Legalitas::findOrFail($id);
-        return view('admin.legalitas.edit', compact('legalitas'));
+        return redirect()->route('admin.legalitas.edit', $id);
     }
 
     public function updateLegalitas(Request $request, $id)
     {
         $legalitas = Legalitas::findOrFail($id);
 
-        $data = $request->all();
+        $data = $request->validate([
+            'judul'     => 'required|string|max:255',
+            'deskripsi' => 'nullable|string',
+            'urutan'    => 'nullable|integer',
+            'image'     => 'nullable|image',
+        ]);
+
+        $payload = [
+            'judul'     => $data['judul'],
+            'deskripsi' => $data['deskripsi'] ?? null,
+            'urutan'    => (int) ($data['urutan'] ?? 0),
+        ];
 
         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . '-' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/legalitas'), $filename);
-            $data['image'] = $filename;
+            $payload['image'] = $this->moveLegalitasImage($request);
         }
 
-        $legalitas->update($data);
+        $legalitas->update($payload);
 
-        return redirect()->route('admin.about.index');
+        return redirect()->route('admin.about.index')->with('success', 'Legalitas diperbarui.');
+    }
+
+    /** Legalitas menyimpan NAMA FILE saja, di public/uploads/legalitas (lihat App\Support\Media). */
+    private function moveLegalitasImage(Request $request): string
+    {
+        $file     = $request->file('image');
+        $filename = time() . '-' . preg_replace('/[^A-Za-z0-9._-]/', '_', $file->getClientOriginalName());
+        $file->move(public_path('uploads/legalitas'), $filename);
+
+        return $filename;
     }
 
     /*
     |--------------------------------------------------------------------------
-    | VISI MISI CRUD
+    | VISI MISI
     |--------------------------------------------------------------------------
     */
-
-    public function createVisiMisi()
-    {
-        return view('admin.visimisi.create');
-    }
-
     public function storeVisiMisi(Request $request)
     {
-        $request->validate([
-            'text' => 'required',
-            'type' => 'required|in:visi,misi'
+        $data = $request->validate([
+            'text' => 'required|string',
+            'type' => 'required|in:visi,misi',
+            'icon' => 'nullable|string|max:255',
         ]);
 
-        VisiMisi::create($request->all());
+        VisiMisi::create([
+            'text' => $data['text'],
+            'type' => $data['type'],
+            'icon' => $data['icon'] ?? null,
+        ]);
 
-        return redirect()->route('admin.about.index');
+        return redirect()->route('admin.about.index')->with('success', 'Visi/Misi ditambahkan.');
     }
 
+    /**
+     * Sebelumnya me-render view 'admin.visimisi.edit' yang tidak ada (foldernya visi_misi)
+     * -> "View [admin.visimisi.edit] not found". Edit dikerjakan AdminVisiMisiController.
+     */
     public function editVisiMisi($id)
     {
-        $visiMisi = VisiMisi::findOrFail($id);
-        return view('admin.visimisi.edit', compact('visiMisi'));
+        return redirect()->route('admin.visi_misi.edit', $id);
     }
 
     public function updateVisiMisi(Request $request, $id)
     {
         $visiMisi = VisiMisi::findOrFail($id);
 
-        $visiMisi->update($request->all());
+        $data = $request->validate([
+            'text' => 'required|string',
+            'type' => 'required|in:visi,misi',
+            'icon' => 'nullable|string|max:255',
+        ]);
 
-        return redirect()->route('admin.about.index');
+        $visiMisi->update([
+            'text' => $data['text'],
+            'type' => $data['type'],
+            'icon' => $data['icon'] ?? null,
+        ]);
+
+        return redirect()->route('admin.about.index')->with('success', 'Visi/Misi diperbarui.');
     }
 }

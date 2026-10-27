@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\KatalogController;
-use App\Http\Controllers\AdminkatalogController;
+use App\Http\Controllers\AdminKatalogController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminVendorController;
@@ -20,13 +20,20 @@ use App\Http\Controllers\AdminHalamanUtamaController;
 use App\Http\Controllers\AdminVisiMisiController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminFooterController;
-use App\Http\Controllers\AdminlegalitasController;
+use App\Http\Controllers\AdminLegalitasController;
 // use App\Http\Controllers\AdminTeamController;
 use App\Http\Controllers\LandingController;
 // use App\Http\Controllers\TeamController;
 use App\Http\Controllers\AdminPortfolioController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AdminImageController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminSettingController;
+use App\Http\Controllers\Admin\AdminGuideCategoryController;
+use App\Http\Controllers\Admin\AdminGuideController;
+use App\Http\Controllers\Admin\AdminGuideLessonController;
+use App\Http\Controllers\Admin\AdminSubscriptionController;
+use App\Http\Controllers\Admin\AdminSubscriptionPlanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,19 +107,17 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
         /* Dashboard untuk semua yang login */
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard', [
-                'usersCount' => 120,
-                'subsCount' => 45,
-            ]);
-        })->name('admin.dashboard');
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
         /* SUPER ADMIN ONLY — VIEW PAGES */
         Route::middleware('role:super_admin')->group(function () {
             Route::view('/users', 'admin.users.index')->name('admin.users.index');
             Route::view('/contacts', 'admin.contacts.index')->name('admin.contacts.index');
             Route::view('/admin_profiles', 'admin.profile.admin_profile')->name('admin.profile.admin_profile');
-            Route::view('/setting', 'admin.setting')->name('admin.setting');
+            // Pengaturan situs: logo, warna, teks (dipakai web & mobile)
+            Route::get('/setting', [AdminSettingController::class, 'index'])->name('admin.setting');
+            Route::put('/setting', [AdminSettingController::class, 'update'])->name('admin.setting.update');
+            Route::post('/setting/reset', [AdminSettingController::class, 'reset'])->name('admin.setting.reset');
         });
 
         /* VENDOR ONLY — VIEW PAGES */
@@ -141,7 +146,6 @@ Route::prefix('admin')
             Route::resource('katalogs', AdminKatalogController::class);
             Route::resource('users', AdminUserController::class);
             Route::resource('contacts', AdminContactController::class);
-            Route::resource('blogs', AdminBlogController::class);
             Route::resource('vendors', AdminVendorController::class);
 
             // ABOUT, HALAMAN UTAMA, VISI MISI, SERVICES, FOOTER → super admin only
@@ -151,19 +155,15 @@ Route::prefix('admin')
                 ->name('about.storeAbout');
 
 
-            Route::post('/about/edit-about', [AdminAboutController::class, 'editAbout'])
-                ->name('about.editAbout');
-
-
 
             Route::post('/about/store-legalitas', [AdminAboutController::class, 'storeLegalitas'])
                 ->name('about.storeLegalitas');
-            Route::get('/admin/about/legalitas/{id}/edit', [AdminAboutController::class, 'editLegalitas'])->name('about.editLegalitas');
+            Route::get('/about/legalitas/{id}/edit', [AdminAboutController::class, 'editLegalitas'])->name('about.editLegalitas');
 
 
             Route::post('/about/store-visimisi', [AdminAboutController::class, 'storeVisiMisi'])
                 ->name('about.storeVisiMisi');
-            Route::get('/admin/about/visi-misi/{id}/edit', [AdminAboutController::class, 'editVisiMisi'])->name('about.editVisiMisi');
+            Route::get('/about/visi-misi/{id}/edit', [AdminAboutController::class, 'editVisiMisi'])->name('about.editVisiMisi');
 
             Route::resource('hasil-uji-lab', AdminUjiLabController::class);
 
@@ -179,6 +179,21 @@ Route::prefix('admin')
             // route::resource('team', AdminTeamController::class);
             route::resource('portfolio', AdminPortfolioController::class);
             route::resource('images', AdminImageController::class);
+
+            /* PANDUAN & LANGGANAN */
+            Route::resource('guides', AdminGuideController::class)->except('show');
+            Route::resource('guides.lessons', AdminGuideLessonController::class)->except('show');
+            Route::resource('guide-categories', AdminGuideCategoryController::class)
+                ->except('show')->parameters(['guide-categories' => 'category']);
+            Route::resource('subscription-plans', AdminSubscriptionPlanController::class)
+                ->except('show')->parameters(['subscription-plans' => 'plan']);
+            Route::get('subscriptions', [AdminSubscriptionController::class, 'index'])->name('subscriptions.index');
+            Route::post('subscriptions/grant', [AdminSubscriptionController::class, 'grant'])->name('subscriptions.grant');
+        });
+
+        /* BLOG: super admin & blogger (blogger HANYA boleh membuka ini) */
+        Route::middleware('role:super_admin,blogger')->group(function () {
+            Route::resource('blogs', AdminBlogController::class);
         });
 
         /* VENDOR CRUD */

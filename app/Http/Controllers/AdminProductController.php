@@ -29,7 +29,7 @@ class AdminProductController extends Controller
             'stok' => 'required|integer',
             'lokasi' => 'required|string|max:255',
             'status' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:5120',
         ]);
 
         // Only take the fields we expect to avoid mass-assignment issues
@@ -58,15 +58,17 @@ class AdminProductController extends Controller
             'name' => 'required',
             'kategori' => 'required',
             'deskripsi' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'discount' => 'nullable|numeric',
             'stok' => 'required|integer',
             'lokasi' => 'required',
             'status' => 'required',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:5120',
         ]);
 
-        $data = $request->all();
+        $data = $request->only([
+            'name', 'kategori', 'deskripsi', 'price', 'discount', 'stok', 'lokasi', 'status'
+        ]);
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('products', 'public');

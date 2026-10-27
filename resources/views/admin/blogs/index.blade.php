@@ -12,6 +12,7 @@
             <th>Category</th>
             <th>Author</th>
             <th>Published</th>
+            <th>Status</th>
             <th width="150">Action</th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
             <td>{{ $blog->category }}</td>
             <td>{{ $blog->author }}</td>
             <td>{{ $blog->published_at }}</td>
+            <td>{{ $blog->status }}</td>
             <td>
                 <a href="{{ route('admin.blogs.show', $blog->id) }}" class="btn btn-info btn-sm">View</a>
                 <a href="{{ route('admin.blogs.edit', $blog->id) }}" class="btn btn-warning btn-sm">Edit</a>

@@ -20,7 +20,11 @@ class AboutController extends Controller
         $visi = VisiMisi::where('type', 'visi')->first();
         $misi = VisiMisi::where('type', 'misi')->get();
 
-        $legalitas = Legalitas::select('deskripsi')->find(4);
+        // Sebelumnya hanya record id=4; bila terhapus, ambil deskripsi pertama yang terisi.
+        $legalitas = Legalitas::select('deskripsi')->find(4)
+            ?? Legalitas::select('deskripsi')
+                ->whereNotNull('deskripsi')->where('deskripsi', '!=', '')
+                ->orderBy('urutan')->first();
         $hasilUji = HasilUjiLab::first();
         $clientLogos = Image::where('type', 'client_logo')
             ->where('is_active', 1)
@@ -39,7 +43,8 @@ class AboutController extends Controller
             'misi',
             'legalitas',
             'hasilUji',
-            'clientLogos'
+            'clientLogos',
+            'aboutImages'
         ));
     }
 }

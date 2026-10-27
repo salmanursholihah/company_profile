@@ -1,158 +1,103 @@
 @extends('layouts.admin')
 
 @section('title', 'Dashboard')
+@section('page-title', 'Dashboard')
 
 @section('content')
-<div class="container-fluid">
-    <!-- Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1 class="h3 mb-0 text-dark fw-bold">Dashboard</h1>
-        <input type="text" class="form-control w-25" placeholder="Search...">
-    </div>
+@php
+    // Peta warna kartu statistik (nilai 'class' berasal dari AdminDashboardController)
+    $tone = [
+        'bg-primary' => ['t-blue',  '<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/>'],
+        'bg-success' => ['t-green', '<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 19v3H6.5A2.5 2.5 0 0 1 4 19.5"/>'],
+        'bg-info'    => ['t-cyan',  '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/>'],
+        'bg-warning' => ['t-amber', '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'],
+    ];
+    $ico = fn ($p) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' . $p . '</svg>';
+    $hour = (int) now()->format('G');
+    $greet = $hour < 11 ? 'Selamat pagi' : ($hour < 15 ? 'Selamat siang' : ($hour < 19 ? 'Selamat sore' : 'Selamat malam'));
+@endphp
 
-    <!-- Statistik Cards -->
-    <div id="stats" class="row mb-4"></div>
-
-    <!-- Content Grid -->
-    <div class="row">
-        <!-- Chart utama -->
-        <div class="col-lg-8 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold mb-3">Page Analytics</h5>
-                    <canvas id="barChart" height="100"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <!-- Chart tambahan -->
-        <div class="col-lg-4 mb-4 admin-only">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold mb-3">Survey Analytics</h5>
-                    <canvas id="pieChart" height="200"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="adm-hero">
+    <h1>{{ $greet }}, {{ auth()->user()->name }} 👋</h1>
+    <p>Ringkasan data terkini dari database {{ $site['brand_name'] }}.</p>
 </div>
+
+<div class="adm-stats">
+    @foreach ($stats as $s)
+        @php [$t, $p] = $tone[$s['class']] ?? ['t-blue', $tone['bg-primary'][1]]; @endphp
+        <div class="adm-stat">
+            <span class="adm-stat-ico {{ $t }}">{!! $ico($p) !!}</span>
+            <div>
+                <div class="adm-stat-val">{{ number_format($s['value'], 0, ',', '.') }}</div>
+                <div class="adm-stat-lbl">{{ $s['label'] }}</div>
+            </div>
+        </div>
+    @endforeach
+</div>
+
+<div class="adm-grid {{ $isSuperAdmin ? 'has-bar' : '' }}">
+    @if ($isSuperAdmin)
+        <section class="adm-panel">
+            <h2>Pesan masuk (6 bulan terakhir)</h2>
+            <div class="adm-chart"><canvas id="barChart"></canvas></div>
+        </section>
+    @endif
+
+    <section class="adm-panel">
+        <h2>Komposisi konten</h2>
+        <div class="adm-chart sm"><canvas id="pieChart"></canvas></div>
+    </section>
+</div>
+
+@if ($isSuperAdmin)
+    <div class="adm-quick">
+        <a href="{{ route('admin.katalogs.create') }}">{!! $ico('<path d="M12 5v14M5 12h14"/>') !!} Tambah Katalog</a>
+        <a href="{{ route('admin.blogs.create') }}">{!! $ico('<path d="M12 5v14M5 12h14"/>') !!} Tulis Artikel</a>
+        <a href="{{ route('admin.contacts.index') }}">{!! $ico('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>') !!} Lihat Pesan</a>
+        <a href="{{ route('admin.setting') }}">{!! $ico('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>') !!} Setting Situs</a>
+    </div>
+@endif
 @endsection
 
 @push('scripts')
+<script src="{{ asset('assets/js/chart.min.js') }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const role = "{{ auth()->user()->role ?? 'vendor' }}"; // ambil dari Laravel Auth
+    var css = getComputedStyle(document.documentElement);
+    var brand = (css.getPropertyValue('--brand') || '').trim() || '#0f766e';
+    var palette = [brand, '#16a34a', '#0891b2', '#f59e0b'];
+    Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+    Chart.defaults.color = '#64748b';
 
-    const stats = document.getElementById("stats");
-
-    if (role === "super_admin") {
-        stats.innerHTML = `
-            <div class="col-md-3">
-                <div class="card text-white bg-primary mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Visitors</h6>
-                        <h3>2690</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-warning mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Feedback</h6>
-                        <h3>40</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-info mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Vendors</h6>
-                        <h3>230</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-success mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Products Sold</h6>
-                        <h3>450</h3>
-                    </div>
-                </div>
-            </div>
-        `;
-    } else {
-        stats.innerHTML = `
-            <div class="col-md-3">
-                <div class="card text-white bg-primary mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Produk Saya</h6>
-                        <h3>25</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-warning mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Blog</h6>
-                        <h3>18</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-info mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">User</h6>
-                        <h3>Rp 12jt</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-white bg-success mb-3 shadow">
-                    <div class="card-body">
-                        <h6 class="card-title">Vendor</h6>
-                        <h3>4.7</h3>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-
-    // sembunyikan bagian khusus
-    if (role === "super_admin") {
-        document.querySelectorAll(".vendor-only").forEach(el => el.style.display = "none");
-    } else {
-        document.querySelectorAll(".admin-only").forEach(el => el.style.display = "none");
-    }
-
-    // === Chart.js ===
+    @if ($isSuperAdmin)
     new Chart(document.getElementById('barChart'), {
         type: 'bar',
         data: {
-            labels: ['Jan','Feb','Mar','Apr','Mei','Jun'],
-            datasets: [{
-                label: 'Visitors',
-                data: [120,190,300,500,200,300],
-                backgroundColor: 'rgba(54,162,235,0.7)'
-            }]
+            labels: @json($chartLabels),
+            datasets: [{ label: 'Pesan', data: @json($chartSeries), backgroundColor: brand, borderRadius: 8, maxBarThickness: 38 }]
         },
         options: {
+            responsive: true, maintainAspectRatio: false,
             plugins: { legend: { display: false } },
-            scales: { y: { beginAtZero: true } }
+            scales: {
+                x: { grid: { display: false } },
+                y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: '#eef1f6' } }
+            }
         }
     });
+    @endif
 
-    if (role === "super_admin") {
-        new Chart(document.getElementById('pieChart'), {
-            type: 'pie',
-            data: {
-                labels: ['Excellent','Good','Medium','Bad'],
-                datasets: [{
-                    data: [55,25,15,5],
-                    backgroundColor: ['#198754','#0d6efd','#ffc107','#dc3545']
-                }]
-            }
-        });
-    }
+    new Chart(document.getElementById('pieChart'), {
+        type: 'doughnut',
+        data: {
+            labels: @json(array_keys($composition)),
+            datasets: [{ data: @json(array_values($composition)), backgroundColor: palette, borderWidth: 3, borderColor: '#fff' }]
+        },
+        options: {
+            responsive: true, maintainAspectRatio: false, cutout: '64%',
+            plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, boxWidth: 8, padding: 14 } } }
+        }
+    });
 });
 </script>
 @endpush

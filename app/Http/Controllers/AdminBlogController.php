@@ -26,7 +26,8 @@ class AdminBlogController extends Controller
             'category'=> 'required',
             'author'  => 'required',
             'content' => 'required',
-            'image'   => 'nullable|image',
+            'status'  => 'nullable|in:draft,published',
+            'image'   => 'nullable|image|max:5120',
         ]);
 
         $slug = Str::slug($request->title);
@@ -43,6 +44,7 @@ class AdminBlogController extends Controller
             'author'       => $request->author,
             'content'      => $request->content,
             'image'        => $image,
+            'status'       => $request->input('status', 'published'),
             'published_at' => $request->published_at,
         ]);
 
@@ -66,7 +68,8 @@ class AdminBlogController extends Controller
             'category'=> 'required',
             'author'  => 'required',
             'content' => 'required',
-            'image'   => 'nullable|image',
+            'status'  => 'nullable|in:draft,published',
+            'image'   => 'nullable|image|max:5120',
         ]);
 
         $slug = Str::slug($request->title);
@@ -86,6 +89,7 @@ class AdminBlogController extends Controller
             'author'       => $request->author,
             'content'      => $request->content,
             'image'        => $image,
+            'status'       => $request->input('status', 'published'),
             'published_at' => $request->published_at,
         ]);
 

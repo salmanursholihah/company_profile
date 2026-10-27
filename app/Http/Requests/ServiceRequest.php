@@ -24,7 +24,7 @@ class ServiceRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:5120',
             'link' => 'nullable|url|max:255',
         ];
     }

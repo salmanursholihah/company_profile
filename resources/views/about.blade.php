@@ -93,45 +93,38 @@
                      {{-- </div>  --}}
                      {{-- About Section (safe) --}}
                      @foreach ($abouts as $about)
-                         <section id="about" class="section py-5">
+                         <section id="{{ $loop->first ? 'about' : 'about-' . $loop->iteration }}" class="section py-5">
                              <div class="container">
                                  <div class="row align-items-start gy-5">
 
                                      <!-- IMAGE -->
-                                     <div class="col-lg-6" data-aos="fade-right">
-                                         <img src="{{ asset($about->image) }}" class="img-fluid rounded shadow-lg w-100"
-                                             alt="About Image">
-                                     </div>
+                                     @if (filled($about->image))
+                                         <div class="col-lg-6" data-aos="fade-right">
+                                             <img src="{{ asset($about->image) }}" class="img-fluid rounded shadow-lg w-100"
+                                                 alt="About Image">
+                                         </div>
+                                     @endif
 
                                      <!-- CONTENT -->
-                                     <div class="col-lg-6" data-aos="fade-left">
+                                     <div class="{{ filled($about->image) ? 'col-lg-6' : 'col-12' }}" data-aos="fade-left">
 
                                          <h2 class="fw-bold mb-4">
                                              {{ $about->headline ?? 'Selayang Pandang' }}
                                          </h2>
 
                                          <p class="text-muted mb-4">
-                                             {!! nl2br(e(Str::limit(strip_tags($about->description), 5000))) !!}
+                                             {!! nl2br(e(Str::limit(strip_tags((string) $about->description), 5000))) !!}
                                          </p>
 
-                                         <h5 class="fw-semibold mb-3">
-                                             Produk dan fasilitas yang kami sajikan memiliki beberapa keunggulan
-                                             diantaranya:
-                                         </h5>
+                                         <h5 class="fw-semibold mb-3">{{ $site['keunggulan_title'] }}</h5>
 
                                          <ul class="list-unstyled">
-                                             <li class="mb-2">
-                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
-                                                 Instalasi cepat & handal
-                                             </li>
-                                             <li class="mb-2">
-                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
-                                                 Pelatihan operator & pendampingan
-                                             </li>
-                                             <li class="mb-2">
-                                                 <i class="bi bi-check2-circle text-primary me-2"></i>
-                                                 Produk ramah lingkungan & hemat energi
-                                             </li>
+                                             @foreach ($site['keunggulan'] as $k)
+                                                 <li class="mb-2">
+                                                     <i class="bi bi-check2-circle text-primary me-2"></i>
+                                                     {{ $k['text'] ?? '' }}
+                                                 </li>
+                                             @endforeach
                                          </ul>
 
                                      </div>
@@ -222,10 +215,11 @@
                          <div class="container">
                              <h2 class="fw-bold mb-4 text-center">legalitas & Sertifikasi</h2>
 
-                             @foreach ($legalitas as $item)
-                                 {{ optional($legalitas)->deskripsi }}
-                                 <br>
-                             @endforeach
+                             @if (filled($legalitas?->deskripsi))
+                                 <div class="text-start">{!! nl2br(e($legalitas->deskripsi)) !!}</div>
+                             @else
+                                 <p class="text-center text-muted mb-0"><em>Data legalitas belum tersedia.</em></p>
+                             @endif
 
                          </div>
                      </section>
@@ -272,6 +266,7 @@
                                  </div>
                              </section> -->
                      <!--hasil uji lab-->
+                     @if ($hasilUji)
                      <section id="hasil-uji-lab" class="py-5 bg-light">
                          <div class="container">
                              <div class="row align-items-center">
@@ -293,16 +288,19 @@
 
                                  <!-- Image -->
                                  <div class="col-lg-5 text-center" data-aos="fade-left">
-                                     <img src="{{ asset('storage/' . $hasilUji->gambar) }}" class="img-fluid rounded shadow">
+                                     @if (filled($hasilUji?->gambar))
+                                         <img src="{{ asset('storage/' . ltrim($hasilUji->gambar, '/')) }}" class="img-fluid rounded shadow" alt="Hasil uji laboratorium">
 
-                                     <p class="mt-2 text-muted">
-                                         <em>Contoh sertifikat hasil uji</em>
-                                     </p>
+                                         <p class="mt-2 text-muted">
+                                             <em>Contoh sertifikat hasil uji</em>
+                                         </p>
+                                     @endif
                                  </div>
 
                              </div>
                          </div>
                      </section>
+                     @endif
 
 
 

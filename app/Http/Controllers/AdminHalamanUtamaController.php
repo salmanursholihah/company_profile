@@ -29,7 +29,8 @@ class AdminHalamanUtamaController extends Controller
         $request->validate([
             'headline' => 'required',
             'sub_headline' => 'required',
-            'image' => 'required|image'
+            'url' => 'nullable|string|max:255',
+            'image' => 'required|image|max:5120'
         ]);
 
         $imagePath = $request->file('image')->store('uploads/halaman_utama', 'public');
@@ -37,10 +38,11 @@ class AdminHalamanUtamaController extends Controller
         HalamanUtama::create([
             'headline' => $request->headline,
             'sub_headline' => $request->sub_headline,
+            'url' => $request->url,
             'image' => 'storage/' . $imagePath
         ]);
 
-        return back()->with('success', 'Berhasil menambah data');
+        return redirect()->route('admin.halaman_utama.index')->with('success', 'Berhasil menambah data');
     }
 
     // public function index()
@@ -91,8 +93,8 @@ class AdminHalamanUtamaController extends Controller
         $request->validate([
             'headline' => 'required',
             'sub_headline' => 'nullable',
-            'url' => 'nullable|url',
-            'image' => 'image|mimes:jpg,png,jpeg,webp'
+            'url' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:5120'
         ]);
 
         $data = [

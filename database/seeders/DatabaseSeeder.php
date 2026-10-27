@@ -3,10 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\Abouts;
-use Database\Seeders\FooterSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,25 +12,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin123'),
-        ]);
-
-
-        $this->call([
-            abouts::class,
-        ]);
-        $this->call([
-            FooterSeed::class,
-        ]);
+        // Admin (aman dijalankan berulang, tidak error kalau email sudah ada)
+        User::firstOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name'     => 'admin',
+                'password' => bcrypt('admin123'), // ganti setelah login pertama
+            ]
+        );
 
         $this->call([
+            // Sudah mencakup: about, hero, visi-misi, layanan, katalog,
+            // legalitas, logo mitra, footer + unduh semua gambar.
+            // Menggantikan seeder lama `abouts` dan `FooterSeed`.
+            CompanyProfileSeeder::class,
+
             BlogSeeder::class,
         ]);
-
     }
 }

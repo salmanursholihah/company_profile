@@ -24,10 +24,10 @@ class AdminUjiLabController extends Controller
             'judul' => 'nullable|string|max:255',
             'poin1' => 'nullable|string',
             'poin2' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120'
         ]);
 
-        $data = $request->all();
+        $data = $request->only(['judul', 'poin1', 'poin2']);
 
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
@@ -56,10 +56,10 @@ class AdminUjiLabController extends Controller
             'judul' => 'nullable|string|max:255',
             'poin1' => 'nullable|string',
             'poin2' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:5120'
         ]);
 
-        $updateData = $request->all();
+        $updateData = $request->only(['judul', 'poin1', 'poin2']);
 
         if ($request->hasFile('gambar')) {
 

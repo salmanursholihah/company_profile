@@ -8,23 +8,19 @@ use Illuminate\Support\Facades\Auth;
 class RoleMiddleware
 {
     /**
-     * Handle an incoming request.
+     * Pemakaian: ->middleware('role:super_admin')  atau  ->middleware('role:super_admin,blogger')
+     * User boleh lewat bila rolenya SALAH SATU dari daftar.
      */
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, ...$roles)
     {
         if (!Auth::check()) {
             return redirect('/login'); // kalau belum login
         }
 
-        // cek role user
-        if (Auth::user()->role !== $role) {
+        if (!in_array(Auth::user()->role, $roles, true)) {
             abort(403, 'Anda tidak memiliki akses ke halaman ini.');
         }
 
         return $next($request);
     }
 }
-
-
-
-
