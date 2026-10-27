@@ -63,6 +63,12 @@ Route::get('/renovasi_ipal', fn() => view('renovasi_ipal'))->name('renovasi_ipal
 // Route::get('/team', [TeamController::class, 'index'])->name('team');
 Route::get('/backend', fn() => view('backend'))->name('backend');
 
+/* Panduan */
+Route::get('/panduan', [\App\Http\Controllers\GuideWebController::class, 'index'])->name('guides.index');
+Route::get('/panduan/{slug}', [\App\Http\Controllers\GuideWebController::class, 'show'])->name('guides.show');
+Route::get('/panduan/{slug}/materi/{id}', [\App\Http\Controllers\GuideWebController::class, 'lesson'])->whereNumber('id')->name('guides.lesson');
+Route::get('/panduan/{slug}/materi/{id}/unduh', [\App\Http\Controllers\GuideWebController::class, 'download'])->whereNumber('id')->name('guides.download');
+
 /* Blog */
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');

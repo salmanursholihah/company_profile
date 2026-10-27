@@ -57,6 +57,7 @@
                     <li><a href="{{ route('portfolio') }}" class="{{ request()->routeIs('portfolio') ? 'active' : '' }}">Portfolio</a></li>
                     <li><a href="{{ route('e-katalog') }}" class="{{ request()->routeIs('e-katalog*') ? 'active' : '' }}">E-katalog</a></li>
                     <li><a href="{{ route('blog.index') }}" class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a></li>
+                    <li><a href="{{ route('guides.index') }}" class="{{ request()->routeIs('guides.*') ? 'active' : '' }}">Panduan</a></li>
                     <li><a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active' : '' }}">Sign Up</a></li>
                     <li><a href="{{ route('login') }}" class="{{ request()->routeIs('login') ? 'active' : '' }}">Sign In</a></li>
                     <li><a href="{{ route('contact.index') }}" class="nav-cta {{ request()->routeIs('contact.*') ? 'active' : '' }}">Contact</a></li>
