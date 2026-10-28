@@ -2,7 +2,11 @@
 
 return [
     // Bank VA yang boleh dipilih pelanggan
-    'banks' => ['bca', 'bni', 'bri', 'permata', 'mandiri'],
+    // 'qris' = QRIS (GoPay/OVO/DANA/m-banking apa pun); sisanya Virtual Account bank
+    'banks' => ['bca', 'bni', 'bri', 'permata', 'mandiri', 'qris'],
+
+    // Masa berlaku QRIS (menit). QR berumur pendek; bila lewat, pelanggan membuat tagihan baru.
+    'qris_expiry_minutes' => 30,
 
     // Masa berlaku VA (jam) sejak dibuat
     'va_expiry_hours' => 24,

@@ -44,11 +44,17 @@ class CreateVAService extends Midtrans
                 'first_name' => $user->name,
                 'email'      => $user->email,
             ],
-            'custom_expiry' => [
-                'expiry_duration' => (int) config('subscription.va_expiry_hours', 24),
-                'unit'            => 'hour',
-            ],
+            'custom_expiry' => $this->bank === 'qris'
+                ? ['expiry_duration' => (int) config('subscription.qris_expiry_minutes', 30), 'unit' => 'minute']
+                : ['expiry_duration' => (int) config('subscription.va_expiry_hours', 24), 'unit' => 'hour'],
         ];
+
+        if ($this->bank === 'qris') {
+            return $base + [
+                'payment_type' => 'qris',
+                'qris'         => ['acquirer' => 'gopay'],
+            ];
+        }
 
         if ($this->bank === 'mandiri') {
             return $base + [
@@ -69,8 +75,12 @@ class CreateVAService extends Midtrans
     protected function store(object $response): VaPayment
     {
         $billerCode = null;
+        $expiredAt  = $this->invoice->due_at;
 
-        if ($this->bank === 'mandiri') {
+        if ($this->bank === 'qris') {
+            $vaNumber  = null; // QRIS tidak punya nomor; gambar QR ada di bank_response.actions
+            $expiredAt = now()->addMinutes((int) config('subscription.qris_expiry_minutes', 30));
+        } elseif ($this->bank === 'mandiri') {
             $vaNumber   = $response->bill_key ?? null;
             $billerCode = $response->biller_code ?? null;
         } elseif ($this->bank === 'permata') {
@@ -90,7 +100,7 @@ class CreateVAService extends Midtrans
                 'amount'         => $this->invoice->total_amount,
                 'status'         => 'pending',
                 'transaction_id' => $response->transaction_id ?? null,
-                'expired_at'     => $this->invoice->due_at,
+                'expired_at'     => $expiredAt,
                 'bank_response'  => json_decode(json_encode($response), true),
             ]
         );

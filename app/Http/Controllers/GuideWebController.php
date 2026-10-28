@@ -57,6 +57,11 @@ class GuideWebController extends Controller
         $lesson = $guide->lessons()->where('is_published', true)->where('id', $id)->firstOrFail();
         $code   = $this->access->denyReason($request->user(), $lesson);
 
+        // Tamu yang masuk/daftar dari sini kembali ke materi ini; lalu otomatis diarahkan memilih paket bila perlu
+        if ($code === GuideAccessService::LOGIN_REQUIRED) {
+            $request->session()->put('url.intended', $request->fullUrl());
+        }
+
         $ids  = $guide->lessons()->where('is_published', true)->pluck('id')->values();
         $pos  = $ids->search($lesson->id);
 

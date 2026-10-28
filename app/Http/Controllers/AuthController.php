@@ -25,14 +25,19 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
 
-        User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'role' => 'vendor',
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('login')->with('success', 'Register berhasil. Silakan login.');
+        // Langsung masuk, lalu kembali ke halaman sebelumnya (mis. materi panduan) atau ke pilihan paket
+        Auth::login($user);
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('subscription.plans'))
+            ->with('success', 'Pendaftaran berhasil. Silakan pilih paket langganan.');
     }
 
     // ==============================

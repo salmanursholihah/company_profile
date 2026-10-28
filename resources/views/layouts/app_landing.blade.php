@@ -58,8 +58,18 @@
                     <li><a href="{{ route('e-katalog') }}" class="{{ request()->routeIs('e-katalog*') ? 'active' : '' }}">E-katalog</a></li>
                     <li><a href="{{ route('blog.index') }}" class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">Blog</a></li>
                     <li><a href="{{ route('guides.index') }}" class="{{ request()->routeIs('guides.*') ? 'active' : '' }}">Panduan</a></li>
+                    <li><a href="{{ route('subscription.plans') }}" class="{{ request()->routeIs('subscription.*') ? 'active' : '' }}">Langganan</a></li>
+                    @guest
                     <li><a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active' : '' }}">Sign Up</a></li>
                     <li><a href="{{ route('login') }}" class="{{ request()->routeIs('login') ? 'active' : '' }}">Sign In</a></li>
+                    @else
+                    <li><a href="{{ route('subscription.history') }}" class="{{ request()->routeIs('subscription.history') ? 'active' : '' }}">Tagihan Saya</a></li>
+                    <li>
+                        <form method="post" action="{{ route('logout') }}" class="m-0">@csrf
+                            <button type="submit" class="btn btn-link nav-link p-0 px-3">Keluar</button>
+                        </form>
+                    </li>
+                    @endguest
                     <li><a href="{{ route('contact.index') }}" class="nav-cta {{ request()->routeIs('contact.*') ? 'active' : '' }}">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

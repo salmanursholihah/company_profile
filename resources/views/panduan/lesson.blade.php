@@ -32,7 +32,7 @@
                         <a href="{{ route('login') }}" class="btn btn-primary">Sign In</a>
                         <a href="{{ route('register') }}" class="btn btn-outline-secondary">Sign Up</a>
                     @else
-                        <a href="{{ route('contact.index') }}" class="btn btn-primary">Hubungi Kami untuk Berlangganan</a>
+                        <a href="{{ route('subscription.plans') }}" class="btn btn-primary">Lihat Paket Langganan</a>
                     @endif
                 </div>
             @else

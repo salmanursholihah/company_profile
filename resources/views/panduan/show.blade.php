@@ -63,6 +63,8 @@
                             <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Sign In</a>
                             <a href="{{ route('register') }}" class="btn btn-outline-secondary btn-sm">Sign Up</a>
                         @endguest
+                        <hr>
+                        <a href="{{ route('subscription.plans') }}" class="btn btn-outline-primary btn-sm">Lihat Paket Langganan</a>
                     </div>
                 </div>
             </div>

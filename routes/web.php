@@ -69,6 +69,15 @@ Route::get('/panduan/{slug}', [\App\Http\Controllers\GuideWebController::class, 
 Route::get('/panduan/{slug}/materi/{id}', [\App\Http\Controllers\GuideWebController::class, 'lesson'])->whereNumber('id')->name('guides.lesson');
 Route::get('/panduan/{slug}/materi/{id}/unduh', [\App\Http\Controllers\GuideWebController::class, 'download'])->whereNumber('id')->name('guides.download');
 
+/* Langganan & pembayaran */
+Route::get('/langganan', [\App\Http\Controllers\SubscriptionWebController::class, 'plans'])->name('subscription.plans');
+Route::middleware('auth')->prefix('langganan')->group(function () {
+    Route::post('/pilih', [\App\Http\Controllers\SubscriptionWebController::class, 'select'])->middleware('throttle:10,1')->name('subscription.select');
+    Route::get('/tagihan', [\App\Http\Controllers\SubscriptionWebController::class, 'history'])->name('subscription.history');
+    Route::get('/tagihan/{number}', [\App\Http\Controllers\SubscriptionWebController::class, 'invoice'])->name('subscription.invoice');
+    Route::post('/tagihan/{number}/cek', [\App\Http\Controllers\SubscriptionWebController::class, 'check'])->middleware('throttle:30,1')->name('subscription.check');
+});
+
 /* Blog */
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');

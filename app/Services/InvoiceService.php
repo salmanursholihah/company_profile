@@ -36,6 +36,22 @@ class InvoiceService
     }
 
     /** Bentuk respons API untuk satu invoice (+VA bila ada). */
+    /** URL gambar QR (PNG) dari actions respons Midtrans. */
+    protected function qrUrl(?array $resp): ?string
+    {
+        foreach ($resp['actions'] ?? [] as $a) {
+            if (($a['name'] ?? '') === 'generate-qr-code') {
+                return $a['url'] ?? null;
+            }
+        }
+        foreach ($resp['actions'] ?? [] as $a) {
+            if (str_starts_with($a['name'] ?? '', 'generate-qr-code')) {
+                return $a['url'] ?? null;
+            }
+        }
+        return null;
+    }
+
     public function payload(SubscriptionInvoice $invoice): array
     {
         $invoice->loadMissing(['plan', 'vaPayment']);
@@ -49,6 +65,8 @@ class InvoiceService
             'due_at'         => $invoice->due_at?->toIso8601String(),
             'paid_at'        => $invoice->paid_at?->toIso8601String(),
             'va'             => $va ? [
+                'qr_url'      => $va->bank === 'qris' ? $this->qrUrl($va->bank_response) : null,
+                'qr_string'   => $va->bank === 'qris' ? ($va->bank_response['qr_string'] ?? null) : null,
                 'bank'        => $va->bank,
                 'va_number'   => $va->va_number,
                 'va_name'     => $va->va_name,
